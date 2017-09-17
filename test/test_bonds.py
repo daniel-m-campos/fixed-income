@@ -78,3 +78,17 @@ class TestClasses(unittest.TestCase):
         perpetuity = bonds.Perpetuity(ytm=ytm, coupon=1)
         expected = 2 / ytm ** 2
         self.assertAlmostEqual(perpetuity.convexity, expected)
+
+    def test_coupon_bond_price_change_without_convexity(self):
+        """Based question 23c chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
+        bond = bonds.Bond(ytm=0.07, face_value=100, periods=10, coupon=7)
+        actual = bond.price_change(ytm_change=0.01)
+        expected = -7.02358154
+        self.assertAlmostEqual(actual, expected)
+
+    def test_coupon_bond_price_change_with_convexity(self):
+        """Based question 23d chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
+        bond = bonds.Bond(ytm=0.07, face_value=100, periods=10, coupon=7)
+        actual = bond.price_change(ytm_change=0.01, use_convexity=True)
+        expected = -6.69891674
+        self.assertAlmostEqual(actual, expected)

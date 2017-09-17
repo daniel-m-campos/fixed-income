@@ -73,6 +73,12 @@ class Bond:
             yield t, self.coupon
         yield self.periods, self.coupon + self.face_value
 
+    def price_change(self, ytm_change, use_convexity=False):
+        sensitivity = -self.modified_duration
+        if use_convexity:
+            sensitivity += 0.5 * ytm_change * self.convexity
+        return self.price * ytm_change * sensitivity
+
     @classmethod
     def from_price(cls, bond_price, face_value, coupon, periods):
         ytm = yield_to_maturity(bond_price=bond_price, face_value=face_value, coupon=coupon, periods=periods)
