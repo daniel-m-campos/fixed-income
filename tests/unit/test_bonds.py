@@ -20,7 +20,7 @@ class TestFunctions(unittest.TestCase):
         self.assertAlmostEqual(actual, expected)
 
 
-class TestClasses(unittest.TestCase):
+class TestCouponBond(unittest.TestCase):
     def test_non_int_periods_causes_assertion_error(self):
         with self.assertRaises(AssertionError):
             bonds.CouponBond(face_value=100, coupon=5, periods=2.5, ytm=0.03)
@@ -42,7 +42,8 @@ class TestClasses(unittest.TestCase):
         coupon = 6.5
         periods = 8
         ytm = coupon / face_value
-        actual = bonds.CouponBond.from_price(bond_price=face_value, face_value=face_value, periods=periods, coupon=coupon)
+        actual = bonds.CouponBond.from_price(bond_price=face_value, face_value=face_value, periods=periods,
+                                             coupon=coupon)
         expected = bonds.CouponBond(ytm=ytm, face_value=face_value, periods=periods, coupon=coupon)
         self.assertEqual(actual, expected)
 
@@ -55,40 +56,56 @@ class TestClasses(unittest.TestCase):
         expected = [(1, coupon), (2, coupon + face_value)]
         self.assertEqual(actual, expected)
 
-    def test_coupon_bond_duration(self):
+    def test_duration(self):
         """Based question 23a chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
         bond = bonds.CouponBond(ytm=0.07, face_value=100, periods=10, coupon=7)
         expected = 7.51523225
         self.assertAlmostEqual(bond.duration, expected)
 
-    def test_coupon_bond_convexity(self):
+    def test_convexity(self):
         """Based question 23b chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
         bond = bonds.CouponBond(ytm=0.07, face_value=100, periods=10, coupon=7)
         expected = 64.9329593
         self.assertAlmostEqual(bond.convexity, expected)
 
-    def test_perpetiuty_duration(self):
-        ytm = 0.07
-        perpetuity = bonds.Perpetuity(ytm=ytm, coupon=1)
-        expected = (1 + ytm) / ytm
-        self.assertAlmostEqual(perpetuity.duration, expected)
-
-    def test_perpetiuty_convexity(self):
-        ytm = 0.07
-        perpetuity = bonds.Perpetuity(ytm=ytm, coupon=1)
-        expected = 2 / ytm ** 2
-        self.assertAlmostEqual(perpetuity.convexity, expected)
-
-    def test_coupon_bond_price_change_without_convexity(self):
+    def test_price_change_without_convexity(self):
         """Based question 23c chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
         bond = bonds.CouponBond(ytm=0.07, face_value=100, periods=10, coupon=7)
         actual = bond.price_change(ytm_change=0.01)
         expected = -7.02358154
         self.assertAlmostEqual(actual, expected)
 
-    def test_coupon_bond_price_change_with_convexity(self):
+    def test_price_change_with_convexity(self):
         """Based question 23d chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
         bond = bonds.CouponBond(ytm=0.07, face_value=100, periods=10, coupon=7)
         actual = bond.price_change(ytm_change=0.01, use_convexity=True)
         expected = -6.69891674
         self.assertAlmostEqual(actual, expected)
+
+
+class TestPerpetuity(unittest.TestCase):
+    def test_duration(self):
+        ytm = 0.07
+        perpetuity = bonds.Perpetuity(ytm=ytm, coupon=1)
+        expected = (1 + ytm) / ytm
+        self.assertAlmostEqual(perpetuity.duration, expected)
+
+    def test_convexity(self):
+        ytm = 0.07
+        perpetuity = bonds.Perpetuity(ytm=ytm, coupon=1)
+        expected = 2 / ytm ** 2
+        self.assertAlmostEqual(perpetuity.convexity, expected)
+
+
+class TestTreasuryNote(unittest.TestCase):
+    def test_price(self):
+        """ Example 2.11 from Pietro Veronesi - Fixed Income Securities"""
+        note = bonds.TreasuryNote(coupon_rate=0.0475, maturity_years=9.5, annual_ytm=0.037548)
+        expected = 107.8906
+        self.assertAlmostEqual(note.price, expected, places=3)
+
+    def test_from_price(self):
+        """ Example 2.11 from Pietro Veronesi - Fixed Income Securities"""
+        note = bonds.TreasuryNote.from_price(bond_price=141.5267, coupon_rate=0.08875, maturity_years=9.5)
+        expected = bonds.TreasuryNote.to_semi_annual_yield(0.036603)
+        self.assertAlmostEqual(note.ytm, expected, places=6)

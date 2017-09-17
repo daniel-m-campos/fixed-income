@@ -12,6 +12,7 @@ def present_value_factor(ytm, periods):
 
 
 def price(face_value, coupon, periods, ytm):
+    """The clean price of a coupon paying bond"""
     pv_factor = present_value_factor(ytm, periods)
     annuity_factor = 1 / ytm * (1 - pv_factor) if ytm != 0.0 else periods
     return coupon * annuity_factor + face_value * pv_factor
@@ -108,3 +109,34 @@ class Perpetuity(CouponBond):
     @property
     def convexity(self):
         return 2 / math.pow(self.ytm, 2)
+
+
+class TreasuryNote(CouponBond):
+    par = 100.0
+    freq = 2
+
+    def __init__(self, coupon_rate, maturity_years, annual_ytm):
+        super().__init__(face_value=self.par,
+                         coupon=self.to_coupon(coupon_rate),
+                         periods=self.to_periods(maturity_years),
+                         ytm=self.to_semi_annual_yield(annual_ytm))
+
+    @classmethod
+    def to_periods(cls, maturity_years):
+        return int(cls.freq * maturity_years)
+
+    @classmethod
+    def to_coupon(cls, coupon_rate):
+        return cls.par * coupon_rate / cls.freq
+
+    @classmethod
+    def to_semi_annual_yield(cls, annual_ytm):
+        return annual_ytm / cls.freq
+
+    @classmethod
+    def from_price(cls, bond_price, coupon_rate, maturity_years, **kwargs):
+        semi_annual_ytm = yield_to_maturity(bond_price=bond_price,
+                                            face_value=cls.par,
+                                            coupon=cls.to_coupon(coupon_rate),
+                                            periods=cls.to_periods(maturity_years))
+        return cls(coupon_rate, maturity_years, semi_annual_ytm * cls.freq)
