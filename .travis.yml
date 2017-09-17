@@ -2,9 +2,9 @@ language: python
 
 python:
   - "3.6"
-install: "pip install -r requirements.txt"
+install: "pip install -r requirements.txt -r test-requirements.txt"
 # command to run tests
-script: nosetests -w ./tests/unit
+script: nosetests
 
 notifications:
   email: false
