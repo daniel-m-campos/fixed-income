@@ -23,18 +23,18 @@ class TestFunctions(unittest.TestCase):
 class TestClasses(unittest.TestCase):
     def test_non_int_periods_causes_assertion_error(self):
         with self.assertRaises(AssertionError):
-            bonds.Bond(face_value=100, coupon=5, periods=2.5, ytm=0.03)
+            bonds.CouponBond(face_value=100, coupon=5, periods=2.5, ytm=0.03)
 
     def test_price_equals_par_when_coupon_equals_ytm(self):
         face_value = 100
         ytm = 0.07
         coupon = ytm * face_value
-        bond = bonds.Bond(face_value=face_value, coupon=coupon, ytm=ytm, periods=12)
+        bond = bonds.CouponBond(face_value=face_value, coupon=coupon, ytm=ytm, periods=12)
         self.assertAlmostEqual(bond.price, face_value)
 
     def test_duration_of_zero_equals_periods(self):
         expected = 7
-        zcb = bonds.ZeroCoupon(face_value=100, periods=expected, ytm=0.05)
+        zcb = bonds.Zero(face_value=100, periods=expected, ytm=0.05)
         self.assertAlmostEqual(zcb.duration, expected)
 
     def test_from_price(self):
@@ -42,28 +42,28 @@ class TestClasses(unittest.TestCase):
         coupon = 6.5
         periods = 8
         ytm = coupon / face_value
-        actual = bonds.Bond.from_price(bond_price=face_value, face_value=face_value, periods=periods, coupon=coupon)
-        expected = bonds.Bond(ytm=ytm, face_value=face_value, periods=periods, coupon=coupon)
+        actual = bonds.CouponBond.from_price(bond_price=face_value, face_value=face_value, periods=periods, coupon=coupon)
+        expected = bonds.CouponBond(ytm=ytm, face_value=face_value, periods=periods, coupon=coupon)
         self.assertEqual(actual, expected)
 
     def test_cash_flow_iteration(self):
         face_value = 100
         coupon = 7
         periods = 2
-        bond = bonds.Bond(ytm=0.01, face_value=face_value, periods=periods, coupon=coupon)
+        bond = bonds.CouponBond(ytm=0.01, face_value=face_value, periods=periods, coupon=coupon)
         actual = list(bond)
         expected = [(1, coupon), (2, coupon + face_value)]
         self.assertEqual(actual, expected)
 
     def test_coupon_bond_duration(self):
         """Based question 23a chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
-        bond = bonds.Bond(ytm=0.07, face_value=100, periods=10, coupon=7)
+        bond = bonds.CouponBond(ytm=0.07, face_value=100, periods=10, coupon=7)
         expected = 7.51523225
         self.assertAlmostEqual(bond.duration, expected)
 
     def test_coupon_bond_convexity(self):
         """Based question 23b chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
-        bond = bonds.Bond(ytm=0.07, face_value=100, periods=10, coupon=7)
+        bond = bonds.CouponBond(ytm=0.07, face_value=100, periods=10, coupon=7)
         expected = 64.9329593
         self.assertAlmostEqual(bond.convexity, expected)
 
@@ -81,14 +81,14 @@ class TestClasses(unittest.TestCase):
 
     def test_coupon_bond_price_change_without_convexity(self):
         """Based question 23c chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
-        bond = bonds.Bond(ytm=0.07, face_value=100, periods=10, coupon=7)
+        bond = bonds.CouponBond(ytm=0.07, face_value=100, periods=10, coupon=7)
         actual = bond.price_change(ytm_change=0.01)
         expected = -7.02358154
         self.assertAlmostEqual(actual, expected)
 
     def test_coupon_bond_price_change_with_convexity(self):
         """Based question 23d chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
-        bond = bonds.Bond(ytm=0.07, face_value=100, periods=10, coupon=7)
+        bond = bonds.CouponBond(ytm=0.07, face_value=100, periods=10, coupon=7)
         actual = bond.price_change(ytm_change=0.01, use_convexity=True)
         expected = -6.69891674
         self.assertAlmostEqual(actual, expected)

@@ -21,7 +21,7 @@ def yield_to_maturity(bond_price, face_value, periods, coupon, guess=0.05):
     return optimize.newton(lambda ytm: price(face_value, coupon, periods, ytm) - bond_price, guess)
 
 
-class Bond:
+class CouponBond:
     def __init__(self, face_value, coupon, periods, ytm):
         assert isinstance(periods, int) or periods == math.inf
         self._face_value = face_value
@@ -64,7 +64,7 @@ class Bond:
         return weighted_cash_flow / self.price * present_value_factor(self.ytm, 2)
 
     def __eq__(self, other):
-        if isinstance(other, Bond):
+        if isinstance(other, CouponBond):
             return all(math.isclose(self.__dict__[key], other.__dict__[key]) for key in self.__dict__)
         return NotImplemented
 
@@ -85,12 +85,15 @@ class Bond:
         return cls(face_value=face_value, coupon=coupon, periods=periods, ytm=ytm)
 
 
-class ZeroCoupon(Bond):
+class Zero(CouponBond):
     def __init__(self, face_value, periods, ytm):
         super().__init__(face_value=face_value, coupon=0, periods=periods, ytm=ytm)
 
+    def __iter__(self):
+        yield self.periods, self.face_value
 
-class Perpetuity(Bond):
+
+class Perpetuity(CouponBond):
     def __init__(self, coupon, ytm):
         super().__init__(face_value=0, coupon=coupon, periods=math.inf, ytm=ytm)
 
