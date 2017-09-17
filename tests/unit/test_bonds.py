@@ -107,5 +107,18 @@ class TestTreasuryNote(unittest.TestCase):
     def test_from_price(self):
         """ Example 2.11 from Pietro Veronesi - Fixed Income Securities"""
         note = bonds.TreasuryNote.from_price(bond_price=141.5267, coupon_rate=0.08875, maturity_years=9.5)
-        expected = bonds.TreasuryNote.to_semi_annual_yield(0.036603)
+        expected = bonds.period_ytm(0.036603)
         self.assertAlmostEqual(note.ytm, expected, places=6)
+
+
+class TestSemiAnnualFloatingRateBond(unittest.TestCase):
+    def test_price_with_zero_spread(self):
+        """ Example 2.13 from Pietro Veronesi - Fixed Income Securities"""
+        floater = bonds.SemiAnnualFloatingRateBond(maturity_years=1, interest_rate=0.06, spread_rate=0)
+        expected = floater.face_value
+        self.assertAlmostEqual(floater.price, expected)
+
+    def test_price_with_nonzero_spread(self):
+        floater = bonds.SemiAnnualFloatingRateBond(maturity_years=1, interest_rate=0.0, spread_rate=0.01)
+        expected = floater.face_value + floater.periods * floater.spread_coupon
+        self.assertAlmostEqual(floater.price, expected)

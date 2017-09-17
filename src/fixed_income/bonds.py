@@ -111,32 +111,96 @@ class Perpetuity(CouponBond):
         return 2 / math.pow(self.ytm, 2)
 
 
+def periods(maturity_years, freq=2):
+    return int(maturity_years * freq)
+
+
+def coupon(par, coupon_rate, freq=2):
+    return par * coupon_rate / freq
+
+
+def period_ytm(annual_ytm, freq=2):
+    return annual_ytm / freq
+
+
 class TreasuryNote(CouponBond):
-    par = 100.0
-    freq = 2
+    _par = 100.0
+    _freq = 2
 
     def __init__(self, coupon_rate, maturity_years, annual_ytm):
-        super().__init__(face_value=self.par,
-                         coupon=self.to_coupon(coupon_rate),
-                         periods=self.to_periods(maturity_years),
-                         ytm=self.to_semi_annual_yield(annual_ytm))
+        super().__init__(face_value=self._par,
+                         coupon=coupon(self._par, coupon_rate, self._freq),
+                         periods=periods(maturity_years, self._freq),
+                         ytm=period_ytm(annual_ytm))
 
-    @classmethod
-    def to_periods(cls, maturity_years):
-        return int(cls.freq * maturity_years)
-
-    @classmethod
-    def to_coupon(cls, coupon_rate):
-        return cls.par * coupon_rate / cls.freq
-
-    @classmethod
-    def to_semi_annual_yield(cls, annual_ytm):
-        return annual_ytm / cls.freq
+    @property
+    def freq(self):
+        return self._freq
 
     @classmethod
     def from_price(cls, bond_price, coupon_rate, maturity_years, **kwargs):
         semi_annual_ytm = yield_to_maturity(bond_price=bond_price,
-                                            face_value=cls.par,
-                                            coupon=cls.to_coupon(coupon_rate),
-                                            periods=cls.to_periods(maturity_years))
-        return cls(coupon_rate, maturity_years, semi_annual_ytm * cls.freq)
+                                            face_value=cls._par,
+                                            coupon=coupon(cls._par, coupon_rate, cls._freq),
+                                            periods=periods(maturity_years, cls._freq))
+        return cls(coupon_rate, maturity_years, semi_annual_ytm * cls._freq)
+
+
+class SemiAnnualFloatingRateBond:
+    _par = 100.0
+    _freq = 2
+
+    def __init__(self, maturity_years, interest_rate, spread_rate=0):
+        self._interest_rate = interest_rate
+        self._spread_rate = spread_rate
+        self._periods = periods(maturity_years, self._freq)
+        self._fixed_bond = CouponBond(face_value=0,
+                                      coupon=coupon(self._par, spread_rate, self._freq),
+                                      periods=self._periods,
+                                      ytm=period_ytm(interest_rate, self._freq))
+
+    def reset(self, period, interest_rate):
+        self._interest_rate = interest_rate
+        self._fixed_bond = CouponBond(face_value=0,
+                                      coupon=coupon(self._par, self._spread_rate, self._freq),
+                                      periods=self._periods - period,
+                                      ytm=period_ytm(interest_rate, self._freq))
+
+    @property
+    def face_value(self):
+        return self._par
+
+    @property
+    def freq(self):
+        return self._freq
+
+    @property
+    def periods(self):
+        return self._fixed_bond.periods
+
+    @property
+    def interest_rate(self):
+        return self._interest_rate
+
+    @property
+    def spread_coupon(self):
+        return self._fixed_bond.coupon
+
+    @property
+    def price(self):
+        return self._par + self._fixed_bond.price
+
+    @property
+    def duration(self):
+        # TODO: fill in
+        return 0.0
+
+    @property
+    def modified_duration(self):
+        # TODO: fill in
+        return 0.0
+
+    @property
+    def convexity(self):
+        # TODO: fill in
+        return 0.0
