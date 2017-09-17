@@ -37,7 +37,7 @@ class TestClasses(unittest.TestCase):
         zcb = bonds.ZeroCoupon(face_value=100, periods=expected, ytm=0.05)
         self.assertAlmostEqual(zcb.duration, expected)
 
-    def test_from_ytm(self):
+    def test_from_price(self):
         face_value = 100
         coupon = 6.5
         periods = 8
@@ -46,7 +46,7 @@ class TestClasses(unittest.TestCase):
         expected = bonds.Bond(ytm=ytm, face_value=face_value, periods=periods, coupon=coupon)
         self.assertEqual(actual, expected)
 
-    def test_cashflow_iteration(self):
+    def test_cash_flow_iteration(self):
         face_value = 100
         coupon = 7
         periods = 2
@@ -54,3 +54,27 @@ class TestClasses(unittest.TestCase):
         actual = list(bond)
         expected = [(1, coupon), (2, coupon + face_value)]
         self.assertEqual(actual, expected)
+
+    def test_coupon_bond_duration(self):
+        """Based question 23a chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
+        bond = bonds.Bond(ytm=0.07, face_value=100, periods=10, coupon=7)
+        expected = 7.51523225
+        self.assertAlmostEqual(bond.duration, expected)
+
+    def test_coupon_bond_convexity(self):
+        """Based question 23b chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
+        bond = bonds.Bond(ytm=0.07, face_value=100, periods=10, coupon=7)
+        expected = 64.9329593
+        self.assertAlmostEqual(bond.convexity, expected)
+
+    def test_perpetiuty_duration(self):
+        ytm = 0.07
+        perpetuity = bonds.Perpetuity(ytm=ytm, coupon=1)
+        expected = (1 + ytm) / ytm
+        self.assertAlmostEqual(perpetuity.duration, expected)
+
+    def test_perpetiuty_convexity(self):
+        ytm = 0.07
+        perpetuity = bonds.Perpetuity(ytm=ytm, coupon=1)
+        expected = 2 / ytm ** 2
+        self.assertAlmostEqual(perpetuity.convexity, expected)

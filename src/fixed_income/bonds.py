@@ -12,7 +12,6 @@ def present_value_factor(ytm, periods):
 
 
 def price(face_value, coupon, periods, ytm):
-    assert isinstance(periods, int)
     pv_factor = present_value_factor(ytm, periods)
     annuity_factor = 1 / ytm * (1 - pv_factor) if ytm != 0.0 else periods
     return coupon * annuity_factor + face_value * pv_factor
@@ -24,7 +23,7 @@ def yield_to_maturity(bond_price, face_value, periods, coupon, guess=0.05):
 
 class Bond:
     def __init__(self, face_value, coupon, periods, ytm):
-        assert isinstance(periods, int)
+        assert isinstance(periods, int) or periods == math.inf
         self._face_value = face_value
         self._coupon = coupon
         self._periods = periods
@@ -52,9 +51,8 @@ class Bond:
 
     @property
     def duration(self):
-        weighted_cf = sum(self.coupon * present_value_factor(self.ytm, n) for n in range(1, self.periods + 1))
-        weighted_cf += self.periods * self.face_value * present_value_factor(self.ytm, self.periods)
-        return weighted_cf / self.price
+        weighted_cash_flow = sum(t * cash_flow * present_value_factor(self.ytm, t) for t, cash_flow in self)
+        return weighted_cash_flow / self.price
 
     @property
     def modified_duration(self):
@@ -62,8 +60,8 @@ class Bond:
 
     @property
     def convexity(self):
-        # TODO: complete
-        return 0.0
+        weighted_cash_flow = sum(t * (t + 1) * cash_flow * present_value_factor(self.ytm, t) for t, cash_flow in self)
+        return weighted_cash_flow / self.price * present_value_factor(self.ytm, 2)
 
     def __eq__(self, other):
         if isinstance(other, Bond):
@@ -83,12 +81,12 @@ class Bond:
 
 class ZeroCoupon(Bond):
     def __init__(self, face_value, periods, ytm):
-        super().__init__(face_value, 0, periods, ytm)
+        super().__init__(face_value=face_value, coupon=0, periods=periods, ytm=ytm)
 
 
 class Perpetuity(Bond):
     def __init__(self, coupon, ytm):
-        super().__init__(0, coupon, math.inf, ytm)
+        super().__init__(face_value=0, coupon=coupon, periods=math.inf, ytm=ytm)
 
     @property
     def price(self):
@@ -100,5 +98,4 @@ class Perpetuity(Bond):
 
     @property
     def convexity(self):
-        # TODO: complete
-        return 0.0
+        return 2 / math.pow(self.ytm, 2)
