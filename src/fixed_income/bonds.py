@@ -1,5 +1,6 @@
 import math
 
+import numpy as np
 import scipy.optimize as optimize
 
 
@@ -22,16 +23,36 @@ def yield_to_maturity(bond_price, face_value, periods, coupon, guess=0.05):
     return optimize.newton(lambda ytm: price(face_value, coupon, periods, ytm) - bond_price, guess)
 
 
-def periods(maturity_years, freq=2):
+def to_periods(maturity_years, freq=2):
     return int(maturity_years * freq)
 
 
-def coupon(par, coupon_rate, freq=2):
+def to_coupon(par, coupon_rate, freq=2):
     return par * coupon_rate / freq
 
 
 def period_ytm(annual_ytm, freq=2):
     return annual_ytm / freq
+
+
+def can_bootstrap(portfolio):
+    periods = set(bond.periods for bond in portfolio)
+    return periods == set(range(1, max(periods) + 1))
+
+
+def cash_flows(portfolio):
+    longest_bond = max(portfolio, key=lambda bond: bond.periods)
+    cfs = [[cf for _, cf in bond] for bond in portfolio]
+    return [cf + [0.0] * (longest_bond.periods - len(cf)) for cf in cfs]
+
+
+def bootstrap(portfolio):
+    assert can_bootstrap(portfolio)
+    prices = np.row_stack([bond.price for bond in portfolio])
+    cfs = np.matrix(cash_flows(portfolio))
+    dfs = cfs.getI() @ prices
+    dfs = np.array(dfs).reshape(-1).tolist()
+    return [Zero.from_price(bond_price=df, periods=n, face_value=1.0) for n, df in enumerate(dfs, start=1)]
 
 
 class CouponBond:
@@ -86,6 +107,10 @@ class CouponBond:
             yield t, self.coupon
         yield self.periods, self.coupon + self.face_value
 
+    def __repr__(self):
+        property_string = ','.join('{}={}'.format(k[1:], v) for k, v in self.__dict__.items())
+        return "{}({})".format(self.__class__.__name__, property_string)
+
     def price_change(self, ytm_change, use_convexity=False):
         sensitivity = -self.modified_duration
         if use_convexity:
@@ -104,6 +129,11 @@ class Zero(CouponBond):
 
     def __iter__(self):
         yield self.periods, self.face_value
+
+    @classmethod
+    def from_price(cls, bond_price, face_value, periods, **kwargs):
+        ytm = yield_to_maturity(bond_price=bond_price, face_value=face_value, coupon=0.0, periods=periods)
+        return cls(face_value, periods, ytm)
 
 
 class Perpetuity(CouponBond):
@@ -129,8 +159,8 @@ class TreasuryNote(CouponBond):
 
     def __init__(self, coupon_rate, maturity_years, annual_ytm):
         super().__init__(face_value=self._par,
-                         coupon=coupon(self._par, coupon_rate, self._freq),
-                         periods=periods(maturity_years, self._freq),
+                         coupon=to_coupon(self._par, coupon_rate, self._freq),
+                         periods=to_periods(maturity_years, self._freq),
                          ytm=period_ytm(annual_ytm))
 
     @property
@@ -141,8 +171,8 @@ class TreasuryNote(CouponBond):
     def from_price(cls, bond_price, coupon_rate, maturity_years, **kwargs):
         semi_annual_ytm = yield_to_maturity(bond_price=bond_price,
                                             face_value=cls._par,
-                                            coupon=coupon(cls._par, coupon_rate, cls._freq),
-                                            periods=periods(maturity_years, cls._freq))
+                                            coupon=to_coupon(cls._par, coupon_rate, cls._freq),
+                                            periods=to_periods(maturity_years, cls._freq))
         return cls(coupon_rate, maturity_years, semi_annual_ytm * cls._freq)
 
 
@@ -151,11 +181,11 @@ class SemiAnnualFloatingRateBond:
     _freq = 2
 
     def __init__(self, maturity_years, interest_rate, spread_rate=0):
-        self._periods = periods(maturity_years, self._freq)
+        self._periods = to_periods(maturity_years, self._freq)
         self._interest_rate = interest_rate
         self._spread_rate = spread_rate
         self._fixed_bond = CouponBond(face_value=0,
-                                      coupon=coupon(self._par, spread_rate, self._freq),
+                                      coupon=to_coupon(self._par, spread_rate, self._freq),
                                       periods=self._periods,
                                       ytm=period_ytm(interest_rate, self._freq))
 
@@ -163,7 +193,7 @@ class SemiAnnualFloatingRateBond:
         self._periods -= period
         self._interest_rate = interest_rate
         self._fixed_bond = CouponBond(face_value=0,
-                                      coupon=coupon(self._par, self._spread_rate, self._freq),
+                                      coupon=to_coupon(self._par, self._spread_rate, self._freq),
                                       periods=self._periods,
                                       ytm=period_ytm(interest_rate, self._freq))
 
@@ -193,7 +223,7 @@ class SemiAnnualFloatingRateBond:
 
     @property
     def coupon(self):
-        return self._fixed_bond.coupon + coupon(self._par, self._interest_rate, self._freq)
+        return self._fixed_bond.coupon + to_coupon(self._par, self._interest_rate, self._freq)
 
     @property
     def price(self):

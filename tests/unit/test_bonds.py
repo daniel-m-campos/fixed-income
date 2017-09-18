@@ -19,6 +19,31 @@ class TestFunctions(unittest.TestCase):
         actual = bonds.price(ytm=0, face_value=face_value, periods=periods, coupon=coupon)
         self.assertAlmostEqual(actual, expected)
 
+    def test_can_bootstrap_is_true(self):
+        portfolio = [bonds.TreasuryNote(coupon_rate=0.05, maturity_years=t / 2, annual_ytm=0.05) for t in range(1, 5)]
+        self.assertTrue(bonds.can_bootstrap(portfolio))
+
+    def test_can_bootstrap_is_false(self):
+        portfolio = [bonds.TreasuryNote(coupon_rate=0.05, maturity_years=0.0, annual_ytm=0.02),
+                     bonds.TreasuryNote(coupon_rate=0.05, maturity_years=1.0, annual_ytm=0.02)]
+        self.assertFalse(bonds.can_bootstrap(portfolio))
+
+    def test_cash_flows(self):
+        portfolio = [bonds.TreasuryNote(coupon_rate=0.05, maturity_years=0.5, annual_ytm=0.02),
+                     bonds.TreasuryNote(coupon_rate=0.05, maturity_years=1.0, annual_ytm=0.02),
+                     bonds.TreasuryNote(coupon_rate=0.05, maturity_years=2.0, annual_ytm=0.02)]
+        actual = bonds.cash_flows(portfolio)
+        expected = [[102.5, 0.0, 0.0, 0.0], [2.5, 102.5, 0.0, 0.0], [2.5, 2.5, 2.5, 102.5]]
+        self.assertEqual(actual, expected)
+
+    def test_bootstrap(self):
+        ytm = 0.1
+        periods = list(range(1, 5))
+        portfolio = [bonds.TreasuryNote(coupon_rate=ytm, maturity_years=n / 2, annual_ytm=ytm) for n in periods]
+        actuals = bonds.bootstrap(portfolio)
+        expecteds = (bonds.Zero(face_value=1.0, periods=n, ytm=bonds.period_ytm(ytm)) for n in periods)
+        self.assertTrue(all(actual == expected for actual, expected in zip(actuals, expecteds)))
+
 
 class TestCouponBond(unittest.TestCase):
     def test_non_int_periods_causes_assertion_error(self):
