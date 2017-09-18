@@ -120,5 +120,24 @@ class TestSemiAnnualFloatingRateBond(unittest.TestCase):
 
     def test_price_with_nonzero_spread(self):
         floater = bonds.SemiAnnualFloatingRateBond(maturity_years=1, interest_rate=0.0, spread_rate=0.01)
-        expected = floater.face_value + floater.periods * floater.spread_coupon
+        expected = floater.face_value + floater.periods * floater.fixed_coupon
         self.assertAlmostEqual(floater.price, expected)
+
+    def test_periods_after_reset(self):
+        floater = bonds.SemiAnnualFloatingRateBond(maturity_years=3.5, interest_rate=0.05, spread_rate=0.01)
+        period = 3
+        expected = floater.periods - period
+        floater.reset(period=period, interest_rate=0.07)
+        self.assertAlmostEqual(floater.periods, expected)
+
+    def test_coupon(self):
+        floater = bonds.SemiAnnualFloatingRateBond(maturity_years=1, interest_rate=0.05, spread_rate=0.01)
+        expected = (floater.interest_rate + floater.spread_rate) * floater.face_value / floater.freq
+        self.assertAlmostEqual(floater.coupon, expected)
+
+    def test_coupon_after_reset(self):
+        floater = bonds.SemiAnnualFloatingRateBond(maturity_years=1.5, interest_rate=0.05, spread_rate=0.01)
+        new_interest_rate = 0.1
+        floater.reset(period=1, interest_rate=new_interest_rate)
+        expected = (new_interest_rate + floater.spread_rate) * floater.face_value / floater.freq
+        self.assertAlmostEqual(floater.coupon, expected)

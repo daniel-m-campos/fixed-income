@@ -151,19 +151,20 @@ class SemiAnnualFloatingRateBond:
     _freq = 2
 
     def __init__(self, maturity_years, interest_rate, spread_rate=0):
+        self._periods = periods(maturity_years, self._freq)
         self._interest_rate = interest_rate
         self._spread_rate = spread_rate
-        self._periods = periods(maturity_years, self._freq)
         self._fixed_bond = CouponBond(face_value=0,
                                       coupon=coupon(self._par, spread_rate, self._freq),
                                       periods=self._periods,
                                       ytm=period_ytm(interest_rate, self._freq))
 
     def reset(self, period, interest_rate):
+        self._periods -= period
         self._interest_rate = interest_rate
         self._fixed_bond = CouponBond(face_value=0,
                                       coupon=coupon(self._par, self._spread_rate, self._freq),
-                                      periods=self._periods - period,
+                                      periods=self._periods,
                                       ytm=period_ytm(interest_rate, self._freq))
 
     @property
@@ -176,15 +177,23 @@ class SemiAnnualFloatingRateBond:
 
     @property
     def periods(self):
-        return self._fixed_bond.periods
+        return self._periods
 
     @property
     def interest_rate(self):
         return self._interest_rate
 
     @property
-    def spread_coupon(self):
+    def spread_rate(self):
+        return self._spread_rate
+
+    @property
+    def fixed_coupon(self):
         return self._fixed_bond.coupon
+
+    @property
+    def coupon(self):
+        return self._fixed_bond.coupon + coupon(self._par, self._interest_rate, self._freq)
 
     @property
     def price(self):
