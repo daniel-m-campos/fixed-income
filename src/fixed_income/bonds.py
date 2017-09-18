@@ -22,6 +22,18 @@ def yield_to_maturity(bond_price, face_value, periods, coupon, guess=0.05):
     return optimize.newton(lambda ytm: price(face_value, coupon, periods, ytm) - bond_price, guess)
 
 
+def periods(maturity_years, freq=2):
+    return int(maturity_years * freq)
+
+
+def coupon(par, coupon_rate, freq=2):
+    return par * coupon_rate / freq
+
+
+def period_ytm(annual_ytm, freq=2):
+    return annual_ytm / freq
+
+
 class CouponBond:
     def __init__(self, face_value, coupon, periods, ytm):
         assert isinstance(periods, int) or periods == math.inf
@@ -109,18 +121,6 @@ class Perpetuity(CouponBond):
     @property
     def convexity(self):
         return 2 / math.pow(self.ytm, 2)
-
-
-def periods(maturity_years, freq=2):
-    return int(maturity_years * freq)
-
-
-def coupon(par, coupon_rate, freq=2):
-    return par * coupon_rate / freq
-
-
-def period_ytm(annual_ytm, freq=2):
-    return annual_ytm / freq
 
 
 class TreasuryNote(CouponBond):
