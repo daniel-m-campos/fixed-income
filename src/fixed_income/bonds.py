@@ -118,7 +118,7 @@ class CouponBond:
         return self.price * ytm_change * sensitivity
 
     @classmethod
-    def from_price(cls, bond_price, coupon, periods, face_value=100):
+    def from_price(cls, bond_price, coupon, periods, face_value):
         ytm = yield_to_maturity(bond_price=bond_price, face_value=face_value, coupon=coupon, periods=periods)
         return cls(face_value=face_value, coupon=coupon, periods=periods, ytm=ytm)
 
@@ -183,6 +183,14 @@ class TreasuryNote(CouponBond):
                                             coupon=to_coupon(cls._par, coupon_rate, cls._freq),
                                             periods=to_periods(maturity_years, cls._freq))
         return cls(coupon_rate, maturity_years, semi_annual_ytm * cls._freq)
+
+    @classmethod
+    def from_dataframe(cls, df):
+        assert {'coupon_rate', 'bond_price', 'maturity_years'}.issubset(df.columns)
+        for index, row in df.iterrows():
+            yield cls.from_price(bond_price=row.bond_price,
+                                 coupon_rate=row.coupon_rate,
+                                 maturity_years=row.maturity_years)
 
 
 class SemiAnnualFloatingRateBond:
