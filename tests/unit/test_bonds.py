@@ -1,5 +1,7 @@
 import unittest
 
+import pandas as pd
+
 from fixed_income import bonds
 
 
@@ -70,6 +72,13 @@ class TestCouponBond(unittest.TestCase):
         actual = bonds.CouponBond.from_price(bond_price=face_value, face_value=face_value, periods=periods,
                                              coupon=coupon)
         expected = bonds.CouponBond(ytm=ytm, face_value=face_value, periods=periods, coupon=coupon)
+        self.assertEqual(actual, expected)
+
+    def test_from_dataframe(self):
+        bond_details = {'bond_price': 100, 'coupon': 5, 'face_value': 100, 'periods': 2}
+        df = pd.DataFrame([bond_details], )
+        actual = next(bonds.CouponBond.from_dataframe(df))
+        expected = bonds.CouponBond.from_price(**bond_details)
         self.assertEqual(actual, expected)
 
     def test_cash_flow_iteration(self):

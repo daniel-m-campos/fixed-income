@@ -57,7 +57,7 @@ def bootstrap(portfolio):
 
 class CouponBond:
     def __init__(self, face_value, coupon, periods, ytm):
-        assert isinstance(periods, int) or periods == math.inf
+        assert isinstance(periods, (int, np.integer)) or periods == math.inf
         self._face_value = face_value
         self._coupon = coupon
         self._periods = periods
@@ -118,9 +118,18 @@ class CouponBond:
         return self.price * ytm_change * sensitivity
 
     @classmethod
-    def from_price(cls, bond_price, face_value, coupon, periods):
+    def from_price(cls, bond_price, coupon, periods, face_value=100):
         ytm = yield_to_maturity(bond_price=bond_price, face_value=face_value, coupon=coupon, periods=periods)
         return cls(face_value=face_value, coupon=coupon, periods=periods, ytm=ytm)
+
+    @classmethod
+    def from_dataframe(cls, df):
+        assert {'coupon', 'bond_price', 'periods', 'face_value'}.issubset(df.columns)
+        for index, row in df.iterrows():
+            yield cls.from_price(face_value=row.face_value,
+                                 coupon=row.coupon,
+                                 periods=row.periods,
+                                 bond_price=row.bond_price)
 
 
 class Zero(CouponBond):
