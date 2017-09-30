@@ -62,6 +62,7 @@ class CouponBond:
         self._coupon = coupon
         self._periods = periods
         self._ytm = ytm
+        self._price = price(self.face_value, self.coupon, self.periods, self.ytm)
 
     @property
     def face_value(self):
@@ -81,7 +82,7 @@ class CouponBond:
 
     @property
     def price(self):
-        return price(self.face_value, self.coupon, self.periods, self.ytm)
+        return self._price
 
     @property
     def duration(self):
