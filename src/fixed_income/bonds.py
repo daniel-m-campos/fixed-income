@@ -98,11 +98,18 @@ class CouponBond:
         return weighted_cash_flow / self.price
 
     @property
+    def duration(self):
+        """The percentage change in price given a change in the level on continuous spot rates"""
+        # In this case it happens to coincide with the macaulay duration.
+        return self.macaulay_duration
+
+    @property
     def modified_duration(self):
+        """The percentage change in price given a change in yield to maturity"""
         return self.macaulay_duration / (1 + self.ytm)
 
     @property
-    def convexity(self):
+    def ytm_convexity(self):
         weighted_cash_flow = sum(t * (t + 1) * cash_flow * present_value_factor(self.ytm, t) for t, cash_flow in self)
         return weighted_cash_flow / self.price * present_value_factor(self.ytm, 2)
 
@@ -123,7 +130,7 @@ class CouponBond:
     def price_change(self, ytm_change, use_convexity=False):
         sensitivity = -self.modified_duration
         if use_convexity:
-            sensitivity += 0.5 * ytm_change * self.convexity
+            sensitivity += 0.5 * ytm_change * self.ytm_convexity
         return self.price * ytm_change * sensitivity
 
     @classmethod
@@ -167,7 +174,7 @@ class Perpetuity(CouponBond):
         return (1 + self.ytm) / self.ytm
 
     @property
-    def convexity(self):
+    def ytm_convexity(self):
         return 2 / math.pow(self.ytm, 2)
 
 
@@ -260,7 +267,7 @@ class FloatingRateBond:
         return self._par + self._fixed_bond.price
 
     @property
-    def duration(self):
+    def macaulay_duration(self):
         return self._fixed_bond.macaulay_duration / self.price
 
     @property
