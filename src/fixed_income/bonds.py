@@ -214,16 +214,15 @@ class TreasuryNote(CouponBond):
 
 
 class FloatingRateBond:
-    _par = 100.0
-
-    def __init__(self, maturity_years, interest_rate, spread_rate=0, freq=1):
+    def __init__(self, maturity_years, interest_rate, spread_rate=0, freq=1, face_value=100):
         self._maturity_years = maturity_years
         self._freq = freq
+        self._face_value = face_value
         self._periods = to_periods(maturity_years, self._freq)
         self._interest_rate = interest_rate
         self._spread_rate = spread_rate
         self._fixed_bond = CouponBond(face_value=0,
-                                      coupon=to_coupon(self._par, spread_rate, self._freq),
+                                      coupon=to_coupon(self._face_value, spread_rate, self._freq),
                                       periods=self._periods,
                                       ytm=period_ytm(interest_rate, self._freq))
 
@@ -269,8 +268,34 @@ class FloatingRateBond:
 
     @property
     def price(self):
-        return self._par + self._fixed_bond.price
+        return self._face_value + self._fixed_bond.price
 
     @property
     def duration(self):
         return 1 / self._freq
+
+
+class InverseFloatingRateBond:
+    def __init__(self, coupon_bond, zero_bond, floating_bond, leverage=1):
+        self._coupon_bond = coupon_bond
+        self._zero_bond = zero_bond
+        self._floating_bond = floating_bond
+        self._leverage = leverage
+
+        self._price = zero_bond.price * leverage + coupon_bond.price - floating_bond.price * leverage
+
+        self._duration = (zero_bond.price * leverage * zero_bond.duration
+                          + coupon_bond.price * coupon_bond.duration
+                          - floating_bond.price * leverage) / self._price
+
+    @property
+    def price(self):
+        return self._price
+
+    @property
+    def duration(self):
+        return self._duration
+
+    @property
+    def leverage(self):
+        return self._leverage
