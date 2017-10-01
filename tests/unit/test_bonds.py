@@ -1,3 +1,4 @@
+import math
 import unittest
 
 import pandas as pd
@@ -102,6 +103,16 @@ class TestCouponBond(unittest.TestCase):
         expected = 64.9329593
         self.assertAlmostEqual(bond.ytm_convexity, expected)
 
+    def test_duration(self):
+        ytm = 0.05
+        coupon = 6
+        periods = 2
+        face_value = 100
+        bond = bonds.CouponBond(face_value, coupon, periods, ytm)
+        zero_prices = [math.pow(1 + ytm, -i) for i in range(1, periods + 1)]
+        expected = sum(t * c * z for (t, c), z in zip(bond, zero_prices)) / bond.price
+        self.assertAlmostEqual(bond.duration, expected)
+
     def test_price_change_without_ytm_convexity(self):
         """Based question 23c chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
         bond = bonds.CouponBond(ytm=0.07, face_value=100, periods=10, coupon=7)
@@ -118,10 +129,10 @@ class TestCouponBond(unittest.TestCase):
 
 
 class TestZero(unittest.TestCase):
-    def test_macaulay_duration(self):
+    def test_duration(self):
         maturity = 5
         zero = bonds.Zero(face_value=1, periods=maturity, ytm=0.05)
-        self.assertEqual(zero.macaulay_duration, maturity)
+        self.assertEqual(zero.duration, maturity)
 
 
 class TestPerpetuity(unittest.TestCase):
