@@ -193,3 +193,9 @@ class TestFloatingRateBond(unittest.TestCase):
         floater.reset(period=1, interest_rate=new_interest_rate)
         expected = (new_interest_rate + floater.spread_rate) * floater.face_value / floater.freq
         self.assertAlmostEqual(floater.coupon, expected)
+
+    def test_duration(self):
+        freq = 2
+        floater = bonds.FloatingRateBond(maturity_years=1.5, interest_rate=0.05, spread_rate=0.01, freq=freq)
+        expected = 1 / freq
+        self.assertEqual(floater.duration, expected)

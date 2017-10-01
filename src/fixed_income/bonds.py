@@ -217,6 +217,7 @@ class FloatingRateBond:
     _par = 100.0
 
     def __init__(self, maturity_years, interest_rate, spread_rate=0, freq=1):
+        self._maturity_years = maturity_years
         self._freq = freq
         self._periods = to_periods(maturity_years, self._freq)
         self._interest_rate = interest_rate
@@ -247,6 +248,10 @@ class FloatingRateBond:
         return self._periods
 
     @property
+    def maturity_years(self):
+        return self._maturity_years
+
+    @property
     def interest_rate(self):
         return self._interest_rate
 
@@ -267,15 +272,5 @@ class FloatingRateBond:
         return self._par + self._fixed_bond.price
 
     @property
-    def macaulay_duration(self):
-        return self._fixed_bond.macaulay_duration / self.price
-
-    @property
-    def modified_duration(self):
-        # TODO: fill in
-        return 0.0
-
-    @property
-    def convexity(self):
-        # TODO: fill in
-        return 0.0
+    def duration(self):
+        return 1 / self._freq
