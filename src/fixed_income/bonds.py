@@ -1,6 +1,7 @@
 import math
 
 import numpy as np
+import pandas as pd
 import scipy.optimize as optimize
 
 
@@ -47,12 +48,19 @@ def cash_flows(portfolio):
 
 
 def bootstrap(portfolio):
-    assert can_bootstrap(portfolio)
+    assert can_bootstrap(portfolio), 'Bonds in portfolio cannot be bootstrapped'
     prices = np.row_stack([bond.price for bond in portfolio])
     cfs = np.matrix(cash_flows(portfolio))
     dfs = cfs.getI() @ prices
     dfs = np.array(dfs).reshape(-1).tolist()
     return [Zero.from_price(bond_price=df, periods=n, face_value=1.0) for n, df in enumerate(dfs, start=1)]
+
+
+def to_dataframe(portfolio):
+    df = [vars(b) for b in portfolio]
+    df = pd.DataFrame(df)
+    df.columns = [k[1:] if k.startswith('_') else k for k in df.columns]
+    return df
 
 
 class CouponBond:
@@ -85,13 +93,13 @@ class CouponBond:
         return self._price
 
     @property
-    def duration(self):
+    def macaulay_duration(self):
         weighted_cash_flow = sum(t * cash_flow * present_value_factor(self.ytm, t) for t, cash_flow in self)
         return weighted_cash_flow / self.price
 
     @property
     def modified_duration(self):
-        return self.duration / (1 + self.ytm)
+        return self.macaulay_duration / (1 + self.ytm)
 
     @property
     def convexity(self):
@@ -109,7 +117,7 @@ class CouponBond:
         yield self.periods, self.coupon + self.face_value
 
     def __repr__(self):
-        property_string = ','.join('{}={}'.format(k[1:], v) for k, v in self.__dict__.items())
+        property_string = ', '.join('{}={:.7g}'.format(k[1:], v) for k, v in self.__dict__.items())
         return "{}({})".format(self.__class__.__name__, property_string)
 
     def price_change(self, ytm_change, use_convexity=False):
@@ -155,7 +163,7 @@ class Perpetuity(CouponBond):
         return self.coupon / self.ytm
 
     @property
-    def duration(self):
+    def macaulay_duration(self):
         return (1 + self.ytm) / self.ytm
 
     @property
@@ -177,6 +185,10 @@ class TreasuryNote(CouponBond):
     def freq(self):
         return self._freq
 
+    @property
+    def annual_ytm(self):
+        return self._freq * self._ytm
+
     @classmethod
     def from_price(cls, bond_price, coupon_rate, maturity_years, **kwargs):
         semi_annual_ytm = yield_to_maturity(bond_price=bond_price,
@@ -194,11 +206,11 @@ class TreasuryNote(CouponBond):
                                  maturity_years=row.maturity_years)
 
 
-class SemiAnnualFloatingRateBond:
+class FloatingRateBond:
     _par = 100.0
-    _freq = 2
 
-    def __init__(self, maturity_years, interest_rate, spread_rate=0):
+    def __init__(self, maturity_years, interest_rate, spread_rate=0, freq=1):
+        self._freq = freq
         self._periods = to_periods(maturity_years, self._freq)
         self._interest_rate = interest_rate
         self._spread_rate = spread_rate
@@ -249,8 +261,7 @@ class SemiAnnualFloatingRateBond:
 
     @property
     def duration(self):
-        # TODO: fill in
-        return 0.0
+        return self._fixed_bond.macaulay_duration / self.price
 
     @property
     def modified_duration(self):

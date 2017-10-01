@@ -62,7 +62,7 @@ class TestCouponBond(unittest.TestCase):
     def test_duration_of_zero_equals_periods(self):
         expected = 7
         zcb = bonds.Zero(face_value=100, periods=expected, ytm=0.05)
-        self.assertAlmostEqual(zcb.duration, expected)
+        self.assertAlmostEqual(zcb.macaulay_duration, expected)
 
     def test_from_price(self):
         face_value = 100
@@ -90,11 +90,11 @@ class TestCouponBond(unittest.TestCase):
         expected = [(1, coupon), (2, coupon + face_value)]
         self.assertEqual(actual, expected)
 
-    def test_duration(self):
+    def test_macaulay_duration(self):
         """Based question 23a chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
         bond = bonds.CouponBond(ytm=0.07, face_value=100, periods=10, coupon=7)
         expected = 7.51523225
-        self.assertAlmostEqual(bond.duration, expected)
+        self.assertAlmostEqual(bond.macaulay_duration, expected)
 
     def test_convexity(self):
         """Based question 23b chapter 16 of Bodie Kane Marcus - Investments (10th Ed)"""
@@ -117,12 +117,19 @@ class TestCouponBond(unittest.TestCase):
         self.assertAlmostEqual(actual, expected)
 
 
+class TestZero(unittest.TestCase):
+    def test_macaulay_duration(self):
+        maturity = 5
+        zero = bonds.Zero(face_value=1, periods=maturity, ytm=0.05)
+        self.assertEqual(zero.macaulay_duration, maturity)
+
+
 class TestPerpetuity(unittest.TestCase):
-    def test_duration(self):
+    def test_macaulay_duration(self):
         ytm = 0.07
         perpetuity = bonds.Perpetuity(ytm=ytm, coupon=1)
         expected = (1 + ytm) / ytm
-        self.assertAlmostEqual(perpetuity.duration, expected)
+        self.assertAlmostEqual(perpetuity.macaulay_duration, expected)
 
     def test_convexity(self):
         ytm = 0.07
@@ -145,32 +152,32 @@ class TestTreasuryNote(unittest.TestCase):
         self.assertAlmostEqual(note.ytm, expected, places=6)
 
 
-class TestSemiAnnualFloatingRateBond(unittest.TestCase):
+class TestFloatingRateBond(unittest.TestCase):
     def test_price_with_zero_spread(self):
         """ Example 2.13 from Pietro Veronesi - Fixed Income Securities"""
-        floater = bonds.SemiAnnualFloatingRateBond(maturity_years=1, interest_rate=0.06, spread_rate=0)
+        floater = bonds.FloatingRateBond(maturity_years=1, interest_rate=0.06, spread_rate=0)
         expected = floater.face_value
         self.assertAlmostEqual(floater.price, expected)
 
     def test_price_with_nonzero_spread(self):
-        floater = bonds.SemiAnnualFloatingRateBond(maturity_years=1, interest_rate=0.0, spread_rate=0.01)
+        floater = bonds.FloatingRateBond(maturity_years=1, interest_rate=0.0, spread_rate=0.01)
         expected = floater.face_value + floater.periods * floater.fixed_coupon
         self.assertAlmostEqual(floater.price, expected)
 
     def test_periods_after_reset(self):
-        floater = bonds.SemiAnnualFloatingRateBond(maturity_years=3.5, interest_rate=0.05, spread_rate=0.01)
+        floater = bonds.FloatingRateBond(maturity_years=3.5, interest_rate=0.05, spread_rate=0.01)
         period = 3
         expected = floater.periods - period
         floater.reset(period=period, interest_rate=0.07)
         self.assertAlmostEqual(floater.periods, expected)
 
     def test_coupon(self):
-        floater = bonds.SemiAnnualFloatingRateBond(maturity_years=1, interest_rate=0.05, spread_rate=0.01)
+        floater = bonds.FloatingRateBond(maturity_years=1, interest_rate=0.05, spread_rate=0.01)
         expected = (floater.interest_rate + floater.spread_rate) * floater.face_value / floater.freq
         self.assertAlmostEqual(floater.coupon, expected)
 
     def test_coupon_after_reset(self):
-        floater = bonds.SemiAnnualFloatingRateBond(maturity_years=1.5, interest_rate=0.05, spread_rate=0.01)
+        floater = bonds.FloatingRateBond(maturity_years=1.5, interest_rate=0.05, spread_rate=0.01)
         new_interest_rate = 0.1
         floater.reset(period=1, interest_rate=new_interest_rate)
         expected = (new_interest_rate + floater.spread_rate) * floater.face_value / floater.freq
