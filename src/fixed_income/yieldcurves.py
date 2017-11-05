@@ -28,7 +28,7 @@ def fit_error(x, real_prices, cashflows, maturities):
 
 
 def fit(real_prices, cashflows, maturities, x0=None):
-    x0 = x0 if x0 else [0.0, 0.0, 0.0, 1.0]
+    x0 = x0 if x0 is not None else [0.0, 0.0, 0.0, 1.0]
     return minimize(fit_error, x0, args=(real_prices, cashflows, maturities))
 
 
@@ -40,7 +40,7 @@ class NelsonSiegel:
         self.kappa = kappa
 
     def __repr__(self):
-        params = ",".join(f"{k}={v:.2f}" for k, v in vars(self).items())
+        params = ",".join(f"{k}={v:.4f}" for k, v in vars(self).items())
         return f"{self.__class__.__name__}({params})"
 
     def _forwards(self, df):
