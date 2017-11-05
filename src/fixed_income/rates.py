@@ -3,6 +3,7 @@ import math
 import numpy as np
 import pandas as pd
 from pandas import Timestamp
+from scipy import interpolate
 
 __all__ = [
     'compute_days_between',
@@ -142,3 +143,59 @@ def forward_rate_from(rate_1, term_1, rate_2, term_2, freq=math.inf):
         return term, spot_rate_from(discount_factor=forward_df, term=term, freq=freq)
     else:
         raise ValueError('Freq must be math.inf or positive int')
+
+
+def interp_rates(rates, maturities=None):
+    assert 'Maturity' in rates.columns
+    assert 'Rate' in rates.columns
+    sorted_rates = rates.sort_values('Maturity')
+
+    interpolator = interpolate.Akima1DInterpolator(sorted_rates['Maturity'], sorted_rates['Rate'])
+    if maturities is None:
+        maturities = np.arange(0.25, 7.25, 0.25)
+    interp_rates = interpolator(maturities)
+
+    index = pd.Series(data=maturities, name='Maturity')
+    interp_rates = pd.Series(data=interp_rates, name='Interpolated Rate', index=index)
+    interp_rates = pd.DataFrame(interp_rates).reset_index()
+
+    return interp_rates
+
+
+def add_libor_curve(rates, first_swap_maturity, delta=0.25):
+    assert 'Maturity' in rates.columns
+    assert 'Interpolated Rate' in rates.columns
+    zeros = np.zeros((len(rates),))
+
+    idx = rates.index < first_swap_maturity
+    zeros[idx] = 1 / (1 + rates.loc[idx, 'Maturity'] * rates.loc[idx, 'Interpolated Rate'])
+    for i in range(sum(idx), len(zeros)):
+        rate = rates['Interpolated Rate'][i]
+        zeros[i] = (1 - rate * delta * np.sum(zeros[:i])) / (1 + rate * delta)
+
+    rates['Zeros'] = zeros
+    rates['Spot Rates'] = -1 / rates['Maturity'] * np.log(zeros)
+
+    return rates
+
+
+def add_forward_discounts(rates, start_maturity=1):
+    assert 'Maturity' in rates.columns
+    assert 'Zeros' in rates.columns
+    rates['Forward Discount'] = rates['Zeros'] / rates['Zeros'].shift(start_maturity)
+    return rates
+
+
+def add_forward_rates(rates):
+    assert 'Maturity' in rates.columns
+    assert 'Forward Discount' in rates.columns
+    rates['Forward Rate'] = (1 / rates['Forward Discount'] - 1) / rates['Maturity'].diff()
+    return rates
+
+
+def add_forward_swap_discounts(rates, start_period=1):
+    assert 'Maturity' in rates.columns
+    assert 'Zeros' in rates.columns
+    rates['Forward Swap Discount'] = rates['Zeros'] / rates['Zeros'].values[start_period - 1]
+    rates.loc[rates.index < start_period, 'Forward Swap Discount'] = np.nan
+    return rates
