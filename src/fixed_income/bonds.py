@@ -189,6 +189,11 @@ class TreasuryNote(CouponBond):
                          ytm=period_ytm(annual_ytm))
 
     @property
+    def duration(self):
+        period_duration = super().duration
+        return period_duration / self._freq
+
+    @property
     def freq(self):
         return self._freq
 
@@ -276,26 +281,61 @@ class FloatingRateBond:
 
 
 class InverseFloatingRateBond:
-    def __init__(self, coupon_bond, zero_bond, floating_bond, leverage=1):
-        self._coupon_bond = coupon_bond
-        self._zero_bond = zero_bond
-        self._floating_bond = floating_bond
-        self._leverage = leverage
+    _par = 100
 
-        self._price = zero_bond.price * leverage + coupon_bond.price - floating_bond.price * leverage
+    def __init__(self, price, duration, convexity, leverage):
+        self.price = price
+        self.duration = duration
+        self.convexity = convexity
+        self.leverage = leverage
 
-        self._duration = (zero_bond.price * leverage * zero_bond.duration
-                          + coupon_bond.price * coupon_bond.duration
-                          - floating_bond.price * leverage) / self._price
+    def __eq__(self, other):
+        if isinstance(other, self.__class__):
+            return vars(self) == vars(other)
+        else:
+            return NotImplemented
 
-    @property
-    def price(self):
-        return self._price
+    def __repr__(self):
+        property_string = ', '.join('{}={:.7g}'.format(k, v) for k, v in vars(self).items())
+        return "{}({})".format(self.__class__.__name__, property_string)
 
-    @property
-    def duration(self):
-        return self._duration
+    @classmethod
+    def from_components(cls, coupon_bond, zero_bond, leverage=1):
+        price = zero_bond.price * leverage + coupon_bond.price - cls._par * leverage
+        duration = (zero_bond.price * leverage * zero_bond.duration
+                    + coupon_bond.price * coupon_bond.duration
+                    - cls._par * leverage) / price
+        convexity = (zero_bond.price * leverage * zero_bond.convexity
+                     + coupon_bond.price * coupon_bond.convexity
+                     - cls._par * leverage) / price
+        return cls(price, duration, convexity)
 
-    @property
-    def leverage(self):
-        return self._leverage
+    @classmethod
+    def from_zeros(cls, zeros, fixed_coupon, maturity, leverage, freq=2):
+        assert len(zeros) == freq * maturity
+        payments = fixed_coupon / freq * np.ones((maturity * freq,))
+        payments[-1] += cls._par
+        price_fixed = sum(p * z for p, z in zip(payments, zeros))
+        price_float = cls._par
+        price_zero = cls._par * zeros[-1]
+        price = price_fixed + leverage * (price_zero - price_float)
+
+        duration_fixed = sum(p * t / freq * z for t, (p, z) in enumerate(zip(payments, zeros), start=1))
+        duration_fixed /= price_fixed
+        duration_float = 1 / freq
+        duration_zero = maturity
+
+        duration = (price_zero * leverage * duration_zero
+                    + price_fixed * duration_fixed
+                    - price_float * leverage * duration_float) / price
+
+        convexity_fixed = sum(p * pow(t / freq, 2) * z for t, (p, z) in enumerate(zip(payments, zeros), start=1))
+        convexity_fixed /= price_fixed
+        convexity_float = duration_float ** 2
+        convexity_zero = duration_zero ** 2
+
+        convexity = (price_zero * leverage * convexity_zero
+                     + price_fixed * convexity_fixed
+                     - cls._par * leverage * convexity_float) / price
+
+        return cls(price, duration, convexity, leverage)

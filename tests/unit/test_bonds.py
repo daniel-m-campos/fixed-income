@@ -162,102 +162,19 @@ class TestTreasuryNote(unittest.TestCase):
         expected = bonds.period_ytm(0.036603)
         self.assertAlmostEqual(note.ytm, expected, places=6)
 
-
-class TestFloatingRateBond(unittest.TestCase):
-    def test_price_with_zero_spread(self):
-        """ Example 2.13 from Pietro Veronesi - Fixed Income Securities"""
-        floater = bonds.FloatingRateBond(maturity_years=1, interest_rate=0.06, spread_rate=0)
-        expected = floater.face_value
-        self.assertAlmostEqual(floater.price, expected)
-
-    def test_price_with_nonzero_spread(self):
-        floater = bonds.FloatingRateBond(maturity_years=1, interest_rate=0.0, spread_rate=0.01)
-        expected = floater.face_value + floater.periods * floater.fixed_coupon
-        self.assertAlmostEqual(floater.price, expected)
-
-    def test_periods_after_reset(self):
-        floater = bonds.FloatingRateBond(maturity_years=3.5, interest_rate=0.05, spread_rate=0.01)
-        period = 3
-        expected = floater.periods - period
-        floater.reset(period=period, interest_rate=0.07)
-        self.assertAlmostEqual(floater.periods, expected)
-
-    def test_coupon(self):
-        floater = bonds.FloatingRateBond(maturity_years=1, interest_rate=0.05, spread_rate=0.01)
-        expected = (floater.interest_rate + floater.spread_rate) * floater.face_value / floater.freq
-        self.assertAlmostEqual(floater.coupon, expected)
-
-    def test_coupon_after_reset(self):
-        floater = bonds.FloatingRateBond(maturity_years=1.5, interest_rate=0.05, spread_rate=0.01)
-        new_interest_rate = 0.1
-        floater.reset(period=1, interest_rate=new_interest_rate)
-        expected = (new_interest_rate + floater.spread_rate) * floater.face_value / floater.freq
-        self.assertAlmostEqual(floater.coupon, expected)
-
     def test_duration(self):
-        freq = 2
-        floater = bonds.FloatingRateBond(maturity_years=1.5, interest_rate=0.05, spread_rate=0.01, freq=freq)
-        expected = 1 / freq
-        self.assertEqual(floater.duration, expected)
+        #         TreasuryNote(face_value=100, coupon=2, periods=10, ytm=0.007789642, price=111.7031)
+        note = bonds.TreasuryNote.from_price(bond_price=111.7031250, coupon_rate=0.04, maturity_years=5)
+        expected = 4.6040133
+        self.assertAlmostEqual(note.duration, expected, places=2)
 
 
-class TestInverseFloatingRateBond(unittest.TestCase):
-    def test_non_levered_price(self):
-        """ Example in 2.8.3 from Pietro Veronesi - Fixed Income Securities"""
-        maturity = 3
-        freq = 2
-        periods = maturity * freq
-        face_value = 100
-
-        coupon_bond = bonds.CouponBond.from_price(bond_price=128.83, face_value=face_value, coupon=15, periods=periods)
-        zero_bond = bonds.Zero.from_price(87.45, face_value=face_value, periods=periods)
-        floating_bond = bonds.FloatingRateBond(maturity_years=maturity, interest_rate=zero_bond.ytm, freq=freq)
-        inverse_floater = bonds.InverseFloatingRateBond(coupon_bond, zero_bond, floating_bond)
-
-        expected = 116.28
-        self.assertAlmostEqual(inverse_floater.price, expected)
-
-    def test_levered_price(self):
-        """ Example in 2.8.4 from Pietro Veronesi - Fixed Income Securities"""
-        maturity = 3
-        freq = 2
-        periods = maturity * freq
-        face_value = 100
-
-        coupon_bond = bonds.CouponBond.from_price(bond_price=156.41, face_value=face_value, coupon=25, periods=periods)
-        zero_bond = bonds.Zero.from_price(bond_price=87.45, face_value=face_value, periods=periods)
-        floating_bond = bonds.FloatingRateBond(maturity_years=maturity, interest_rate=zero_bond.ytm, freq=freq)
-        inverse_floater = bonds.InverseFloatingRateBond(coupon_bond, zero_bond, floating_bond, leverage=2)
-
-        expected = 131.32
-        self.assertAlmostEqual(inverse_floater.price, expected, places=1)
-
-    def test_non_levered_duration(self):
-        """ Example in 3.7.3 from Pietro Veronesi - Fixed Income Securities"""
-        maturity = 3
-        freq = 1
-        periods = maturity * freq
-        face_value = 100
-
-        coupon_bond = bonds.CouponBond.from_price(bond_price=128.83, face_value=face_value, coupon=15, periods=periods)
-        zero_bond = bonds.Zero.from_price(bond_price=87.45, face_value=face_value, periods=periods)
-        floating_bond = bonds.FloatingRateBond(maturity_years=maturity, interest_rate=zero_bond.ytm, freq=freq)
-        inverse_floater = bonds.InverseFloatingRateBond(coupon_bond, zero_bond, floating_bond)
-
-        expected = 4.35
-        self.assertAlmostEqual(inverse_floater.duration, expected, places=1)
-
-    def test_levered_duration(self):
-        """ Example in 3.7.4 from Pietro Veronesi - Fixed Income Securities"""
-        maturity = 3
-        freq = 1
-        periods = maturity * freq
-        face_value = 100
-
-        coupon_bond = bonds.CouponBond.from_price(bond_price=156.41, face_value=face_value, coupon=25, periods=periods)
-        zero_bond = bonds.Zero.from_price(bond_price=87.45, face_value=face_value, periods=periods)
-        floating_bond = bonds.FloatingRateBond(maturity_years=maturity, interest_rate=zero_bond.ytm, freq=freq)
-        inverse_floater = bonds.InverseFloatingRateBond(coupon_bond, zero_bond, floating_bond, leverage=2)
-
-        expected = 5.5040
-        self.assertAlmostEqual(inverse_floater.duration, expected, places=2)
+class TestLIF(unittest.TestCase):
+    def test_from_zeros(self):
+        zero_prices = [0.99832479, 0.99389955, 0.98957486, 0.98455887, 0.97605325,
+                       0.96571976, 0.95716784, 0.94795714, 0.93556282, 0.91985021]
+        actual = bonds.InverseFloatingRateBond.from_zeros(zero_prices, fixed_coupon=10, maturity=5, leverage=2)
+        expected = bonds.InverseFloatingRateBond(**{'price': 124.29840844999998, 'duration': 11.35131578267606,
+                                                    'convexity': 58.76219278131876,
+                                                    'leverage': 2})
+        self.assertEqual(actual, expected)
