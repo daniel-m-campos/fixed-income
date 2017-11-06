@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 from scipy.optimize import minimize
 
+__all__ = ['NelsonSiegel']
+
 
 def nelson_siegel(theta0, theta1, theta2, kappa, maturities):
     inverse_maturities = (1.0 / maturities).replace(np.inf, 0)

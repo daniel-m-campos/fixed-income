@@ -153,13 +153,13 @@ def interp_rates(rates, maturities=None):
     interpolator = interpolate.Akima1DInterpolator(sorted_rates['Maturity'], sorted_rates['Rate'])
     if maturities is None:
         maturities = np.arange(0.25, 7.25, 0.25)
-    interp_rates = interpolator(maturities)
+    interpolated_rates = interpolator(maturities)
 
     index = pd.Series(data=maturities, name='Maturity')
-    interp_rates = pd.Series(data=interp_rates, name='Interpolated Rate', index=index)
-    interp_rates = pd.DataFrame(interp_rates).reset_index()
+    interpolated_rates = pd.Series(data=interpolated_rates, name='Interpolated Rate', index=index)
+    interpolated_rates = pd.DataFrame(interpolated_rates).reset_index()
 
-    return interp_rates
+    return interpolated_rates
 
 
 def add_libor_curve(rates, first_swap_maturity, delta=0.25):
