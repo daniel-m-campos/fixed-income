@@ -1,4 +1,3 @@
 include requirements.txt
 include test-requirements.txt
 include cirrus.conf
-include tests/unit/resources/DataTIPS.xlsx

@@ -1,3 +1,4 @@
+import os
 from unittest import TestCase
 
 import numpy as np
@@ -5,12 +6,13 @@ import pandas as pd
 
 from fixed_income import yieldcurves
 
-DATA_FILE = './resources/DataTIPS.xlsx'
+DATA_FILE = f'{os.path.dirname(os.path.abspath(__file__))}/resources/DataTIPS.xlsx'
 
 
 class TestFit(TestCase):
     def setUp(self):
         super().setUp()
+        os.path.dirname(os.path.abspath(__file__))
         self.quotes = pd.read_excel(DATA_FILE, sheetname='Treasury_Quotes')
         self.quotes.index = self.quotes['Time To Maturity'].values
         self.cashflows = pd.read_excel(DATA_FILE, sheetname='Treasury_Cashflows')
