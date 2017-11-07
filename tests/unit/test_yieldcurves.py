@@ -5,7 +5,7 @@ import pandas as pd
 
 from fixed_income import yieldcurves
 
-DATA_FILE = 'resources/DataTIPS.xlsx'
+DATA_FILE = './resources/DataTIPS.xlsx'
 
 
 class TestFit(TestCase):
