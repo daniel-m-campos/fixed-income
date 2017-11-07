@@ -17,7 +17,7 @@ def backfill(rate_tree, period, time_step):
     zero_tree[:, -1] = 1
     pi = 0.5
     for j in range(period + 1, 0, -1):
-        discount = np.exp(-rate_tree[:j, j-1] * time_step)
+        discount = np.exp(-rate_tree[:j, j - 1] * time_step)
         zero_tree[:j, j - 1] = discount * pi * (zero_tree[:j, j] + zero_tree[1:j + 1, j])
     return zero_tree
 
@@ -75,6 +75,20 @@ def bond_price(rate_tree, coupon, maturity, time_step):
     pi = 0.5
 
     for j in range(size, 0, -1):
-        discount = np.exp(-rate_tree[:j, j-1] * time_step)
+        discount = np.exp(-rate_tree[:j, j - 1] * time_step)
         bond_tree[:j, j - 1] = discount * (pi * (bond_tree[:j, j] + bond_tree[1:j + 1, j]) + coupon * time_step)
-    return bond_tree[0, 0]
+    return bond_tree
+
+
+def call_price(rate_tree, bond_tree, strike, maturity, time_step, first_time_call):
+    size = int(maturity / time_step)
+    call_tree = np.zeros((size + 1, size + 1))
+    call_tree[:, -1] = bond_tree[:, -1] - strike
+    pi = 0.5
+
+    for j in range(size, 0, -1):
+        discount = np.exp(-rate_tree[:j, j - 1] * time_step)
+        call_tree[:j, j - 1] = discount * pi * (call_tree[:j, j] + call_tree[1:j + 1, j])
+        if (j - 1) * time_step >= first_time_call:
+            call_tree[:j, j - 1] = np.max([call_tree[:j, j - 1], bond_tree[:j, j - 1] - strike], axis=0)
+    return call_tree

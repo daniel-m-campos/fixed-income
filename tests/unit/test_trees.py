@@ -61,6 +61,13 @@ class TestTrees(TestCase):
 
     def test_bond_price(self):
         rate_tree = np.load(RATE_TREE)
-        actual = trees.bond_price(rate_tree, coupon=6, maturity=20, time_step=0.5)
+        actual = trees.bond_price(rate_tree, coupon=6, maturity=20, time_step=0.5)[0, 0]
         expected = 108.55
         self.assertAlmostEquals(actual, expected, places=2)
+
+    def test_call_price(self):
+        rate_tree = np.load(RATE_TREE)
+        bond_tree = trees.bond_price(rate_tree, coupon=6, maturity=20, time_step=0.5)
+        call_tree = trees.call_price(rate_tree, bond_tree, strike=100, maturity=20, time_step=0.5, first_time_call=4)
+        expected = 17.02
+        self.assertAlmostEquals(call_tree[0, 0], expected, places=2)
