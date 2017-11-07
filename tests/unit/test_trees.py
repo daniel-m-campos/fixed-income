@@ -1,8 +1,11 @@
+import os
 from unittest import TestCase
 
 import numpy as np
 
 from fixed_income import trees
+
+RATE_TREE = f'{os.path.dirname(os.path.abspath(__file__))}/resources/rate_tree.npy'
 
 
 class TestTrees(TestCase):
@@ -55,3 +58,9 @@ class TestTrees(TestCase):
         _, fitted_zeros, _ = trees.fit(trees.ho_lee, zeros=zeros, sigma=0.00671631656750658, time_step=0.5)
         average_error = np.abs(zeros - fitted_zeros).mean()
         self.assertLess(average_error, 1e-7)
+
+    def test_bond_price(self):
+        rate_tree = np.load(RATE_TREE)
+        actual = trees.bond_price(rate_tree, coupon=6, maturity=20, time_step=0.5)
+        expected = 108.55
+        self.assertAlmostEquals(actual, expected, places=2)

@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.optimize import minimize
 
-__all__ = ['ho_lee', 'black_derman_toy', 'fit']
+__all__ = ['ho_lee', 'black_derman_toy', 'fit', 'bond_price']
 
 
 def initialize_tree(maturity, time_step, is_zero):
@@ -16,12 +16,10 @@ def backfill(rate_tree, period, time_step):
     zero_tree = np.zeros((zero_maturity, zero_maturity))
     zero_tree[:, -1] = 1
     pi = 0.5
-    for j in range(period, 0, -1):
-        discount = np.exp(-rate_tree[0:j + 1, j] * time_step)
-        zero_tree[0:j + 1, j] = discount * pi * (zero_tree[0:j + 1, j + 1] + zero_tree[1:j + 2, j + 1])
-    discount = np.exp(-rate_tree[0, 0] * time_step)
-    zero_tree[0, 0] = discount * pi * (zero_tree[0, 1] + zero_tree[1, 1])
-    return rate_tree, zero_tree
+    for j in range(period + 1, 0, -1):
+        discount = np.exp(-rate_tree[:j, j-1] * time_step)
+        zero_tree[:j, j - 1] = discount * pi * (zero_tree[:j, j] + zero_tree[1:j + 1, j])
+    return zero_tree
 
 
 def ho_lee(theta, rate_tree, period, sigma, time_step):
@@ -29,7 +27,7 @@ def ho_lee(theta, rate_tree, period, sigma, time_step):
     for i in range(1, period + 1):
         rate_tree[i, period] = rate_tree[i - 1, period - 1] + theta * time_step - sigma * np.sqrt(time_step)
 
-    return backfill(rate_tree, period, time_step)
+    return rate_tree, backfill(rate_tree, period, time_step)
 
 
 def black_derman_toy(theta, rate_tree, period, sigma, time_step):
@@ -38,7 +36,7 @@ def black_derman_toy(theta, rate_tree, period, sigma, time_step):
         rate_tree[i, period] = rate_tree[i - 1, period - 1] \
                                * np.exp(theta * time_step - sigma * np.sqrt(time_step))
 
-    return backfill(rate_tree, period, time_step)
+    return rate_tree, backfill(rate_tree, period, time_step)
 
 
 def error(theta, zero, model, rate_tree, period, sigma, time_step):
@@ -68,3 +66,15 @@ def fit(model, zeros, sigma, time_step):
 
     fitted_zeros = zero_tree[0, 0, :].squeeze()
     return thetas, fitted_zeros, rate_tree
+
+
+def bond_price(rate_tree, coupon, maturity, time_step):
+    size = int(maturity / time_step)
+    bond_tree = np.zeros((size + 1, size + 1))
+    bond_tree[:, -1] = 100
+    pi = 0.5
+
+    for j in range(size, 0, -1):
+        discount = np.exp(-rate_tree[:j, j-1] * time_step)
+        bond_tree[:j, j - 1] = discount * (pi * (bond_tree[:j, j] + bond_tree[1:j + 1, j]) + coupon * time_step)
+    return bond_tree[0, 0]
