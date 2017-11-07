@@ -103,3 +103,4 @@ ENV/
 # Pycharm
 .idea/
 /src/.idea/
+*.egg-info
