@@ -34,6 +34,12 @@ def fit(real_prices, cashflows, maturities, x0=None):
     return minimize(fit_error, x0, args=(real_prices, cashflows, maturities), method='powell')
 
 
+def forwards(df):
+    df['Forward'] = -np.log(df.Zero).diff() / df.Maturity.diff()
+    df.Forward.values[0] = df.Yield.values[0]
+    return df
+
+
 class NelsonSiegel:
     def __init__(self, theta0, theta1, theta2, kappa):
         self.theta0 = theta0
@@ -45,18 +51,13 @@ class NelsonSiegel:
         params = ",".join(f"{k}={v:.4f}" for k, v in vars(self).items())
         return f"{self.__class__.__name__}({params})"
 
-    def _forwards(self, df):
-        df['Forward'] = -np.log(df.Zero).diff() / df.Maturity.diff()
-        df.Forward.values[0] = df.Yield.values[0]
-        return df
-
     def dataframe(self, maturities):
         yields = nelson_siegel(self.theta0, self.theta1, self.theta2, self.kappa, maturities)
         return (pd.DataFrame()
                 .assign(Maturity=maturities)
                 .assign(Yield=yields)
                 .assign(Zero=np.exp(-maturities * yields))
-                .pipe(self._forwards)
+                .pipe(forwards)
                 .set_index('Maturity')
                 )
 

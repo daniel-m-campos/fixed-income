@@ -22,5 +22,5 @@ class TestFit(TestCase):
         prices = (self.quotes['Bid Price'] + self.quotes['Ask Price']) / 2
         result = yieldcurves.fit(prices, self.cashflows, self.cf_maturities)
         actual = result.x
-        expected = np.array([0.03935264, -0.02175932, -0.07813865, 1.91278737])
+        expected = np.array([0.03935294, -0.02175923, -0.07813487, 1.91292469])
         self.assertTrue(all(np.isclose(actual, expected)))
