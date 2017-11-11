@@ -58,7 +58,7 @@ def fit(model, zeros, sigma, time_step):
     errors = np.zeros(zeros.shape)
 
     for i, zero in enumerate(zeros[1:], start=1):
-        result = minimize(error, x0=[0], args=(zero, model, rate_tree.copy(), i, sigma, time_step))
+        result = minimize(error, x0=[0], args=(zero, model, rate_tree.copy(), i, sigma, time_step), method='powell')
         thetas[i - 1] = result.x
         errors[i - 1] = result.fun
         rate_tree, z_tree = model(thetas[i - 1], rate_tree, i, sigma, time_step)

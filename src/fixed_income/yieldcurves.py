@@ -31,7 +31,7 @@ def fit_error(x, real_prices, cashflows, maturities):
 
 def fit(real_prices, cashflows, maturities, x0=None):
     x0 = x0 if x0 is not None else [0.0, 0.0, 0.0, 1.0]
-    return minimize(fit_error, x0, args=(real_prices, cashflows, maturities))
+    return minimize(fit_error, x0, args=(real_prices, cashflows, maturities), method='powell')
 
 
 class NelsonSiegel:
