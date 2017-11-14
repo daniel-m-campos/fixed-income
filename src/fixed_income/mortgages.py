@@ -4,6 +4,13 @@ import pandas as pd
 __all__ = ['payments']
 
 
+def coupon(loan, maturity, mortgage_rate, freq=1):
+    dt = 1 / freq
+    periods = maturity * freq
+    discount = 1 / (1 + mortgage_rate * dt)
+    return loan * (1 / discount - 1) / (1 - pow(discount, periods))
+
+
 def payments(loan, maturity, mortgage_rate, freq=1):
     dt = 1 / freq
     periods = np.arange(0, int(maturity / dt) + 1)
@@ -12,7 +19,7 @@ def payments(loan, maturity, mortgage_rate, freq=1):
     discounts = (1 + mortgage_rate * dt) ** -periods
     discounts[0] = 0
 
-    payment = loan / np.sum(discounts[1:])  # optimize this with series formula
+    payment = coupon(loan, maturity, mortgage_rate, freq)
 
     balance = 0 * payment_times
     balance[0] = loan
