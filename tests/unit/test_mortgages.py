@@ -13,10 +13,9 @@ class TestFunctions(unittest.TestCase):
         actual = mortgages.coupon(loan, maturity, mortgage_rate, freq)
 
         dt = 1 / freq
-        periods = np.arange(0, int(maturity / dt) + 1)
+        periods = np.arange(1, int(maturity / dt) + 1)
 
         discounts = (1 + mortgage_rate * dt) ** -periods
-        discounts[0] = 0
 
-        expected = loan / np.sum(discounts[1:])
+        expected = loan / np.sum(discounts)
         self.assertAlmostEqual(actual, expected)
