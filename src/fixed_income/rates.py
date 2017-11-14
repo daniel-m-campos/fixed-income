@@ -145,18 +145,18 @@ def forward_rate_from(rate_1, term_1, rate_2, term_2, freq=math.inf):
         raise ValueError('Freq must be math.inf or positive int')
 
 
-def interp_rates(rates, maturities=None):
+def interp_rates(rates, maturities=None, column='Rate'):
     assert 'Maturity' in rates.columns
-    assert 'Rate' in rates.columns
+    assert column in rates.columns
     sorted_rates = rates.sort_values('Maturity')
 
-    interpolator = interpolate.Akima1DInterpolator(sorted_rates['Maturity'], sorted_rates['Rate'])
+    interpolator = interpolate.Akima1DInterpolator(sorted_rates['Maturity'], sorted_rates[column])
     if maturities is None:
         maturities = np.arange(0.25, 7.25, 0.25)
     interpolated_rates = interpolator(maturities)
 
     index = pd.Series(data=maturities, name='Maturity')
-    interpolated_rates = pd.Series(data=interpolated_rates, name='Interpolated Rate', index=index)
+    interpolated_rates = pd.Series(data=interpolated_rates, name=f'Interpolated {column}', index=index)
     interpolated_rates = pd.DataFrame(interpolated_rates).reset_index()
 
     return interpolated_rates
@@ -173,16 +173,22 @@ def add_libor_curve(rates, first_swap_maturity, delta=0.25):
         rate = rates['Interpolated Rate'][i]
         zeros[i] = (1 - rate * delta * np.sum(zeros[:i])) / (1 + rate * delta)
 
-    rates['Zeros'] = zeros
-    rates['Spot Rates'] = -1 / rates['Maturity'] * np.log(zeros)
+    rates['Zero'] = zeros
+    rates['Spot Rate'] = -1 / rates['Maturity'] * np.log(zeros)
 
     return rates
 
 
+def add_short_rates(rates, time_step):
+    assert 'Maturity' in rates.columns
+    assert 'Zero' in rates.columns
+    rates['Short Rate'] = 1 / time_step * (1 / rates['Zero'] - 1)
+
+
 def add_forward_discounts(rates, start_maturity=1):
     assert 'Maturity' in rates.columns
-    assert 'Zeros' in rates.columns
-    rates['Forward Discount'] = rates['Zeros'] / rates['Zeros'].shift(start_maturity)
+    assert 'Zero' in rates.columns
+    rates['Forward Discount'] = rates['Zero'] / rates['Zero'].shift(start_maturity)
     return rates
 
 
@@ -195,7 +201,14 @@ def add_forward_rates(rates):
 
 def add_forward_swap_discounts(rates, start_period=1):
     assert 'Maturity' in rates.columns
-    assert 'Zeros' in rates.columns
-    rates['Forward Swap Discount'] = rates['Zeros'] / rates['Zeros'].values[start_period - 1]
+    assert 'Zero' in rates.columns
+    rates['Forward Swap Discount'] = rates['Zero'] / rates['Zero'].values[start_period - 1]
     rates.loc[rates.index < start_period, 'Forward Swap Discount'] = np.nan
+    return rates
+
+
+def add_swap_rates(rates):
+    assert 'Zero' in rates.columns
+    assert 'Maturity' in rates.columns
+    rates['Swap Rate'] = (1 - rates['Zero']) / rates['Zero'].cumsum() / rates['Maturity'].diff()
     return rates
