@@ -30,7 +30,7 @@ def ho_lee(theta, rate_tree, period, sigma, time_step):
     return rate_tree, backfill(rate_tree, period, time_step)
 
 
-def black_derman_toy(theta, rate_tree, period, sigma, time_step):
+def simple_bdt(theta, rate_tree, period, sigma, time_step):
     rate_tree[0, period] = rate_tree[0, period - 1] * np.exp(theta * time_step + sigma * np.sqrt(time_step))
     for i in range(1, rate_tree.shape[0]):
         rate_tree[i, period] = rate_tree[i - 1, period - 1] \

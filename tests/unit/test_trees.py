@@ -41,8 +41,8 @@ class TestTrees(TestCase):
         tree = trees.initialize_tree(maturity=1, time_step=dt, is_zero=False)
         tree[0, 0] = r0
 
-        actual_rate_tree, actual_zero_tree = trees.black_derman_toy(theta=-0.0969608599011977, rate_tree=tree, period=1,
-                                                                    sigma=0.22225391407878499, time_step=dt)
+        actual_rate_tree, actual_zero_tree = trees.simple_bdt(theta=-0.0969608599011977, rate_tree=tree, period=1,
+                                                              sigma=0.22225391407878499, time_step=dt)
 
         expected_rate_tree = [[0.05068215, 0.05650057],
                               [0.0, 0.04126176]]
