@@ -124,6 +124,12 @@ class Vasicek:
         zeros = np.exp(-cashflow_maturities * yields)
         return price(cashflows, zeros)
 
+    def delta(self, cashflows, cashflow_maturities):
+        yields = vasicek(self.eta, self.gamma, self.r0, self.sigma, cashflow_maturities)
+        zeros = np.exp(-cashflow_maturities * yields)
+        b = (1 - np.exp(-self.gamma * cashflow_maturities)) / self.gamma
+        return price(cashflows, b * zeros)
+
     @classmethod
     def from_fit(cls, r0, sigma, real_prices, cashflows, cashflow_maturities, x0=None):
         result = vasicek_fit(r0, sigma, real_prices, cashflows, cashflow_maturities, x0)
