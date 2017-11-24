@@ -32,15 +32,15 @@ class TestVasicekFit(TestCase):
     def setUp(self):
         super().setUp()
         self.quotes = pd.read_excel(VASICEK_FILE, sheetname='Quotes')
-        self.quotes.index = self.quotes['Maturity'].values
+        self.quotes.index = range(1, len(self.quotes) + 1)
         self.cashflows = pd.read_excel(VASICEK_FILE, sheetname='CashFlows')
         self.cf_maturities = pd.read_excel(VASICEK_FILE, sheetname='Maturities')
 
     def test_fit(self):
         r0 = 0.011499737607216544
-        sigma = 0.0323
+        sigma = 0.032261681963642166
         prices = (self.quotes['Bid'] + self.quotes['Ask']) / 2 + self.quotes['AccruedInterest']
         result = yieldcurves.vasicek_fit(r0, sigma, prices, self.cashflows, self.cf_maturities)
         actual = result.x
-        expected = np.array([0.01342675, 0.03853852])
+        expected = np.array([0.01768098, 0.2130499])
         self.assertTrue(all(np.isclose(actual, expected)))

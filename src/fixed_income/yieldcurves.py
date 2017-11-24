@@ -89,7 +89,13 @@ def vasicek_error(x, r0, sigma, real_prices, cashflows, maturities):
 
 def vasicek_fit(r0, sigma, real_prices, cashflows, maturities, x0=None):
     x0 = x0 if x0 is not None else [0.1, 0.1]
-    return minimize(vasicek_error, x0, args=(r0, sigma, real_prices, cashflows, maturities), method='powell')
+    return minimize(vasicek_error,
+                    x0,
+                    args=(r0, sigma, real_prices, cashflows, maturities),
+                    method='Nelder-Mead',
+                    options={'maxiter': 1000},
+                    tol=1e-10
+                    )
 
 
 class Vasicek:
