@@ -24,7 +24,7 @@ def _create_df(table):
 def _get_date(date):
     if isinstance(date, datetime.date):
         return date
-    elif isinstance(date, datetime.date):
+    elif isinstance(date, str):
         return datetime.datetime.strptime(date, DATE_FORMAT)
     raise NotImplementedError(f'{type(date)} not supported.')
 
