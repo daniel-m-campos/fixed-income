@@ -1,0 +1,1591 @@
+interactions:
+- request:
+    body: priceDate.month=11&priceDate.day=17&priceDate.year=2017&submit=Show+Prices
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['74']
+      Content-Type: [application/x-www-form-urlencoded]
+      User-Agent: [python-requests/2.18.4]
+    method: POST
+    uri: https://www.treasurydirect.gov/GA-FI/FedInvest/selectSecurityPriceDate.htm
+  response:
+    body: {string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"\
+        http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n\r\n \r\n\r\n\r\n\r\
+        \n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"\
+        Content-Type\" content=\"text/html; charset=ISO-8859-1\" />\r\n<meta name=\"\
+        GENERATOR\" content=\"Rational Application Developer\" />\r\n\t<link type=\"\
+        text/css\" rel=\"stylesheet\" media=\"screen\" href=\"/css/global_null.css\"\
+        \ />\r\n\t<link type=\"text/css\" rel=\"stylesheet\" media=\"screen\" href=\"\
+        /css/gw_govt_screen.css\" />\r\n\t<link type=\"text/css\" rel=\"stylesheet\"\
+        \ media=\"screen\" href=\"/css/ga_all.css\" />\r\n\t<link type=\"text/css\"\
+        \ rel=\"stylesheet\" media=\"print\"  href=\"/css/govt_print.css\" />\r\n\r\
+        \n \t<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/css/global_fontsize76.css\"\
+        \ title=\"76\" />\r\n\t<link type=\"text/css\" rel=\"alternate stylesheet\"\
+        \ media=\"all\" href=\"/css/global_fontsize66.css\" title=\"66\" />\r\n\t\
+        <link type=\"text/css\" rel=\"alternate stylesheet\" media=\"all\" href=\"\
+        /css/global_fontsize86.css\" title=\"86\" />\r\n\t<link type=\"text/css\"\
+        \ rel=\"alternate stylesheet\" media=\"all\" href=\"/css/global_fontsize96.css\"\
+        \ title=\"96\" />\r\n<title>Security Prices</title>\r\n</head>\r\n<body id=\"\
+        govt\">\r\n\t<div id=\"container\">\r\n\r\n<!-- BEGIN HEADER -->\r\n<div id=\"\
+        header\">\r\n\r\n\t<!-- BEGIN LOGO -->\r\n\t<div id=\"logo\">\r\n\t\t<a href=\"\
+        /tdhome.htm\"><img src=\"/images/td_logo.gif\" width=\"232\" height=\"50\"\
+        \ alt=\"TreasuryDirect Logo\" /></a>\r\n\t</div>\r\n\t<!-- END LOGO -->\r\n\
+        \r\n\t<!-- BEGIN TYPE NAVIGATION -->\r\n\t<div id=\"typenav\">\r\n\t\t<ul\
+        \ id=\"investortype\">\r\n\t\t\t<li>You are in:</li>\r\n\t\t\t<li><a href=\"\
+        /indiv/indiv.htm\">Individual</a></li>\r\n\t\t\t<li>&nbsp;|&nbsp;</li>\r\n\
+        \t\t\t<li><a href=\"/RT/RTGateway?page=institHome\">Institutional</a></li>\r\
+        \n\t\t\t<li>&nbsp;|&nbsp;</li>\r\n\t\t\t<li><strong>&gt; Government</strong></li>\r\
+        \n\t\t</ul>\r\n\t</div>\r\n\t<!-- END TYPE NAVIGATION -->\r\n\r\n\t<!-- BEGIN\
+        \ SEARCH BOX -->\r\n\t<div id=\"searchbox\">\r\n\t\t<form id=\"gs\" method=\"\
+        get\" action=\"http://search.treas.gov/search\">\r\n\t\t    <fieldset>\r\n\
+        \t\t    \t<label for=\"q\">Search: </label>\r\n\t\t\t\t<input type=\"text\"\
+        \ name=\"q\" id=\"q\" size=\"25\" maxlength=\"256\" value=\"\" />\r\n\t\t\t\
+        \t<input name=\"btnG\" value=\"Search\" class=\"button\" type=\"image\" src=\"\
+        /images/go.gif\" alt=\"Go\" />\r\n\t\t\t\t<input type=\"hidden\" name=\"sort\"\
+        \ value=\"date:D:L:d1\" />\r\n\t\t\t\t<input type=\"hidden\" name=\"output\"\
+        \ value=\"xml_no_dtd\" />\r\n\t\t\t\t<input type=\"hidden\" name=\"ie\" value=\"\
+        UTF-8\" />\r\n\t\t\t\t<input type=\"hidden\" name=\"oe\" value=\"UTF-8\" />\r\
+        \n\t\t\t\t<input type=\"hidden\" name=\"client\" value=\"BPD-treasurydirect\"\
+        \ />\r\n\t\t\t\t<input type=\"hidden\" name=\"proxystylesheet\" value=\"BPD-treasurydirect\"\
+        \ />\r\n\t\t\t\t<input type=\"hidden\" name=\"site\" value=\"BPD-treasurydirect\"\
+        \ />\r\n\t\t\t</fieldset>\r\n\t\t</form>\r\n\t</div>\r\n\t<!-- END SEARCH\
+        \ BOX -->\r\n\r\n\t<!-- BEGIN UTILITY NAVIGATION -->\r\n\t<div id=\"utilitynav\"\
+        >\r\n\t\t<ul>\r\n\t\t\t<li><a href=\"/maillist/maillist.htm\">Mailing Lists</a></li>\r\
+        \n\t\t\t<li>&nbsp;|&nbsp;</li>\r\n\t\t\t<li><a href=\"/news/news.htm\">News</a></li>\r\
+        \n\t\t\t<li>&nbsp;|&nbsp;</li>\r\n\t\t\t<li><a href=\"/about.htm\">About</a></li>\r\
+        \n\t\t\t<li>&nbsp;|&nbsp;</li>\r\n\t\t\t<li><a href=\"/sitemap.htm\">Sitemap</a></li>\r\
+        \n\t\t\t<li>&nbsp;|&nbsp;</li>\r\n\t\t\t<li><a href=\"/email.htm\">Contact\
+        \ Us</a></li>\r\n\t\t</ul>\r\n\t</div>\r\n\t<!-- END UTILITY NAVIGATION -->\r\
+        \n\r\n</div>\r\n<!-- END HEADER -->\r\n\r\n<!-- BEGIN PERSISTENT NAVIGATION\
+        \ -->\r\n<div id=\"persistentnav\">\r\n\t\r\n\t\t<ul>\r\n\t<li class=\"doubleline\"\
+        ><a class=\"nonactive\" href=\"/govt/apps/apps.htm\">Applications &amp; Programs</a></li>\r\
+        \n\t<li class=\"singleline\"><a class=\"nonactive\" href=\"/govt/reports/reports.htm\"\
+        >Reports</a></li>\r\n\t<li class=\"doubleline\"><a class=\"active\" href=\"\
+        /govt/rates/rates.htm\">Interest Rates<br /> &amp; Prices</a></li>\r\n\t<li\
+        \ class=\"singleline\"><a class=\"nonactive\" href=\"/govt/charts/charts.htm\"\
+        >Charts &amp; Analysis</a></li>\r\n\t<li class=\"singleline\"><a class=\"\
+        nonactive\" href=\"/govt/resources/resources.htm\">Resources</a></li>\r\n\
+        </ul>\r\n\t\r\n</div>\r\n<!-- END PERSISTENT NAVIGATION -->\r\n\r\n<div id=\"\
+        contentwrap\">\r\n\r\n<!-- BEGIN BREADCRUMBNAV -->\r\n<div id=\"breadcrumbnav\"\
+        >\r\n\t<ul id=\"breadcrumb\">\r\n\t\t<li><a href=\"http://www.treasurydirect.gov\"\
+        >Home</a></li>\r\n\t\t<li>&#8250;</li>\r\n\t\t\r\n\t\t<li><a href=\"/govt/govt.htm\"\
+        >Government</a></li>\r\n\t\t<li>&#8250;</li>\r\n\t\t\t\r\n\t\t<li><a href=\"\
+        /govt/rates/rates.htm\">Interest Rate Data</a></li>\r\n\t\t<li>&#8250;</li>\r\
+        \n\t\t\r\n\t\t<li><a href=\"/govt/rates/rates_fip.htm\">Federal Investments\
+        \ Program Rates and Prices</a></li>\r\n\r\n\t\t<li>Historical Prices</li>\r\
+        \n\t</ul>\r\n</div>\r\n<!-- END BREADCRUMBNAV -->\r\n\r\n  \t\t<!-- BEGIN\
+        \ LOCALNAV -->\r\n<div id=\"localnav\">\r\n\t\r\n\t<h1>INTEREST RATES AND\
+        \ PRICES</h1>\r\n<div id=\"verticalline\">\r\n\t<ul>\r\n\t\t<li class=\"open\"\
+        ><a href=\"/govt/rates/rates_fip.htm\" class=\"active\">Federal Investments\
+        \ Program Rates and Prices</a>\r\n\t\t\t<div class=\"subindent\"><a href=\"\
+        /GA-FI/FedInvest/todaySecurityPriceDate.htm\">Today's Prices</a></div>\r\n\
+        \t\t\t<div class=\"subindent\"><a href=\"/GA-FI/FedInvest/selectOvernightRateDate.htm\"\
+        >Overnight Rates</a></div>\r\n\t\t\t<div class=\"subindent2\"><a href=\"/GA-FI/FedInvest/selectSecurityPriceDate.htm\"\
+        \ class=\"active\">Historical Prices</a></div>\r\n</li>\r\n\t\t<li class=\"\
+        closed\"><a href=\"/govt/rates/slgs/slgs.htm\">SLGS Rates</a></li>\r\n\t\t\
+        <li class=\"closed\"><a href=\"/govt/rates/rates_irstcb.htm\">IRS Tax Credit\
+        \ Bonds Rates</a></li>\r\n\t\t<li class=\"closed\"><a href=\"/govt/rates/tcir/tcir.htm\"\
+        >Treasury's Certified Interest Rates</a></li>\r\n\t\t<li class=\"closed\"\
+        ><a href=\"/govt/rates/pd/pd.htm\">Public Debt</a></li>\r\n\t\t<li class=\"\
+        closedlast\"><a href=\"/govt/rates/rates_tfr.htm\">UTF Quarterly Yields</a></li>\r\
+        \n\t</ul>\r\n</div>\r\n\r\n<!-- BEGIN ACCOUNT CENTER -->\r\n<div id=\"login\"\
+        >\r\n<h2>ACCOUNT CENTER</h2>\r\n<h3>Log in now</h3>\r\n<ul>\r\n\t<li><a href=\"\
+        /SZ/BPDLogin?application=spss\">SLGSafe<sup>&reg;</sup></a></li>\r\n\t<li><a\
+        \ href=\"/FD/FedInvestGateway.htm\">FedInvest<sup>&reg;</sup></a></li>\r\n\
+        </ul>\r\n<ul id=\"openacct\">\r\n\t<li><a href=\"/govt/govt_acctsetup.htm\"\
+        >Set up an account</a></li>\r\n</ul>\r\n</div>\r\n<!-- END ACCOUNT CENTER\
+        \ -->\r\n\r\n\t<noscript>\r\n\t\t<div id=\"acsialert\"><p><img src=\"/images/alertmessage.gif\"\
+        \ width=\"16\" height=\"16\" alt=\"Exclamation Point\" />We're pleased to\
+        \ hear from our customers regarding their satisfaction with our website. Although\
+        \ your browser settings don't allow you to view the website survey we're conducting,\
+        \ please <a href=\"mailto:oadmin@fiscal.treasury.gov\">e-mail</a> your comments.</p></div>\r\
+        \n\t</noscript>\r\n</div>\r\n<!-- END LOCALNAV -->\r\n<!-- BEGIN CONTENT -->\r\
+        \n<div id=\"content\"> \r\n\r\n<div class=\"columnwrap\">\r\n\t<div class=\"\
+        column60\">\r\n\t\t<img src=\"/images/fedinvest3.gif\" width=\"190\" height=\"\
+        64\" alt=\"Fed Invest\" />\r\n\t</div>\r\n\t\r\n\t<div class=\"column20\"\
+        >\r\n\t\t<form id=\"CSVFormat\" action=\"/GA-FI/FedInvest/selectSecurityPriceDate.htm\"\
+        \ method=\"post\">\r\n\t\t<div class=\"buttons\">\r\n\t\t\t<input type=\"\
+        submit\" value=\"CSV Format\" class=\"action\" name=\"submit\" />\r\n\t\t\
+        </div>\t\r\n\t\t<div class=\"buttons\">\r\n\t\t\t<input type=\"submit\" value=\"\
+        XML Format\" class=\"action\" name=\"submit\" />\r\n\t\t</div>\t\t\r\n\t\t\
+        </form>\r\n\t\t<script type=\"text/javascript\">\r\n\t\t\tdocument.getElementById('CSVFormat').target=\"\
+        _blank\";\r\n\t\t</script>\r\n\t</div>\r\n\t\r\n</div>\r\n\r\n<p><br /></p>\r\
+        \n<h1>Historical Prices</h1>\r\n<h2>Prices For: Nov 17, 2017</h2>\r\n(<strong>NOTE:</strong>\
+        \ These prices apply only to market-based Treasury special securities.) <br\
+        \ /><br />\r\n<table class=\"data1\">\r\n\t<tr><th>CUSIP</th><th>SECURITY\
+        \ TYPE</th><th>RATE</th><th>MATURITY DATE</th><th>CALL DATE</th><th>BUY</th><th>SELL</th><th>END\
+        \ OF DAY</th></tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796MD8</td>\r\n\t\t<td style=\"\
+        white-space: nowrap; text-align: left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\
+        \n\t\t<td>11/24/2017</td>\r\n\t\t<td></td>\r\n\t\t<td>99.980069</td>\r\n\t\
+        \t<td>99.979778</td>\r\n\t\t<td>99.988444</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912796ME6</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\n\t\t<td>11/30/2017</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.962264</td>\r\n\t\t<td>99.962083</td>\r\n\t\t\
+        <td>99.971111</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796LB3</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BILL</td>\r\
+        \n\t\t<td>0.000%</td>\r\n\t\t<td>12/07/2017</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.941944</td>\r\n\t\t<td>99.941667</td>\r\n\t\t<td>99.949944</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796RX9</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\
+        \n\t\t<td>12/08/2017</td>\r\n\t\t<td></td>\r\n\t\t<td>99.939042</td>\r\n\t\
+        \t<td>99.938750</td>\r\n\t\t<td>99.947500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912796MG1</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\n\t\t<td>12/14/2017</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.921625</td>\r\n\t\t<td>99.921250</td>\r\n\t\t\
+        <td>99.930000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796MH9</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BILL</td>\r\
+        \n\t\t<td>0.000%</td>\r\n\t\t<td>12/21/2017</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.896583</td>\r\n\t\t<td>99.896111</td>\r\n\t\t<td>99.905278</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796MJ5</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\
+        \n\t\t<td>12/28/2017</td>\r\n\t\t<td></td>\r\n\t\t<td>99.870736</td>\r\n\t\
+        \t<td>99.870167</td>\r\n\t\t<td>99.878611</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912796RK7</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\n\t\t<td>01/02/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.853694</td>\r\n\t\t<td>99.853056</td>\r\n\t\t\
+        <td>99.862639</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796LC1</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BILL</td>\r\
+        \n\t\t<td>0.000%</td>\r\n\t\t<td>01/04/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.848667</td>\r\n\t\t<td>99.848000</td>\r\n\t\t<td>99.856250</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796ML0</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\
+        \n\t\t<td>01/11/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.825069</td>\r\n\t\
+        \t<td>99.824306</td>\r\n\t\t<td>99.832444</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912796NN5</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\n\t\t<td>01/18/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.801083</td>\r\n\t\t<td>99.800222</td>\r\n\t\t\
+        <td>99.809889</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796NP0</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BILL</td>\r\
+        \n\t\t<td>0.000%</td>\r\n\t\t<td>01/25/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.776708</td>\r\n\t\t<td>99.775750</td>\r\n\t\t<td>99.785500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796LJ6</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\
+        \n\t\t<td>02/01/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.744556</td>\r\n\t\
+        \t<td>99.742444</td>\r\n\t\t<td>99.752611</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912796NR6</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\n\t\t<td>02/08/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.719875</td>\r\n\t\t<td>99.718722</td>\r\n\t\t\
+        <td>99.726667</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796NS4</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BILL</td>\r\
+        \n\t\t<td>0.000%</td>\r\n\t\t<td>02/15/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.691250</td>\r\n\t\t<td>99.690000</td>\r\n\t\t<td>99.695500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796NT2</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\
+        \n\t\t<td>02/22/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.669931</td>\r\n\t\
+        \t<td>99.668583</td>\r\n\t\t<td>99.673611</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912796LN7</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\n\t\t<td>03/01/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.634556</td>\r\n\t\t<td>99.633111</td>\r\n\t\t\
+        <td>99.640889</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796NU9</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BILL</td>\r\
+        \n\t\t<td>0.000%</td>\r\n\t\t<td>03/08/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.602250</td>\r\n\t\t<td>99.599167</td>\r\n\t\t<td>99.610000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796NW5</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\
+        \n\t\t<td>03/15/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.582083</td>\r\n\t\
+        \t<td>99.580444</td>\r\n\t\t<td>99.584722</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912796NX3</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\n\t\t<td>03/22/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.555556</td>\r\n\t\t<td>99.555556</td>\r\n\t\t\
+        <td>99.559444</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796LS6</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BILL</td>\r\
+        \n\t\t<td>0.000%</td>\r\n\t\t<td>03/29/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.528833</td>\r\n\t\t<td>99.527000</td>\r\n\t\t<td>99.537750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796NY1</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\
+        \n\t\t<td>04/05/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.503847</td>\r\n\t\
+        \t<td>99.501917</td>\r\n\t\t<td>99.512667</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912796PA1</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\n\t\t<td>04/12/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.472778</td>\r\n\t\t<td>99.472778</td>\r\n\t\t\
+        <td>99.479639</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796PB9</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BILL</td>\r\
+        \n\t\t<td>0.000%</td>\r\n\t\t<td>04/19/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.447500</td>\r\n\t\t<td>99.447500</td>\r\n\t\t<td>99.454167</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796LX5</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\
+        \n\t\t<td>04/26/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.420000</td>\r\n\t\
+        \t<td>99.417778</td>\r\n\t\t<td>99.428694</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912796PC7</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\n\t\t<td>05/03/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.380708</td>\r\n\t\t<td>99.378389</td>\r\n\t\t\
+        <td>99.389556</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796PF0</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BILL</td>\r\
+        \n\t\t<td>0.000%</td>\r\n\t\t<td>05/10/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.340250</td>\r\n\t\t<td>99.337833</td>\r\n\t\t<td>99.344500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796PG8</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\
+        \n\t\t<td>05/17/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.303653</td>\r\n\t\
+        \t<td>99.301139</td>\r\n\t\t<td>99.312722</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912796MB2</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\n\t\t<td>05/24/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.281944</td>\r\n\t\t<td>99.279333</td>\r\n\t\t\
+        <td>99.280556</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796MF3</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BILL</td>\r\
+        \n\t\t<td>0.000%</td>\r\n\t\t<td>06/21/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.181000</td>\r\n\t\t<td>99.178000</td>\r\n\t\t<td>99.189417</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796MK2</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\
+        \n\t\t<td>07/19/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.030778</td>\r\n\t\
+        \t<td>99.024000</td>\r\n\t\t<td>99.022611</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912796NQ8</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\n\t\t<td>08/16/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>98.900667</td>\r\n\t\t<td>98.896889</td>\r\n\t\t\
+        <td>98.901583</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796NV7</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BILL</td>\r\
+        \n\t\t<td>0.000%</td>\r\n\t\t<td>09/13/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.762500</td>\r\n\t\t<td>98.758333</td>\r\n\t\t<td>98.762500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912796NZ8</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\
+        \n\t\t<td>10/11/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>98.610556</td>\r\n\t\
+        \t<td>98.606000</td>\r\n\t\t<td>98.609722</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912796PD5</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BILL</td>\r\n\t\t<td>0.000%</td>\r\n\t\t<td>11/08/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>98.472167</td>\r\n\t\t<td>98.467222</td>\r\n\t\t\
+        <td>98.470333</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828UA6</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>0.625%</td>\r\n\t\t<td>11/30/2017</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>0.000000</td>\r\n\t\t<td>99.968750</td>\r\n\t\t<td>99.968750</td>\r\n\t\
+        </tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828PK0</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.250%</td>\r\
+        \n\t\t<td>11/30/2017</td>\r\n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t\
+        <td>100.031250</td>\r\n\t\t<td>100.000000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828M72</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.875%</td>\r\n\t\t<td>11/30/2017</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t<td>100.000000</td>\r\n\t\t\
+        <td>99.968750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828G79</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.000%</td>\r\n\t\t<td>12/15/2017</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>0.000000</td>\r\n\t\t<td>100.000000</td>\r\n\t\t<td>99.968750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828PN4</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.750%</td>\r\
+        \n\t\t<td>12/31/2017</td>\r\n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t\
+        <td>100.156250</td>\r\n\t\t<td>100.156250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828N55</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.000%</td>\r\n\t\t<td>12/31/2017</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t<td>99.968750</td>\r\n\t\t\
+        <td>99.937500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828UE8</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>0.750%</td>\r\n\t\t<td>12/31/2017</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>0.000000</td>\r\n\t\t<td>99.937500</td>\r\n\t\t<td>99.937500</td>\r\n\t\
+        </tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828H37</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.875%</td>\r\
+        \n\t\t<td>01/15/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t\
+        <td>99.937500</td>\r\n\t\t<td>99.937500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\
+        \t\t<td>912828P20</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.750%</td>\r\n\t\t<td>01/31/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t<td>99.906250</td>\r\n\t\t\
+        <td>99.875000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828PT1</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.625%</td>\r\n\t\t<td>01/31/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>0.000000</td>\r\n\t\t<td>100.250000</td>\r\n\t\t<td>100.250000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828UJ7</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.875%</td>\r\
+        \n\t\t<td>01/31/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t\
+        <td>99.906250</td>\r\n\t\t<td>99.906250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\
+        \t\t<td>912828HR4</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>3.500%</td>\r\n\t\t<td>02/15/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t<td>100.500000</td>\r\n\t\t\
+        <td>100.468750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828H94</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.000%</td>\r\n\t\t<td>02/15/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>0.000000</td>\r\n\t\t<td>99.937500</td>\r\n\t\t<td>99.906250</td>\r\n\t\
+        </tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828PY0</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.750%</td>\r\
+        \n\t\t<td>02/28/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t\
+        <td>100.375000</td>\r\n\t\t<td>100.375000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828UR9</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.750%</td>\r\n\t\t<td>02/28/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t<td>99.843750</td>\r\n\t\t\
+        <td>99.812500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828J68</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.000%</td>\r\n\t\t<td>03/15/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>0.000000</td>\r\n\t\t<td>99.875000</td>\r\n\t\t<td>99.875000</td>\r\n\t\
+        </tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828Q45</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.875%</td>\r\
+        \n\t\t<td>03/31/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t\
+        <td>99.812500</td>\r\n\t\t<td>99.812500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\
+        \t\t<td>912828QB9</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.875%</td>\r\n\t\t<td>03/31/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t<td>100.531250</td>\r\n\t\t\
+        <td>100.500000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828UU2</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>0.750%</td>\r\n\t\t<td>03/31/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>0.000000</td>\r\n\t\t<td>99.781250</td>\r\n\t\t<td>99.750000</td>\r\n\t\
+        </tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828K25</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.750%</td>\r\
+        \n\t\t<td>04/15/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t\
+        <td>99.718750</td>\r\n\t\t<td>99.750000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\
+        \t\t<td>912828QG8</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.625%</td>\r\n\t\t<td>04/30/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t<td>100.531250</td>\r\n\t\t\
+        <td>100.531250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828Q94</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>0.750%</td>\r\n\t\t<td>04/30/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>0.000000</td>\r\n\t\t<td>99.718750</td>\r\n\t\t<td>99.718750</td>\r\n\t\
+        </tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828UZ1</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.625%</td>\r\
+        \n\t\t<td>04/30/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t\
+        <td>99.656250</td>\r\n\t\t<td>99.656250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\
+        \t\t<td>912828XA3</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.000%</td>\r\n\t\t<td>05/15/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t<td>99.812500</td>\r\n\t\t\
+        <td>99.812500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828HZ6</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>3.875%</td>\r\n\t\t<td>05/15/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>0.000000</td>\r\n\t\t<td>101.218750</td>\r\n\t\t<td>101.156250</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828R51</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.875%</td>\r\
+        \n\t\t<td>05/31/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.734375</td>\r\n\t\
+        \t<td>99.718750</td>\r\n\t\t<td>99.718750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828QQ6</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.375%</td>\r\n\t\t<td>05/31/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>100.500000</td>\r\n\t\t<td>100.500000</td>\r\n\t\
+        \t<td>100.468750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828VE7</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.000%</td>\r\n\t\t<td>05/31/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.781250</td>\r\n\t\t<td>99.781250</td>\r\n\t\t<td>99.750000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828XF2</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.125%</td>\r\
+        \n\t\t<td>06/15/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.828125</td>\r\n\t\
+        \t<td>99.812500</td>\r\n\t\t<td>99.812500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828VK3</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\n\t\t<td>06/30/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.953125</td>\r\n\t\t<td>99.937500</td>\r\n\t\t\
+        <td>99.937500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828R93</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>0.625%</td>\r\n\t\t<td>06/30/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.500000</td>\r\n\t\t<td>99.500000</td>\r\n\t\t<td>99.500000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828QT0</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.375%</td>\r\
+        \n\t\t<td>06/30/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>100.546875</td>\r\n\t\
+        \t<td>100.531250</td>\r\n\t\t<td>100.531250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828XK1</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.875%</td>\r\n\t\t<td>07/15/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.609375</td>\r\n\t\t<td>99.593750</td>\r\n\t\t\
+        <td>99.593750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828S68</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>0.750%</td>\r\n\t\t<td>07/31/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.484375</td>\r\n\t\t<td>99.468750</td>\r\n\t\t<td>99.468750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828QY9</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.250%</td>\r\
+        \n\t\t<td>07/31/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>100.515625</td>\r\n\t\
+        \t<td>100.500000</td>\r\n\t\t<td>100.531250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828VQ0</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\n\t\t<td>07/31/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.921875</td>\r\n\t\t<td>99.906250</td>\r\n\t\t\
+        <td>99.906250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828JH4</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>4.000%</td>\r\n\t\t<td>08/15/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>101.812500</td>\r\n\t\t<td>101.781250</td>\r\n\t\t<td>101.781250</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828K82</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.000%</td>\r\
+        \n\t\t<td>08/15/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.609375</td>\r\n\t\
+        \t<td>99.593750</td>\r\n\t\t<td>99.593750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828RE2</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.500%</td>\r\n\t\t<td>08/31/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.953125</td>\r\n\t\t<td>99.937500</td>\r\n\t\t\
+        <td>99.937500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128282C3</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>0.750%</td>\r\n\t\t<td>08/31/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.375000</td>\r\n\t\t<td>99.375000</td>\r\n\t\t<td>99.375000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828L40</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.000%</td>\r\
+        \n\t\t<td>09/15/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.531250</td>\r\n\t\
+        \t<td>99.531250</td>\r\n\t\t<td>99.531250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828RH5</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\n\t\t<td>09/30/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.781250</td>\r\n\t\t<td>99.781250</td>\r\n\t\t\
+        <td>99.812500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828T42</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>0.750%</td>\r\n\t\t<td>09/30/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.281250</td>\r\n\t\t<td>99.281250</td>\r\n\t\t<td>99.281250</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828L81</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.875%</td>\r\
+        \n\t\t<td>10/15/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.359375</td>\r\n\t\
+        \t<td>99.343750</td>\r\n\t\t<td>99.343750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828RP7</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.750%</td>\r\n\t\t<td>10/31/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>100.109375</td>\r\n\t\t<td>100.093750</td>\r\n\t\
+        \t<td>100.125000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828T83</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>0.750%</td>\r\n\t\t<td>10/31/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.203125</td>\r\n\t\t<td>99.187500</td>\r\n\t\t<td>99.187500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828WD8</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.250%</td>\r\
+        \n\t\t<td>10/31/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.671875</td>\r\n\t\
+        \t<td>99.656250</td>\r\n\t\t<td>99.656250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828M64</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.250%</td>\r\n\t\t<td>11/15/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.640625</td>\r\n\t\t<td>99.625000</td>\r\n\t\t\
+        <td>99.656250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828JR2</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>3.750%</td>\r\n\t\t<td>11/15/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>102.078125</td>\r\n\t\t<td>102.062500</td>\r\n\t\t<td>102.062500</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828A34</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.250%</td>\r\
+        \n\t\t<td>11/30/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.609375</td>\r\n\t\
+        \t<td>99.593750</td>\r\n\t\t<td>99.593750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828RT9</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\n\t\t<td>11/30/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.734375</td>\r\n\t\t<td>99.718750</td>\r\n\t\t\
+        <td>99.718750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828U40</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.000%</td>\r\n\t\t<td>11/30/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.359375</td>\r\n\t\t<td>99.343750</td>\r\n\t\t<td>99.375000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828N22</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.250%</td>\r\
+        \n\t\t<td>12/15/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.593750</td>\r\n\t\
+        \t<td>99.593750</td>\r\n\t\t<td>99.593750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828RY8</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\n\t\t<td>12/31/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.718750</td>\r\n\t\t<td>99.718750</td>\r\n\t\t\
+        <td>99.687500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828U99</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.250%</td>\r\n\t\t<td>12/31/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.578125</td>\r\n\t\t<td>99.562500</td>\r\n\t\t<td>99.562500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828A75</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.500%</td>\r\
+        \n\t\t<td>12/31/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>99.828125</td>\r\n\t\
+        \t<td>99.812500</td>\r\n\t\t<td>99.812500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828N63</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.125%</td>\r\n\t\t<td>01/15/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.406250</td>\r\n\t\t<td>99.406250</td>\r\n\t\t\
+        <td>99.406250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828B33</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.500%</td>\r\n\t\t<td>01/31/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.828125</td>\r\n\t\t<td>99.812500</td>\r\n\t\t<td>99.812500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828SD3</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.250%</td>\r\
+        \n\t\t<td>01/31/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>99.531250</td>\r\n\t\
+        \t<td>99.531250</td>\r\n\t\t<td>99.531250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828V56</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.125%</td>\r\n\t\t<td>01/31/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.390625</td>\r\n\t\t<td>99.375000</td>\r\n\t\t\
+        <td>99.375000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828KD1</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.750%</td>\r\n\t\t<td>02/15/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>101.359375</td>\r\n\t\t<td>101.343750</td>\r\n\t\t<td>101.343750</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828P53</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.750%</td>\r\
+        \n\t\t<td>02/15/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>98.890625</td>\r\n\t\
+        \t<td>98.875000</td>\r\n\t\t<td>98.875000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828C24</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.500%</td>\r\n\t\t<td>02/28/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.796875</td>\r\n\t\t<td>99.781250</td>\r\n\t\t\
+        <td>99.781250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828W30</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.125%</td>\r\n\t\t<td>02/28/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.343750</td>\r\n\t\t<td>99.343750</td>\r\n\t\t<td>99.312500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828SH4</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\
+        \n\t\t<td>02/28/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>99.640625</td>\r\n\t\
+        \t<td>99.625000</td>\r\n\t\t<td>99.625000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828P95</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.000%</td>\r\n\t\t<td>03/15/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.156250</td>\r\n\t\t<td>99.156250</td>\r\n\t\t\
+        <td>99.125000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828C65</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.625%</td>\r\n\t\t<td>03/31/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.953125</td>\r\n\t\t<td>99.937500</td>\r\n\t\t<td>99.937500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828SN1</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.500%</td>\r\
+        \n\t\t<td>03/31/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>99.796875</td>\r\n\t\
+        \t<td>99.781250</td>\r\n\t\t<td>99.781250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828W97</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.250%</td>\r\n\t\t<td>03/31/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.437500</td>\r\n\t\t<td>99.437500</td>\r\n\t\t\
+        <td>99.437500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828Q52</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>0.875%</td>\r\n\t\t<td>04/15/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.906250</td>\r\n\t\t<td>98.906250</td>\r\n\t\t<td>98.906250</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828D23</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.625%</td>\r\
+        \n\t\t<td>04/30/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>99.937500</td>\r\n\t\
+        \t<td>99.937500</td>\r\n\t\t<td>99.937500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828ST8</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.250%</td>\r\n\t\t<td>04/30/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.406250</td>\r\n\t\t<td>99.406250</td>\r\n\t\t\
+        <td>99.406250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828KQ2</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>3.125%</td>\r\n\t\t<td>05/15/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>102.156250</td>\r\n\t\t<td>102.125000</td>\r\n\t\t<td>102.125000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828R44</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.875%</td>\r\
+        \n\t\t<td>05/15/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>98.859375</td>\r\n\t\
+        \t<td>98.843750</td>\r\n\t\t<td>98.843750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828SX9</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.125%</td>\r\n\t\t<td>05/31/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.203125</td>\r\n\t\t<td>99.187500</td>\r\n\t\t\
+        <td>99.187500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828WL0</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.500%</td>\r\n\t\t<td>05/31/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.750000</td>\r\n\t\t<td>99.750000</td>\r\n\t\t<td>99.718750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828XS4</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.250%</td>\r\
+        \n\t\t<td>05/31/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>99.375000</td>\r\n\t\
+        \t<td>99.375000</td>\r\n\t\t<td>99.375000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828R85</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.875%</td>\r\n\t\t<td>06/15/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>98.765625</td>\r\n\t\t<td>98.750000</td>\r\n\t\t\
+        <td>98.750000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828XV7</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.250%</td>\r\n\t\t<td>06/30/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.312500</td>\r\n\t\t<td>99.312500</td>\r\n\t\t<td>99.312500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828TC4</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.000%</td>\r\
+        \n\t\t<td>06/30/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>98.921875</td>\r\n\t\
+        \t<td>98.906250</td>\r\n\t\t<td>98.906250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828WS5</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.625%</td>\r\n\t\t<td>06/30/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.890625</td>\r\n\t\t<td>99.875000</td>\r\n\t\t\
+        <td>99.875000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828S43</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>0.750%</td>\r\n\t\t<td>07/15/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.484375</td>\r\n\t\t<td>98.468750</td>\r\n\t\t<td>98.468750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828TH3</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.875%</td>\r\
+        \n\t\t<td>07/31/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>98.656250</td>\r\n\t\
+        \t<td>98.656250</td>\r\n\t\t<td>98.625000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>9128282K5</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\n\t\t<td>07/31/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.484375</td>\r\n\t\t<td>99.468750</td>\r\n\t\t\
+        <td>99.468750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828WW6</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.625%</td>\r\n\t\t<td>07/31/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.906250</td>\r\n\t\t<td>99.906250</td>\r\n\t\t<td>99.875000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128282B5</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>0.750%</td>\r\
+        \n\t\t<td>08/15/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>98.421875</td>\r\n\t\
+        \t<td>98.406250</td>\r\n\t\t<td>98.406250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828LJ7</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>3.625%</td>\r\n\t\t<td>08/15/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>103.296875</td>\r\n\t\t<td>103.281250</td>\r\n\t\
+        \t<td>103.281250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828D80</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.625%</td>\r\n\t\t<td>08/31/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.859375</td>\r\n\t\t<td>99.843750</td>\r\n\t\t<td>99.843750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128282T6</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.250%</td>\r\
+        \n\t\t<td>08/31/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>99.218750</td>\r\n\t\
+        \t<td>99.218750</td>\r\n\t\t<td>99.187500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828TN0</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.000%</td>\r\n\t\t<td>08/31/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>98.796875</td>\r\n\t\t<td>98.781250</td>\r\n\t\t\
+        <td>98.781250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128282G4</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>0.875%</td>\r\n\t\t<td>09/15/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.500000</td>\r\n\t\t<td>98.500000</td>\r\n\t\t<td>98.468750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828TR1</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.000%</td>\r\
+        \n\t\t<td>09/30/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>98.703125</td>\r\n\t\
+        \t<td>98.687500</td>\r\n\t\t<td>98.687500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828F39</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.750%</td>\r\n\t\t<td>09/30/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>100.062500</td>\r\n\t\t<td>100.062500</td>\r\n\t\
+        \t<td>100.031250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128282X7</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.375%</td>\r\n\t\t<td>09/30/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.390625</td>\r\n\t\t<td>99.375000</td>\r\n\t\t<td>99.406250</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828T59</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.000%</td>\r\
+        \n\t\t<td>10/15/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>98.671875</td>\r\n\t\
+        \t<td>98.656250</td>\r\n\t\t<td>98.656250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828TV2</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.250%</td>\r\n\t\t<td>10/31/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.125000</td>\r\n\t\t<td>99.125000</td>\r\n\t\t\
+        <td>99.093750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828F62</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.500%</td>\r\n\t\t<td>10/31/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.593750</td>\r\n\t\t<td>99.593750</td>\r\n\t\t<td>99.562500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828LY4</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>3.375%</td>\r\
+        \n\t\t<td>11/15/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>103.218750</td>\r\n\t\
+        \t<td>103.187500</td>\r\n\t\t<td>103.187500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828U32</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.000%</td>\r\n\t\t<td>11/15/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>98.593750</td>\r\n\t\t<td>98.593750</td>\r\n\t\t\
+        <td>98.593750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828UB4</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.000%</td>\r\n\t\t<td>11/30/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.562500</td>\r\n\t\t<td>98.562500</td>\r\n\t\t<td>98.562500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828G61</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.500%</td>\r\
+        \n\t\t<td>11/30/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>99.546875</td>\r\n\t\
+        \t<td>99.531250</td>\r\n\t\t<td>99.531250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828U73</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\n\t\t<td>12/15/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.281250</td>\r\n\t\t<td>99.281250</td>\r\n\t\t\
+        <td>99.250000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828UF5</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.125%</td>\r\n\t\t<td>12/31/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.750000</td>\r\n\t\t<td>98.750000</td>\r\n\t\t<td>98.750000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828G95</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.625%</td>\r\
+        \n\t\t<td>12/31/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>99.750000</td>\r\n\t\
+        \t<td>99.750000</td>\r\n\t\t<td>99.718750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828V31</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\n\t\t<td>01/15/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.250000</td>\r\n\t\t<td>99.250000</td>\r\n\t\t\
+        <td>99.218750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828UL2</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.375%</td>\r\n\t\t<td>01/31/2020</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.234375</td>\r\n\t\t<td>99.218750</td>\r\n\t\t<td>99.218750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828H52</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.250%</td>\r\
+        \n\t\t<td>01/31/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>98.937500</td>\r\n\t\
+        \t<td>98.937500</td>\r\n\t\t<td>98.937500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828MP2</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>3.625%</td>\r\n\t\t<td>02/15/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>104.125000</td>\r\n\t\t<td>104.125000</td>\r\n\t\
+        \t<td>104.093750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828W22</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.375%</td>\r\n\t\t<td>02/15/2020</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.171875</td>\r\n\t\t<td>99.156250</td>\r\n\t\t<td>99.156250</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828UQ1</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.250%</td>\r\
+        \n\t\t<td>02/29/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>98.890625</td>\r\n\t\
+        \t<td>98.875000</td>\r\n\t\t<td>98.875000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828J50</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\n\t\t<td>02/29/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.156250</td>\r\n\t\t<td>99.156250</td>\r\n\t\t\
+        <td>99.125000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828W63</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.625%</td>\r\n\t\t<td>03/15/2020</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.703125</td>\r\n\t\t<td>99.687500</td>\r\n\t\t<td>99.687500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828UV0</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.125%</td>\r\
+        \n\t\t<td>03/31/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>98.546875</td>\r\n\t\
+        \t<td>98.531250</td>\r\n\t\t<td>98.531250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828J84</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\n\t\t<td>03/31/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.109375</td>\r\n\t\t<td>99.093750</td>\r\n\t\t\
+        <td>99.093750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828X21</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.500%</td>\r\n\t\t<td>04/15/2020</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.375000</td>\r\n\t\t<td>99.375000</td>\r\n\t\t<td>99.375000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828VA5</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.125%</td>\r\
+        \n\t\t<td>04/30/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>98.484375</td>\r\n\t\
+        \t<td>98.468750</td>\r\n\t\t<td>98.468750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828K58</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\n\t\t<td>04/30/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.062500</td>\r\n\t\t<td>99.062500</td>\r\n\t\t\
+        <td>99.062500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828ND8</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>3.500%</td>\r\n\t\t<td>05/15/2020</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>104.218750</td>\r\n\t\t<td>104.187500</td>\r\n\t\t<td>104.187500</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828X96</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.500%</td>\r\
+        \n\t\t<td>05/15/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>99.328125</td>\r\n\t\
+        \t<td>99.312500</td>\r\n\t\t<td>99.343750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828XE5</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.500%</td>\r\n\t\t<td>05/31/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.312500</td>\r\n\t\t<td>99.312500</td>\r\n\t\t\
+        <td>99.312500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828VF4</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.375%</td>\r\n\t\t<td>05/31/2020</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.015625</td>\r\n\t\t<td>99.000000</td>\r\n\t\t<td>99.000000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828XU9</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.500%</td>\r\
+        \n\t\t<td>06/15/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>99.312500</td>\r\n\t\
+        \t<td>99.312500</td>\r\n\t\t<td>99.312500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828XH8</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.625%</td>\r\n\t\t<td>06/30/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.609375</td>\r\n\t\t<td>99.593750</td>\r\n\t\t\
+        <td>99.593750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828VJ6</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.875%</td>\r\n\t\t<td>06/30/2020</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>100.234375</td>\r\n\t\t<td>100.218750</td>\r\n\t\t<td>100.218750</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128282J8</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.500%</td>\r\
+        \n\t\t<td>07/15/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>99.250000</td>\r\n\t\
+        \t<td>99.250000</td>\r\n\t\t<td>99.250000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828XM7</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.625%</td>\r\n\t\t<td>07/31/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.562500</td>\r\n\t\t<td>99.562500</td>\r\n\t\t\
+        <td>99.562500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828VP2</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.000%</td>\r\n\t\t<td>07/31/2020</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>100.546875</td>\r\n\t\t<td>100.531250</td>\r\n\t\t<td>100.531250</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828NT3</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.625%</td>\r\
+        \n\t\t<td>08/15/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>102.203125</td>\r\n\t\
+        \t<td>102.187500</td>\r\n\t\t<td>102.187500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>9128282Q2</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.500%</td>\r\n\t\t<td>08/15/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.218750</td>\r\n\t\t<td>99.218750</td>\r\n\t\t\
+        <td>99.218750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828L32</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.375%</td>\r\n\t\t<td>08/31/2020</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.859375</td>\r\n\t\t<td>98.843750</td>\r\n\t\t<td>98.843750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828VV9</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.125%</td>\r\
+        \n\t\t<td>08/31/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>100.875000</td>\r\n\t\
+        \t<td>100.875000</td>\r\n\t\t<td>100.843750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>9128282V1</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\n\t\t<td>09/15/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>98.859375</td>\r\n\t\t<td>98.843750</td>\r\n\t\t\
+        <td>98.843750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828VZ0</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.000%</td>\r\n\t\t<td>09/30/2020</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>100.515625</td>\r\n\t\t<td>100.500000</td>\r\n\t\t<td>100.500000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828L65</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\
+        \n\t\t<td>09/30/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>98.796875</td>\r\n\t\
+        \t<td>98.781250</td>\r\n\t\t<td>98.781250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>9128282Z2</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.625%</td>\r\n\t\t<td>10/15/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.468750</td>\r\n\t\t<td>99.468750</td>\r\n\t\t\
+        <td>99.468750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828L99</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.375%</td>\r\n\t\t<td>10/31/2020</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.718750</td>\r\n\t\t<td>98.718750</td>\r\n\t\t<td>98.687500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828WC0</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.750%</td>\r\
+        \n\t\t<td>10/31/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>99.796875</td>\r\n\t\
+        \t<td>99.781250</td>\r\n\t\t<td>99.781250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828PC8</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.625%</td>\r\n\t\t<td>11/15/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>102.312500</td>\r\n\t\t<td>102.281250</td>\r\n\t\
+        \t<td>102.281250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128283G3</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.750%</td>\r\n\t\t<td>11/15/2020</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.796875</td>\r\n\t\t<td>99.781250</td>\r\n\t\t<td>99.781250</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828M98</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.625%</td>\r\
+        \n\t\t<td>11/30/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>99.375000</td>\r\n\t\
+        \t<td>99.375000</td>\r\n\t\t<td>99.343750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828A42</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.000%</td>\r\n\t\t<td>11/30/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>100.515625</td>\r\n\t\t<td>100.500000</td>\r\n\t\
+        \t<td>100.468750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828A83</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.375%</td>\r\n\t\t<td>12/31/2020</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>101.578125</td>\r\n\t\t<td>101.562500</td>\r\n\t\t<td>101.562500</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828N48</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.750%</td>\r\
+        \n\t\t<td>12/31/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>99.687500</td>\r\n\t\
+        \t<td>99.687500</td>\r\n\t\t<td>99.656250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828B58</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.125%</td>\r\n\t\t<td>01/31/2021</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>100.812500</td>\r\n\t\t<td>100.781250</td>\r\n\t\
+        \t<td>100.781250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828N89</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.375%</td>\r\n\t\t<td>01/31/2021</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.468750</td>\r\n\t\t<td>98.468750</td>\r\n\t\t<td>98.468750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828PX2</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>3.625%</td>\r\
+        \n\t\t<td>02/15/2021</td>\r\n\t\t<td></td>\r\n\t\t<td>105.546875</td>\r\n\t\
+        \t<td>105.531250</td>\r\n\t\t<td>105.500000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828P87</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.125%</td>\r\n\t\t<td>02/28/2021</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>97.609375</td>\r\n\t\t<td>97.593750</td>\r\n\t\t\
+        <td>97.593750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828B90</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.000%</td>\r\n\t\t<td>02/28/2021</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>100.421875</td>\r\n\t\t<td>100.406250</td>\r\n\t\t<td>100.375000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828C57</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.250%</td>\r\
+        \n\t\t<td>03/31/2021</td>\r\n\t\t<td></td>\r\n\t\t<td>101.187500</td>\r\n\t\
+        \t<td>101.187500</td>\r\n\t\t<td>101.156250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828Q37</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.250%</td>\r\n\t\t<td>03/31/2021</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>97.921875</td>\r\n\t\t<td>97.906250</td>\r\n\t\t\
+        <td>97.906250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828Q78</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.375%</td>\r\n\t\t<td>04/30/2021</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.281250</td>\r\n\t\t<td>98.281250</td>\r\n\t\t<td>98.250000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828WG1</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.250%</td>\r\
+        \n\t\t<td>04/30/2021</td>\r\n\t\t<td></td>\r\n\t\t<td>101.171875</td>\r\n\t\
+        \t<td>101.156250</td>\r\n\t\t<td>101.156250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828QN3</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>3.125%</td>\r\n\t\t<td>05/15/2021</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>104.156250</td>\r\n\t\t<td>104.125000</td>\r\n\t\
+        \t<td>104.125000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828R77</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.375%</td>\r\n\t\t<td>05/31/2021</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.171875</td>\r\n\t\t<td>98.156250</td>\r\n\t\t<td>98.156250</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828WN6</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.000%</td>\r\
+        \n\t\t<td>05/31/2021</td>\r\n\t\t<td></td>\r\n\t\t<td>100.328125</td>\r\n\t\
+        \t<td>100.312500</td>\r\n\t\t<td>100.312500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828WR7</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.125%</td>\r\n\t\t<td>06/30/2021</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>100.734375</td>\r\n\t\t<td>100.718750</td>\r\n\t\
+        \t<td>100.687500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828S27</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.125%</td>\r\n\t\t<td>06/30/2021</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>97.265625</td>\r\n\t\t<td>97.250000</td>\r\n\t\t<td>97.218750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828S76</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.125%</td>\r\
+        \n\t\t<td>07/31/2021</td>\r\n\t\t<td></td>\r\n\t\t<td>97.140625</td>\r\n\t\
+        \t<td>97.125000</td>\r\n\t\t<td>97.125000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828WY2</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.250%</td>\r\n\t\t<td>07/31/2021</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>101.140625</td>\r\n\t\t<td>101.125000</td>\r\n\t\
+        \t<td>101.125000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828RC6</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.125%</td>\r\n\t\t<td>08/15/2021</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>100.703125</td>\r\n\t\t<td>100.687500</td>\r\n\t\t<td>100.656250</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828D72</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.000%</td>\r\
+        \n\t\t<td>08/31/2021</td>\r\n\t\t<td></td>\r\n\t\t<td>100.203125</td>\r\n\t\
+        \t<td>100.187500</td>\r\n\t\t<td>100.187500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>9128282F6</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.125%</td>\r\n\t\t<td>08/31/2021</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>97.015625</td>\r\n\t\t<td>97.000000</td>\r\n\t\t\
+        <td>97.000000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828T34</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.125%</td>\r\n\t\t<td>09/30/2021</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>96.937500</td>\r\n\t\t<td>96.937500</td>\r\n\t\t<td>96.906250</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828F21</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.125%</td>\r\
+        \n\t\t<td>09/30/2021</td>\r\n\t\t<td></td>\r\n\t\t<td>100.640625</td>\r\n\t\
+        \t<td>100.625000</td>\r\n\t\t<td>100.625000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828F96</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.000%</td>\r\n\t\t<td>10/31/2021</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>100.171875</td>\r\n\t\t<td>100.156250</td>\r\n\t\
+        \t<td>100.156250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828T67</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.250%</td>\r\n\t\t<td>10/31/2021</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>97.328125</td>\r\n\t\t<td>97.312500</td>\r\n\t\t<td>97.312500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828RR3</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.000%</td>\r\
+        \n\t\t<td>11/15/2021</td>\r\n\t\t<td></td>\r\n\t\t<td>100.234375</td>\r\n\t\
+        \t<td>100.218750</td>\r\n\t\t<td>100.187500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828G53</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.875%</td>\r\n\t\t<td>11/30/2021</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.734375</td>\r\n\t\t<td>99.718750</td>\r\n\t\t\
+        <td>99.718750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828U65</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.750%</td>\r\n\t\t<td>11/30/2021</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.156250</td>\r\n\t\t<td>99.156250</td>\r\n\t\t<td>99.125000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828U81</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.000%</td>\r\
+        \n\t\t<td>12/31/2021</td>\r\n\t\t<td></td>\r\n\t\t<td>100.078125</td>\r\n\t\
+        \t<td>100.062500</td>\r\n\t\t<td>100.062500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828G87</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.125%</td>\r\n\t\t<td>12/31/2021</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>100.609375</td>\r\n\t\t<td>100.593750</td>\r\n\t\
+        \t<td>100.593750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828H86</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.500%</td>\r\n\t\t<td>01/31/2022</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.078125</td>\r\n\t\t<td>98.062500</td>\r\n\t\t<td>98.031250</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828V72</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.875%</td>\r\
+        \n\t\t<td>01/31/2022</td>\r\n\t\t<td></td>\r\n\t\t<td>99.546875</td>\r\n\t\
+        \t<td>99.531250</td>\r\n\t\t<td>99.531250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828SF8</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.000%</td>\r\n\t\t<td>02/15/2022</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>100.140625</td>\r\n\t\t<td>100.125000</td>\r\n\t\
+        \t<td>100.125000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828W55</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.875%</td>\r\n\t\t<td>02/28/2022</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.500000</td>\r\n\t\t<td>99.500000</td>\r\n\t\t<td>99.468750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828J43</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.750%</td>\r\
+        \n\t\t<td>02/28/2022</td>\r\n\t\t<td></td>\r\n\t\t<td>99.046875</td>\r\n\t\
+        \t<td>99.031250</td>\r\n\t\t<td>99.031250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828J76</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.750%</td>\r\n\t\t<td>03/31/2022</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>98.968750</td>\r\n\t\t<td>98.968750</td>\r\n\t\t\
+        <td>98.937500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828W89</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.875%</td>\r\n\t\t<td>03/31/2022</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.453125</td>\r\n\t\t<td>99.437500</td>\r\n\t\t<td>99.437500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828WZ9</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.750%</td>\r\
+        \n\t\t<td>04/30/2022</td>\r\n\t\t<td></td>\r\n\t\t<td>98.890625</td>\r\n\t\
+        \t<td>98.875000</td>\r\n\t\t<td>98.875000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828X47</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.875%</td>\r\n\t\t<td>04/30/2022</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.406250</td>\r\n\t\t<td>99.406250</td>\r\n\t\t\
+        <td>99.375000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828SV3</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.750%</td>\r\n\t\t<td>05/15/2022</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.921875</td>\r\n\t\t<td>98.906250</td>\r\n\t\t<td>98.906250</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828XR6</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.750%</td>\r\
+        \n\t\t<td>05/31/2022</td>\r\n\t\t<td></td>\r\n\t\t<td>98.843750</td>\r\n\t\
+        \t<td>98.843750</td>\r\n\t\t<td>98.812500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828XD7</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.875%</td>\r\n\t\t<td>05/31/2022</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.421875</td>\r\n\t\t<td>99.406250</td>\r\n\t\t\
+        <td>99.406250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828XG0</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.125%</td>\r\n\t\t<td>06/30/2022</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>100.421875</td>\r\n\t\t<td>100.406250</td>\r\n\t\t<td>100.406250</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828XW5</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.750%</td>\r\
+        \n\t\t<td>06/30/2022</td>\r\n\t\t<td></td>\r\n\t\t<td>98.765625</td>\r\n\t\
+        \t<td>98.750000</td>\r\n\t\t<td>98.750000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828XQ8</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.000%</td>\r\n\t\t<td>07/31/2022</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.843750</td>\r\n\t\t<td>99.843750</td>\r\n\t\t\
+        <td>99.812500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128282P4</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.875%</td>\r\n\t\t<td>07/31/2022</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.250000</td>\r\n\t\t<td>99.250000</td>\r\n\t\t<td>99.218750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828TJ9</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.625%</td>\r\
+        \n\t\t<td>08/15/2022</td>\r\n\t\t<td></td>\r\n\t\t<td>98.234375</td>\r\n\t\
+        \t<td>98.218750</td>\r\n\t\t<td>98.187500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828L24</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.875%</td>\r\n\t\t<td>08/31/2022</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.203125</td>\r\n\t\t<td>99.187500</td>\r\n\t\t\
+        <td>99.187500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128282S8</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.625%</td>\r\n\t\t<td>08/31/2022</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.109375</td>\r\n\t\t<td>98.093750</td>\r\n\t\t<td>98.093750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128282W9</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.875%</td>\r\
+        \n\t\t<td>09/30/2022</td>\r\n\t\t<td></td>\r\n\t\t<td>99.187500</td>\r\n\t\
+        \t<td>99.187500</td>\r\n\t\t<td>99.156250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828L57</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.750%</td>\r\n\t\t<td>09/30/2022</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>98.578125</td>\r\n\t\t<td>98.562500</td>\r\n\t\t\
+        <td>98.562500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828M49</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.875%</td>\r\n\t\t<td>10/31/2022</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.125000</td>\r\n\t\t<td>99.125000</td>\r\n\t\t<td>99.093750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128283C2</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.000%</td>\r\
+        \n\t\t<td>10/31/2022</td>\r\n\t\t<td></td>\r\n\t\t<td>99.750000</td>\r\n\t\
+        \t<td>99.750000</td>\r\n\t\t<td>99.750000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828TY6</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.625%</td>\r\n\t\t<td>11/15/2022</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>97.953125</td>\r\n\t\t<td>97.937500</td>\r\n\t\t\
+        <td>97.937500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828M80</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.000%</td>\r\n\t\t<td>11/30/2022</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.703125</td>\r\n\t\t<td>99.687500</td>\r\n\t\t<td>99.687500</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828N30</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.125%</td>\r\
+        \n\t\t<td>12/31/2022</td>\r\n\t\t<td></td>\r\n\t\t<td>100.203125</td>\r\n\t\
+        \t<td>100.187500</td>\r\n\t\t<td>100.187500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828P38</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.750%</td>\r\n\t\t<td>01/31/2023</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>98.328125</td>\r\n\t\t<td>98.312500</td>\r\n\t\t\
+        <td>98.281250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828UN8</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.000%</td>\r\n\t\t<td>02/15/2023</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.531250</td>\r\n\t\t<td>99.500000</td>\r\n\t\t<td>99.500000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828P79</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.500%</td>\r\
+        \n\t\t<td>02/28/2023</td>\r\n\t\t<td></td>\r\n\t\t<td>97.015625</td>\r\n\t\
+        \t<td>97.000000</td>\r\n\t\t<td>97.000000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828Q29</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.500%</td>\r\n\t\t<td>03/31/2023</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>96.921875</td>\r\n\t\t<td>96.906250</td>\r\n\t\t\
+        <td>96.906250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828R28</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.625%</td>\r\n\t\t<td>04/30/2023</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>97.515625</td>\r\n\t\t<td>97.500000</td>\r\n\t\t<td>97.468750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828VB3</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.750%</td>\r\
+        \n\t\t<td>05/15/2023</td>\r\n\t\t<td></td>\r\n\t\t<td>98.140625</td>\r\n\t\
+        \t<td>98.125000</td>\r\n\t\t<td>98.093750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828R69</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.625%</td>\r\n\t\t<td>05/31/2023</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>97.421875</td>\r\n\t\t<td>97.406250</td>\r\n\t\t\
+        <td>97.406250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828S35</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.375%</td>\r\n\t\t<td>06/30/2023</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>96.046875</td>\r\n\t\t<td>96.031250</td>\r\n\t\t<td>96.031250</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828S92</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.250%</td>\r\
+        \n\t\t<td>07/31/2023</td>\r\n\t\t<td></td>\r\n\t\t<td>95.281250</td>\r\n\t\
+        \t<td>95.281250</td>\r\n\t\t<td>95.250000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828VS6</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.500%</td>\r\n\t\t<td>08/15/2023</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>102.015625</td>\r\n\t\t<td>102.000000</td>\r\n\t\
+        \t<td>101.968750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128282D1</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.375%</td>\r\n\t\t<td>08/31/2023</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>95.875000</td>\r\n\t\t<td>95.875000</td>\r\n\t\t<td>95.843750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828T26</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.375%</td>\r\
+        \n\t\t<td>09/30/2023</td>\r\n\t\t<td></td>\r\n\t\t<td>95.781250</td>\r\n\t\
+        \t<td>95.781250</td>\r\n\t\t<td>95.750000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828T91</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.625%</td>\r\n\t\t<td>10/31/2023</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>97.109375</td>\r\n\t\t<td>97.093750</td>\r\n\t\t\
+        <td>97.093750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828WE6</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.750%</td>\r\n\t\t<td>11/15/2023</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>103.390625</td>\r\n\t\t<td>103.375000</td>\r\n\t\t<td>103.375000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828U57</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.125%</td>\r\
+        \n\t\t<td>11/30/2023</td>\r\n\t\t<td></td>\r\n\t\t<td>99.875000</td>\r\n\t\
+        \t<td>99.875000</td>\r\n\t\t<td>99.843750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828V23</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.250%</td>\r\n\t\t<td>12/31/2023</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>100.484375</td>\r\n\t\t<td>100.468750</td>\r\n\t\
+        \t<td>100.468750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828V80</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.250%</td>\r\n\t\t<td>01/31/2024</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>100.421875</td>\r\n\t\t<td>100.406250</td>\r\n\t\t<td>100.375000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828B66</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.750%</td>\r\
+        \n\t\t<td>02/15/2024</td>\r\n\t\t<td></td>\r\n\t\t<td>103.328125</td>\r\n\t\
+        \t<td>103.312500</td>\r\n\t\t<td>103.281250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828W48</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.125%</td>\r\n\t\t<td>02/29/2024</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.656250</td>\r\n\t\t<td>99.656250</td>\r\n\t\t\
+        <td>99.625000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828W71</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.125%</td>\r\n\t\t<td>03/31/2024</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.609375</td>\r\n\t\t<td>99.593750</td>\r\n\t\t<td>99.593750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828X70</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.000%</td>\r\
+        \n\t\t<td>04/30/2024</td>\r\n\t\t<td></td>\r\n\t\t<td>98.828125</td>\r\n\t\
+        \t<td>98.812500</td>\r\n\t\t<td>98.781250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828WJ5</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.500%</td>\r\n\t\t<td>05/15/2024</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>101.812500</td>\r\n\t\t<td>101.812500</td>\r\n\t\
+        \t<td>101.781250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828XT2</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.000%</td>\r\n\t\t<td>05/31/2024</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>98.765625</td>\r\n\t\t<td>98.750000</td>\r\n\t\t<td>98.750000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828XX3</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.000%</td>\r\
+        \n\t\t<td>06/30/2024</td>\r\n\t\t<td></td>\r\n\t\t<td>98.718750</td>\r\n\t\
+        \t<td>98.718750</td>\r\n\t\t<td>98.687500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>9128282N9</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.125%</td>\r\n\t\t<td>07/31/2024</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.453125</td>\r\n\t\t<td>99.437500</td>\r\n\t\t\
+        <td>99.437500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828D56</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.375%</td>\r\n\t\t<td>08/15/2024</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>100.984375</td>\r\n\t\t<td>100.968750</td>\r\n\t\t<td>100.968750</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128282U3</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.875%</td>\r\
+        \n\t\t<td>08/31/2024</td>\r\n\t\t<td></td>\r\n\t\t<td>97.859375</td>\r\n\t\
+        \t<td>97.843750</td>\r\n\t\t<td>97.843750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>9128282Y5</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.125%</td>\r\n\t\t<td>09/30/2024</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.375000</td>\r\n\t\t<td>99.375000</td>\r\n\t\t\
+        <td>99.343750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128283D0</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.250%</td>\r\n\t\t<td>10/31/2024</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>100.156250</td>\r\n\t\t<td>100.156250</td>\r\n\t\t<td>100.125000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828G38</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.250%</td>\r\
+        \n\t\t<td>11/15/2024</td>\r\n\t\t<td></td>\r\n\t\t<td>100.125000</td>\r\n\t\
+        \t<td>100.125000</td>\r\n\t\t<td>100.093750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828J27</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.000%</td>\r\n\t\t<td>02/15/2025</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>98.328125</td>\r\n\t\t<td>98.312500</td>\r\n\t\t\
+        <td>98.281250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828XB1</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.125%</td>\r\n\t\t<td>05/15/2025</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.046875</td>\r\n\t\t<td>99.031250</td>\r\n\t\t<td>99.031250</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828K74</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.000%</td>\r\
+        \n\t\t<td>08/15/2025</td>\r\n\t\t<td></td>\r\n\t\t<td>98.031250</td>\r\n\t\
+        \t<td>98.031250</td>\r\n\t\t<td>98.000000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828M56</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.250%</td>\r\n\t\t<td>11/15/2025</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.703125</td>\r\n\t\t<td>99.687500</td>\r\n\t\t\
+        <td>99.687500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828P46</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>1.625%</td>\r\n\t\t<td>02/15/2026</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>94.890625</td>\r\n\t\t<td>94.875000</td>\r\n\t\t<td>94.843750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828R36</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.625%</td>\r\
+        \n\t\t<td>05/15/2026</td>\r\n\t\t<td></td>\r\n\t\t<td>94.671875</td>\r\n\t\
+        \t<td>94.656250</td>\r\n\t\t<td>94.625000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>9128282A7</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>1.500%</td>\r\n\t\t<td>08/15/2026</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>93.453125</td>\r\n\t\t<td>93.437500</td>\r\n\t\t\
+        <td>93.406250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828U24</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.000%</td>\r\n\t\t<td>11/15/2026</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>97.234375</td>\r\n\t\t<td>97.218750</td>\r\n\t\t<td>97.218750</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828V98</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.250%</td>\r\
+        \n\t\t<td>02/15/2027</td>\r\n\t\t<td></td>\r\n\t\t<td>99.156250</td>\r\n\t\
+        \t<td>99.156250</td>\r\n\t\t<td>99.156250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828X88</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.375%</td>\r\n\t\t<td>05/15/2027</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>100.156250</td>\r\n\t\t<td>100.156250</td>\r\n\t\
+        \t<td>100.156250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128282R0</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED NOTE</td>\r\
+        \n\t\t<td>2.250%</td>\r\n\t\t<td>08/15/2027</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.031250</td>\r\n\t\t<td>99.031250</td>\r\n\t\t<td>99.000000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128283F5</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED NOTE</td>\r\n\t\t<td>2.250%</td>\r\
+        \n\t\t<td>11/15/2027</td>\r\n\t\t<td></td>\r\n\t\t<td>99.171875</td>\r\n\t\
+        \t<td>99.156250</td>\r\n\t\t<td>99.156250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810EA2</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>9.125%</td>\r\n\t\t<td>05/15/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t<td>103.656250</td>\r\n\t\t\
+        <td>103.656250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810EB0</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>9.000%</td>\r\n\t\t<td>11/15/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>107.250000</td>\r\n\t\t<td>107.250000</td>\r\n\t\t<td>107.250000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810EC8</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>8.875%</td>\r\
+        \n\t\t<td>02/15/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>108.968750</td>\r\n\t\
+        \t<td>108.875000</td>\r\n\t\t<td>108.906250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810ED6</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>8.125%</td>\r\n\t\t<td>08/15/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>111.015625</td>\r\n\t\t<td>110.937500</td>\r\n\t\
+        \t<td>110.937500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810EE4</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>8.500%</td>\r\n\t\t<td>02/15/2020</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>115.000000</td>\r\n\t\t<td>114.937500</td>\r\n\t\t<td>114.875000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810EF1</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>8.750%</td>\r\
+        \n\t\t<td>05/15/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>117.171875</td>\r\n\t\
+        \t<td>117.125000</td>\r\n\t\t<td>117.062500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810EG9</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>8.750%</td>\r\n\t\t<td>08/15/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>118.640625</td>\r\n\t\t<td>118.562500</td>\r\n\t\
+        \t<td>118.562500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810EH7</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>7.875%</td>\r\n\t\t<td>02/15/2021</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>118.984375</td>\r\n\t\t<td>118.937500</td>\r\n\t\t<td>118.906250</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810EJ3</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>8.125%</td>\r\
+        \n\t\t<td>05/15/2021</td>\r\n\t\t<td></td>\r\n\t\t<td>121.093750</td>\r\n\t\
+        \t<td>121.093750</td>\r\n\t\t<td>121.062500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810EK0</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>8.125%</td>\r\n\t\t<td>08/15/2021</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>122.437500</td>\r\n\t\t<td>122.343750</td>\r\n\t\
+        \t<td>122.343750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810EL8</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>8.000%</td>\r\n\t\t<td>11/15/2021</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>123.296875</td>\r\n\t\t<td>123.218750</td>\r\n\t\t<td>123.187500</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810EM6</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>7.250%</td>\r\
+        \n\t\t<td>08/15/2022</td>\r\n\t\t<td></td>\r\n\t\t<td>123.578125</td>\r\n\t\
+        \t<td>123.500000</td>\r\n\t\t<td>123.500000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810EN4</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>7.625%</td>\r\n\t\t<td>11/15/2022</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>126.375000</td>\r\n\t\t<td>126.281250</td>\r\n\t\
+        \t<td>126.281250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810EP9</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>7.125%</td>\r\n\t\t<td>02/15/2023</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>125.015625</td>\r\n\t\t<td>124.937500</td>\r\n\t\t<td>124.906250</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810EQ7</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>6.250%</td>\r\
+        \n\t\t<td>08/15/2023</td>\r\n\t\t<td></td>\r\n\t\t<td>122.328125</td>\r\n\t\
+        \t<td>122.250000</td>\r\n\t\t<td>122.250000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810ES3</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>7.500%</td>\r\n\t\t<td>11/15/2024</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>134.375000</td>\r\n\t\t<td>134.281250</td>\r\n\t\
+        \t<td>134.250000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810ET1</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>7.625%</td>\r\n\t\t<td>02/15/2025</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>136.234375</td>\r\n\t\t<td>136.156250</td>\r\n\t\t<td>136.125000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810EV6</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>6.875%</td>\r\
+        \n\t\t<td>08/15/2025</td>\r\n\t\t<td></td>\r\n\t\t<td>133.062500</td>\r\n\t\
+        \t<td>133.000000</td>\r\n\t\t<td>132.968750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810EW4</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>6.000%</td>\r\n\t\t<td>02/15/2026</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>128.093750</td>\r\n\t\t<td>128.031250</td>\r\n\t\
+        \t<td>128.031250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810EX2</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>6.750%</td>\r\n\t\t<td>08/15/2026</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>135.421875</td>\r\n\t\t<td>135.343750</td>\r\n\t\t<td>135.343750</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810EY0</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>6.500%</td>\r\
+        \n\t\t<td>11/15/2026</td>\r\n\t\t<td></td>\r\n\t\t<td>134.140625</td>\r\n\t\
+        \t<td>134.062500</td>\r\n\t\t<td>134.062500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810EZ7</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>6.625%</td>\r\n\t\t<td>02/15/2027</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>136.031250</td>\r\n\t\t<td>135.968750</td>\r\n\t\
+        \t<td>135.968750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810FA1</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>6.375%</td>\r\n\t\t<td>08/15/2027</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>135.359375</td>\r\n\t\t<td>135.312500</td>\r\n\t\t<td>135.312500</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810FB9</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>6.125%</td>\r\
+        \n\t\t<td>11/15/2027</td>\r\n\t\t<td></td>\r\n\t\t<td>133.796875</td>\r\n\t\
+        \t<td>133.750000</td>\r\n\t\t<td>133.750000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810FE3</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>5.500%</td>\r\n\t\t<td>08/15/2028</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>129.734375</td>\r\n\t\t<td>129.687500</td>\r\n\t\
+        \t<td>129.687500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810FF0</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>5.250%</td>\r\n\t\t<td>11/15/2028</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>127.796875</td>\r\n\t\t<td>127.750000</td>\r\n\t\t<td>127.718750</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810FG8</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>5.250%</td>\r\
+        \n\t\t<td>02/15/2029</td>\r\n\t\t<td></td>\r\n\t\t<td>128.296875</td>\r\n\t\
+        \t<td>128.250000</td>\r\n\t\t<td>128.218750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810FJ2</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>6.125%</td>\r\n\t\t<td>08/15/2029</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>138.265625</td>\r\n\t\t<td>138.218750</td>\r\n\t\
+        \t<td>138.187500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810FM5</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>6.250%</td>\r\n\t\t<td>05/15/2030</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>141.546875</td>\r\n\t\t<td>141.500000</td>\r\n\t\t<td>141.500000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810FP8</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>5.375%</td>\r\
+        \n\t\t<td>02/15/2031</td>\r\n\t\t<td></td>\r\n\t\t<td>133.656250</td>\r\n\t\
+        \t<td>133.593750</td>\r\n\t\t<td>133.593750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810FT0</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>4.500%</td>\r\n\t\t<td>02/15/2036</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>129.125000</td>\r\n\t\t<td>129.093750</td>\r\n\t\
+        \t<td>129.062500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810PT9</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>4.750%</td>\r\n\t\t<td>02/15/2037</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>133.453125</td>\r\n\t\t<td>133.406250</td>\r\n\t\t<td>133.375000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810PU6</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>5.000%</td>\r\
+        \n\t\t<td>05/15/2037</td>\r\n\t\t<td></td>\r\n\t\t<td>137.328125</td>\r\n\t\
+        \t<td>137.281250</td>\r\n\t\t<td>137.250000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810PW2</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>4.375%</td>\r\n\t\t<td>02/15/2038</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>127.843750</td>\r\n\t\t<td>127.812500</td>\r\n\t\
+        \t<td>127.781250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810PX0</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>4.500%</td>\r\n\t\t<td>05/15/2038</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>129.968750</td>\r\n\t\t<td>129.937500</td>\r\n\t\t<td>129.906250</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810QA9</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>3.500%</td>\r\
+        \n\t\t<td>02/15/2039</td>\r\n\t\t<td></td>\r\n\t\t<td>113.890625</td>\r\n\t\
+        \t<td>113.843750</td>\r\n\t\t<td>113.875000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810QB7</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>4.250%</td>\r\n\t\t<td>05/15/2039</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>126.140625</td>\r\n\t\t<td>126.093750</td>\r\n\t\
+        \t<td>126.093750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810QC5</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>4.500%</td>\r\n\t\t<td>08/15/2039</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>130.359375</td>\r\n\t\t<td>130.312500</td>\r\n\t\t<td>130.312500</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810QD3</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>4.375%</td>\r\
+        \n\t\t<td>11/15/2039</td>\r\n\t\t<td></td>\r\n\t\t<td>128.328125</td>\r\n\t\
+        \t<td>128.281250</td>\r\n\t\t<td>128.312500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810QE1</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>4.625%</td>\r\n\t\t<td>02/15/2040</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>132.687500</td>\r\n\t\t<td>132.656250</td>\r\n\t\
+        \t<td>132.656250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810QH4</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>4.375%</td>\r\n\t\t<td>05/15/2040</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>128.531250</td>\r\n\t\t<td>128.500000</td>\r\n\t\t<td>128.500000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810QK7</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>3.875%</td>\r\
+        \n\t\t<td>08/15/2040</td>\r\n\t\t<td></td>\r\n\t\t<td>120.031250</td>\r\n\t\
+        \t<td>120.000000</td>\r\n\t\t<td>120.000000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810QL5</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>4.250%</td>\r\n\t\t<td>11/15/2040</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>126.593750</td>\r\n\t\t<td>126.562500</td>\r\n\t\
+        \t<td>126.593750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810QN1</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>4.750%</td>\r\n\t\t<td>02/15/2041</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>135.437500</td>\r\n\t\t<td>135.406250</td>\r\n\t\t<td>135.437500</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810QQ4</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>4.375%</td>\r\
+        \n\t\t<td>05/15/2041</td>\r\n\t\t<td></td>\r\n\t\t<td>129.062500</td>\r\n\t\
+        \t<td>129.031250</td>\r\n\t\t<td>129.062500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810QS0</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>3.750%</td>\r\n\t\t<td>08/15/2041</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>118.062500</td>\r\n\t\t<td>118.031250</td>\r\n\t\
+        \t<td>118.062500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810QT8</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>3.125%</td>\r\n\t\t<td>11/15/2041</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>106.968750</td>\r\n\t\t<td>106.937500</td>\r\n\t\t<td>107.000000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810QU5</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>3.125%</td>\r\
+        \n\t\t<td>02/15/2042</td>\r\n\t\t<td></td>\r\n\t\t<td>106.937500</td>\r\n\t\
+        \t<td>106.906250</td>\r\n\t\t<td>106.968750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810QW1</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>3.000%</td>\r\n\t\t<td>05/15/2042</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>104.687500</td>\r\n\t\t<td>104.656250</td>\r\n\t\
+        \t<td>104.718750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810QX9</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>2.750%</td>\r\n\t\t<td>08/15/2042</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>100.031250</td>\r\n\t\t<td>100.000000</td>\r\n\t\t<td>100.031250</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810QY7</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>2.750%</td>\r\
+        \n\t\t<td>11/15/2042</td>\r\n\t\t<td></td>\r\n\t\t<td>99.937500</td>\r\n\t\
+        \t<td>99.906250</td>\r\n\t\t<td>99.968750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810QZ4</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>3.125%</td>\r\n\t\t<td>02/15/2043</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>106.750000</td>\r\n\t\t<td>106.718750</td>\r\n\t\
+        \t<td>106.781250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RB6</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>2.875%</td>\r\n\t\t<td>05/15/2043</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>102.093750</td>\r\n\t\t<td>102.062500</td>\r\n\t\t<td>102.125000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RC4</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>3.625%</td>\r\
+        \n\t\t<td>08/15/2043</td>\r\n\t\t<td></td>\r\n\t\t<td>116.046875</td>\r\n\t\
+        \t<td>116.031250</td>\r\n\t\t<td>116.093750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810RD2</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>3.750%</td>\r\n\t\t<td>11/15/2043</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>118.515625</td>\r\n\t\t<td>118.500000</td>\r\n\t\
+        \t<td>118.562500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RE0</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>3.625%</td>\r\n\t\t<td>02/15/2044</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>116.250000</td>\r\n\t\t<td>116.218750</td>\r\n\t\t<td>116.281250</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RG5</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>3.375%</td>\r\
+        \n\t\t<td>05/15/2044</td>\r\n\t\t<td></td>\r\n\t\t<td>111.546875</td>\r\n\t\
+        \t<td>111.531250</td>\r\n\t\t<td>111.625000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810RH3</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>3.125%</td>\r\n\t\t<td>08/15/2044</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>106.796875</td>\r\n\t\t<td>106.781250</td>\r\n\t\
+        \t<td>106.843750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RJ9</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>3.000%</td>\r\n\t\t<td>11/15/2044</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>104.390625</td>\r\n\t\t<td>104.375000</td>\r\n\t\t<td>104.437500</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RK6</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>2.500%</td>\r\
+        \n\t\t<td>02/15/2045</td>\r\n\t\t<td></td>\r\n\t\t<td>94.609375</td>\r\n\t\
+        \t<td>94.593750</td>\r\n\t\t<td>94.687500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810RM2</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>3.000%</td>\r\n\t\t<td>05/15/2045</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>104.328125</td>\r\n\t\t<td>104.312500</td>\r\n\t\
+        \t<td>104.406250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RN0</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>2.875%</td>\r\n\t\t<td>08/15/2045</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>101.828125</td>\r\n\t\t<td>101.812500</td>\r\n\t\t<td>101.906250</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RP5</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>3.000%</td>\r\
+        \n\t\t<td>11/15/2045</td>\r\n\t\t<td></td>\r\n\t\t<td>104.296875</td>\r\n\t\
+        \t<td>104.281250</td>\r\n\t\t<td>104.375000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810RQ3</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>2.500%</td>\r\n\t\t<td>02/15/2046</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>94.359375</td>\r\n\t\t<td>94.343750</td>\r\n\t\t\
+        <td>94.437500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RS9</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>2.500%</td>\r\n\t\t<td>05/15/2046</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>94.296875</td>\r\n\t\t<td>94.281250</td>\r\n\t\t<td>94.375000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RT7</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>2.250%</td>\r\
+        \n\t\t<td>08/15/2046</td>\r\n\t\t<td></td>\r\n\t\t<td>89.296875</td>\r\n\t\
+        \t<td>89.281250</td>\r\n\t\t<td>89.375000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810RU4</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>2.875%</td>\r\n\t\t<td>11/15/2046</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>101.734375</td>\r\n\t\t<td>101.718750</td>\r\n\t\
+        \t<td>101.843750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RV2</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>3.000%</td>\r\n\t\t<td>02/15/2047</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>104.296875</td>\r\n\t\t<td>104.281250</td>\r\n\t\t<td>104.375000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RX8</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED BOND</td>\r\n\t\t<td>3.000%</td>\r\
+        \n\t\t<td>05/15/2047</td>\r\n\t\t<td></td>\r\n\t\t<td>104.296875</td>\r\n\t\
+        \t<td>104.281250</td>\r\n\t\t<td>104.375000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912810RY6</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED BOND</td>\r\n\t\t<td>2.750%</td>\r\n\t\t<td>08/15/2047</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>99.234375</td>\r\n\t\t<td>99.218750</td>\r\n\t\t\
+        <td>99.343750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RZ3</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED BOND</td>\r\
+        \n\t\t<td>2.750%</td>\r\n\t\t<td>11/15/2047</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>99.281250</td>\r\n\t\t<td>99.281250</td>\r\n\t\t<td>99.375000</td>\r\n\
+        \t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828HN3</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">TIPS</td>\r\n\t\t<td>1.625%</td>\r\n\t\t<td>01/15/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t<td>100.156250</td>\r\n\t\t\
+        <td>100.156250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828UX6</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>0.125%</td>\r\n\t\t<td>04/15/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\
+        \n\t\t<td>99.812500</td>\r\n\t\t<td>99.843750</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912828JE1</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>1.375%</td>\r\n\t\t<td>07/15/2018</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>101.250000</td>\r\n\t\t<td>101.218750</td>\r\n\t\t\
+        <td>101.250000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828JX9</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>2.125%</td>\r\n\t\t<td>01/15/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>102.453125</td>\r\
+        \n\t\t<td>102.406250</td>\r\n\t\t<td>102.406250</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912828C99</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>0.125%</td>\r\n\t\t<td>04/15/2019</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>99.953125</td>\r\n\t\t<td>99.906250</td>\r\n\t\t<td>99.906250</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828LA6</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">TIPS</td>\r\n\t\t<td>1.875%</td>\r\n\t\t<td>07/15/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>103.531250</td>\r\n\t\t<td>103.468750</td>\r\n\t\
+        \t<td>103.468750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828MF4</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>1.375%</td>\r\n\t\t<td>01/15/2020</td>\r\n\t\t<td></td>\r\n\t\t<td>103.015625</td>\r\
+        \n\t\t<td>102.937500</td>\r\n\t\t<td>102.937500</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912828K33</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>0.125%</td>\r\n\t\t<td>04/15/2020</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>100.015625</td>\r\n\t\t<td>99.968750</td>\r\n\t\t<td>99.968750</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828NM8</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">TIPS</td>\r\n\t\t<td>1.250%</td>\r\n\t\t<td>07/15/2020</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>103.656250</td>\r\n\t\t<td>103.593750</td>\r\n\t\
+        \t<td>103.625000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828PP9</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>1.125%</td>\r\n\t\t<td>01/15/2021</td>\r\n\t\t<td></td>\r\n\t\t<td>103.437500</td>\r\
+        \n\t\t<td>103.375000</td>\r\n\t\t<td>103.406250</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912828Q60</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>0.125%</td>\r\n\t\t<td>04/15/2021</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>99.906250</td>\r\n\t\t<td>99.875000</td>\r\n\t\t<td>99.843750</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828QV5</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">TIPS</td>\r\n\t\t<td>0.625%</td>\r\n\t\t<td>07/15/2021</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>102.281250</td>\r\n\t\t<td>102.218750</td>\r\n\t\
+        \t<td>102.218750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828SA9</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>0.125%</td>\r\n\t\t<td>01/15/2022</td>\r\n\t\t<td></td>\r\n\t\t<td>99.937500</td>\r\
+        \n\t\t<td>99.875000</td>\r\n\t\t<td>99.875000</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912828X39</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>0.125%</td>\r\n\t\t<td>04/15/2022</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>99.656250</td>\r\n\t\t<td>99.625000</td>\r\n\t\t<td>99.593750</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828TE0</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">TIPS</td>\r\n\t\t<td>0.125%</td>\r\n\t\t<td>07/15/2022</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>100.156250</td>\r\n\t\t<td>100.093750</td>\r\n\t\
+        \t<td>100.062500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828UH1</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>0.125%</td>\r\n\t\t<td>01/15/2023</td>\r\n\t\t<td></td>\r\n\t\t<td>99.437500</td>\r\
+        \n\t\t<td>99.375000</td>\r\n\t\t<td>99.375000</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912828VM9</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>0.375%</td>\r\n\t\t<td>07/15/2023</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>100.968750</td>\r\n\t\t<td>100.906250</td>\r\n\t\t\
+        <td>100.875000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828B25</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>0.625%</td>\r\n\t\t<td>01/15/2024</td>\r\n\t\t<td></td>\r\n\t\t<td>101.906250</td>\r\
+        \n\t\t<td>101.843750</td>\r\n\t\t<td>101.812500</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912828WU0</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>0.125%</td>\r\n\t\t<td>07/15/2024</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>98.843750</td>\r\n\t\t<td>98.781250</td>\r\n\t\t<td>98.750000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828H45</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">TIPS</td>\r\n\t\t<td>0.250%</td>\r\n\t\t<td>01/15/2025</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>98.968750</td>\r\n\t\t<td>98.906250</td>\r\n\t\t\
+        <td>98.906250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810FR4</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>2.375%</td>\r\n\t\t<td>01/15/2025</td>\r\n\t\t<td></td>\r\n\t\t<td>113.968750</td>\r\
+        \n\t\t<td>113.875000</td>\r\n\t\t<td>113.875000</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912828XL9</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>0.375%</td>\r\n\t\t<td>07/15/2025</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>99.968750</td>\r\n\t\t<td>99.906250</td>\r\n\t\t<td>99.906250</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810FS2</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">TIPS</td>\r\n\t\t<td>2.000%</td>\r\n\t\t<td>01/15/2026</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>112.281250</td>\r\n\t\t<td>112.187500</td>\r\n\t\
+        \t<td>112.187500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828N71</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>0.625%</td>\r\n\t\t<td>01/15/2026</td>\r\n\t\t<td></td>\r\n\t\t<td>101.296875</td>\r\
+        \n\t\t<td>101.250000</td>\r\n\t\t<td>101.250000</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912828S50</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>0.125%</td>\r\n\t\t<td>07/15/2026</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>97.328125</td>\r\n\t\t<td>97.281250</td>\r\n\t\t<td>97.281250</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828V49</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">TIPS</td>\r\n\t\t<td>0.375%</td>\r\n\t\t<td>01/15/2027</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>98.828125</td>\r\n\t\t<td>98.781250</td>\r\n\t\t\
+        <td>98.781250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810PS1</td>\r\n\
+        \t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>2.375%</td>\r\n\t\t<td>01/15/2027</td>\r\n\t\t<td></td>\r\n\t\t<td>116.703125</td>\r\
+        \n\t\t<td>116.593750</td>\r\n\t\t<td>116.562500</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>9128282L3</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>0.375%</td>\r\n\t\t<td>07/15/2027</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>99.046875</td>\r\n\t\t<td>99.000000</td>\r\n\t\t<td>99.000000</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810PV4</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">TIPS</td>\r\n\t\t<td>1.750%</td>\r\n\t\t<td>01/15/2028</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>112.031250</td>\r\n\t\t<td>111.937500</td>\r\n\t\
+        \t<td>111.906250</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810FD5</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>3.625%</td>\r\n\t\t<td>04/15/2028</td>\r\n\t\t<td></td>\r\n\t\t<td>130.921875</td>\r\
+        \n\t\t<td>130.781250</td>\r\n\t\t<td>130.750000</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912810PZ5</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>2.500%</td>\r\n\t\t<td>01/15/2029</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>120.687500</td>\r\n\t\t<td>120.562500</td>\r\n\t\t\
+        <td>120.593750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810FH6</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>3.875%</td>\r\n\t\t<td>04/15/2029</td>\r\n\t\t<td></td>\r\n\t\t<td>135.812500</td>\r\
+        \n\t\t<td>135.656250</td>\r\n\t\t<td>135.656250</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912810FQ6</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>3.375%</td>\r\n\t\t<td>04/15/2032</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>137.640625</td>\r\n\t\t<td>137.437500</td>\r\n\t\t\
+        <td>137.500000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810QF8</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>2.125%</td>\r\n\t\t<td>02/15/2040</td>\r\n\t\t<td></td>\r\n\t\t<td>127.625000</td>\r\
+        \n\t\t<td>127.406250</td>\r\n\t\t<td>127.375000</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912810QP6</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>2.125%</td>\r\n\t\t<td>02/15/2041</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>128.375000</td>\r\n\t\t<td>128.187500</td>\r\n\t\t\
+        <td>128.218750</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810QV3</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>0.750%</td>\r\n\t\t<td>02/15/2042</td>\r\n\t\t<td></td>\r\n\t\t<td>98.468750</td>\r\
+        \n\t\t<td>98.250000</td>\r\n\t\t<td>98.312500</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912810RA8</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>0.625%</td>\r\n\t\t<td>02/15/2043</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>95.281250</td>\r\n\t\t<td>95.062500</td>\r\n\t\t<td>95.093750</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RF7</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">TIPS</td>\r\n\t\t<td>1.375%</td>\r\n\t\t<td>02/15/2044</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>112.500000</td>\r\n\t\t<td>112.312500</td>\r\n\t\
+        \t<td>112.312500</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RL4</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>0.750%</td>\r\n\t\t<td>02/15/2045</td>\r\n\t\t<td></td>\r\n\t\t<td>97.531250</td>\r\
+        \n\t\t<td>97.343750</td>\r\n\t\t<td>97.375000</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912810RR1</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">TIPS</td>\r\n\t\t<td>1.000%</td>\r\n\t\t<td>02/15/2046</td>\r\n\t\
+        \t<td></td>\r\n\t\t<td>103.734375</td>\r\n\t\t<td>103.593750</td>\r\n\t\t\
+        <td>103.625000</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912810RW0</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">TIPS</td>\r\n\t\t\
+        <td>0.875%</td>\r\n\t\t<td>02/15/2047</td>\r\n\t\t<td></td>\r\n\t\t<td>100.796875</td>\r\
+        \n\t\t<td>100.687500</td>\r\n\t\t<td>100.750000</td>\r\n\t</tr>\r\n\t\r\n\t\
+        <tr>\r\n\t\t<td>912828N97</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED FRN</td>\r\n\t\t<td>1.537%</td>\r\n\t\t<td>01/31/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>0.000000</td>\r\n\t\t<td>100.064054</td>\r\n\t\t\
+        <td>100.065053</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828Q86</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED FRN</td>\r\
+        \n\t\t<td>1.454%</td>\r\n\t\t<td>04/30/2018</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>100.111182</td>\r\n\t\t<td>100.102262</td>\r\n\t\t<td>100.102262</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828S84</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED FRN</td>\r\n\t\t<td>1.438%</td>\r\
+        \n\t\t<td>07/31/2018</td>\r\n\t\t<td></td>\r\n\t\t<td>100.159865</td>\r\n\t\
+        \t<td>100.142370</td>\r\n\t\t<td>100.139572</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>912828T75</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED FRN</td>\r\n\t\t<td>1.434%</td>\r\n\t\t<td>10/31/2018</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>100.202007</td>\r\n\t\t<td>100.187715</td>\r\n\t\
+        \t<td>100.190096</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828V64</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED FRN</td>\r\
+        \n\t\t<td>1.403%</td>\r\n\t\t<td>01/31/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>100.186299</td>\r\n\t\t<td>100.174253</td>\r\n\t\t<td>100.171242</td>\r\
+        \n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>912828X54</td>\r\n\t\t<td style=\"white-space:\
+        \ nowrap; text-align: left\">MARKET BASED FRN</td>\r\n\t\t<td>1.332%</td>\r\
+        \n\t\t<td>04/30/2019</td>\r\n\t\t<td></td>\r\n\t\t<td>100.095605</td>\r\n\t\
+        \t<td>100.079330</td>\r\n\t\t<td>100.082946</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\
+        \n\t\t<td>9128282M1</td>\r\n\t\t<td style=\"white-space: nowrap; text-align:\
+        \ left\">MARKET BASED FRN</td>\r\n\t\t<td>1.322%</td>\r\n\t\t<td>07/31/2019</td>\r\
+        \n\t\t<td></td>\r\n\t\t<td>100.069769</td>\r\n\t\t<td>100.059166</td>\r\n\t\
+        \t<td>100.050686</td>\r\n\t</tr>\r\n\t\r\n\t<tr>\r\n\t\t<td>9128283B4</td>\r\
+        \n\t\t<td style=\"white-space: nowrap; text-align: left\">MARKET BASED FRN</td>\r\
+        \n\t\t<td>1.310%</td>\r\n\t\t<td>10/31/2019</td>\r\n\t\t<td></td>\r\n\t\t\
+        <td>100.020242</td>\r\n\t\t<td>100.015380</td>\r\n\t\t<td>100.000796</td>\r\
+        \n\t</tr>\r\n\t\r\n</table>\r\n\r\n<!-- InstanceEndEditable -->\r\n\t\t</div>\r\
+        \n<!-- END CONTENT --> \r\n\r\n<!-- BEGIN SUBLOCALNAV -->\r\n<div id=\"right\"\
+        >\r\n\t\r\n\t<img src=\"/images/govt/relatedlinks.gif\" width=\"170\" height=\"\
+        20\" alt=\"Related Links\" />\r\n<ul class=\"relatedlinks\">\r\n\t<li><a href=\"\
+        /govt/reports/fip/fip.htm\">Federal Investments Program Reports</a></li>\r\
+        \n\t<li><a href=\"/govt/apps/fip/fip.htm\">Federal Investments Program</a></li>\r\
+        \n\t<li><a href=\"/govt/resources/faq/faq_fedinvest.htm\">FAQ</a></li>\r\n\
+        </ul>\r\n</div>\r\n<!-- END SUBLOCALNAV -->\r\n\t\t</div>\r\n  \t\t<!-- BEGIN\
+        \ FOOTER -->\r\n<div id=\"footer\">\r\n\t<ul>\r\n\t\t<li><a href=\"/foia.htm\"\
+        >Freedom of Information Act</a></li>\r\n\t\t<li>|</li>\r\n\t\t<li><a href=\"\
+        /law_and_guidance.htm\">Law &amp; Guidance</a></li>\r\n\t\t<li>|</li>\r\n\t\
+        \t<li><a href=\"/privacy.htm\">Privacy &amp; Legal Notices</a></li>\r\n\t\t\
+        <li>|</li>\r\n\t\t<li><a href=\"/terms.htm\">Website Terms &amp; Conditions</a></li>\r\
+        \n\t\t<li>|</li>\r\n\t\t<li><a href=\"/accessibility.htm\">Accessibility</a></li>\r\
+        \n\t\t<li>|</li>\r\n\t\t<li><a href=\"/data_quality.htm\">Data Quality</a></li>\r\
+        \n\t</ul>\r\n\t<p><a href=\"http://www.fiscal.treasury.gov/\">U.S. Department\
+        \ of the Treasury, Bureau of the Fiscal Service</a></p>\r\n\t<p><em>Last Updated\
+        \ February 10, 2007</em></p>\r\n</div>\r\n<!-- END FOOTER -->\r\n\t</div>\r\
+        \n</body>\r\n<!-- InstanceEnd --></html>\r\n"}
+    headers:
+      Cache-Control: [no-store]
+      Connection: [Keep-Alive]
+      Content-Language: [en-US]
+      Content-Type: [text/html; charset=ISO-8859-1]
+      Date: ['Sun, 26 Nov 2017 01:54:37 GMT']
+      Expires: ['Thu, 01 Jan 1970 00:00:00 GMT']
+      Keep-Alive: ['timeout=10, max=100']
+      Pragma: [no-cache]
+      Set-Cookie: ['JSESSIONID=0000_LCiDYYxwlCfNOCUtMdNuZ6:17n048ahu; Path=/; Secure;
+          HttpOnly', BIGipServerpl_www.treasurydirect.gov_443=3070586378.47873.0000;
+          path=/; Httponly; Secure, TS01598982=019e2ba2e9241a7c314d931abbc3e97daa7ce9240c27533244f119e3f3ae6e91e8eee4e61e73719f2ddc7157089a88da2e5b2d01edc9a2e9ad0fcb934f523df953413e5bd94796b4a9b84f9fbf41564ec3a01ecc21;
+          Path=/, BIGipServerpl_166.123.219.80_https=108817930.47873.0000; path=/;
+          Httponly; Secure]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains]
+      Surrogate-Control: ['content="ESI/1.0",no-store']
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-Powered-By: [Servlet/3.0]
+    status: {code: 200, message: OK}
+version: 1
