@@ -15,6 +15,8 @@ def nelson_siegel(theta0, theta1, theta2, kappa, maturities):
 
 
 def price(cashflows, zeros):
+    if isinstance(cashflows, pd.Series) and isinstance(zeros, pd.Series):
+        return (cashflows * zeros).sum()
     return (cashflows * zeros).sum(axis=1)
 
 
@@ -54,17 +56,21 @@ class NelsonSiegel:
     def dataframe(self, maturities):
         yields = nelson_siegel(self.theta0, self.theta1, self.theta2, self.kappa, maturities)
         return (pd.DataFrame()
-                .assign(Maturity=maturities)
-                .assign(Yield=yields)
-                .assign(Zero=np.exp(-maturities * yields))
-                .pipe(forwards)
-                .set_index('Maturity')
-                )
+            .assign(Maturity=maturities)
+            .assign(Yield=yields)
+            .assign(Zero=np.exp(-maturities * yields))
+            .pipe(forwards)
+            .set_index('Maturity')
+            )
 
     def price(self, cashflows, cashflow_maturities):
-        yields = nelson_siegel(self.theta0, self.theta1, self.theta2, self.kappa, cashflow_maturities)
-        zeros = np.exp(-cashflow_maturities * yields)
-        return price(cashflows, zeros)
+        return price(cashflows, self.zeros(cashflow_maturities))
+
+    def yields(self, maturities):
+        return nelson_siegel(self.theta0, self.theta1, self.theta2, self.kappa, maturities)
+
+    def zeros(self, maturities):
+        return np.exp(-maturities * self.yields(maturities))
 
     @classmethod
     def from_fit(cls, real_prices, cashflows, cashflow_maturities, x0=None):
@@ -106,29 +112,34 @@ class Vasicek:
         self.sigma = sigma
 
     def __repr__(self):
-        params = ",".join(f"{k}={v:.4f}" for k, v in vars(self).items())
+        params = ",".join(f"{k}={v:.5f}" for k, v in vars(self).items())
         return f"{self.__class__.__name__}({params})"
 
     def dataframe(self, maturities):
         yields = vasicek(self.eta, self.gamma, self.r0, self.sigma, maturities)
         return (pd.DataFrame()
-                .assign(Maturity=maturities)
-                .assign(Yield=yields)
-                .assign(Zero=np.exp(-maturities * yields))
-                .pipe(forwards)
-                .set_index('Maturity')
-                )
+            .assign(Maturity=maturities)
+            .assign(Yield=yields)
+            .assign(Zero=np.exp(-maturities * yields))
+            .pipe(forwards)
+            .set_index('Maturity')
+            )
 
     def price(self, cashflows, cashflow_maturities):
         yields = vasicek(self.eta, self.gamma, self.r0, self.sigma, cashflow_maturities)
         zeros = np.exp(-cashflow_maturities * yields)
         return price(cashflows, zeros)
 
+    def yields(self, maturities):
+        return vasicek(self.eta, self.gamma, self.r0, self.sigma, maturities)
+
+    def zeros(self, maturities):
+        return np.exp(-maturities * self.yields(maturities))
+
     def delta(self, cashflows, cashflow_maturities):
-        yields = vasicek(self.eta, self.gamma, self.r0, self.sigma, cashflow_maturities)
-        zeros = np.exp(-cashflow_maturities * yields)
+        zeros = self.zeros(cashflow_maturities)
         b = (1 - np.exp(-self.gamma * cashflow_maturities)) / self.gamma
-        return price(cashflows, b * zeros)
+        return price(cashflows, -b * zeros)
 
     @classmethod
     def from_fit(cls, r0, sigma, real_prices, cashflows, cashflow_maturities, x0=None):
