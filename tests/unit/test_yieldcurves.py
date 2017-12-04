@@ -27,6 +27,12 @@ class TestNelsonSiegelFit(TestCase):
         expected = np.array([0.03935294, -0.02175923, -0.07813487, 1.91292469])
         self.assertTrue(all(np.isclose(actual, expected)))
 
+    def test_duration(self):
+        ns = yieldcurves.NelsonSiegel(theta0=0.0394, theta1=-0.0218, theta2=-0.0781, kappa=1.9129)
+        actual = ns.duration(pd.Series([0, 0, 1]), pd.Series([0.25, 0.5, 0.75]))
+        expected = 0.75
+        self.assertEqual(actual, expected)
+
 
 class TestVasicekFit(TestCase):
     def setUp(self):
