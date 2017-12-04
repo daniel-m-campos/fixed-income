@@ -79,6 +79,13 @@ class NelsonSiegel:
     def duration(self, cashflows, cashflow_maturities):
         return self.delta(cashflows, cashflow_maturities) / self.price(cashflows, cashflow_maturities)
 
+    def gamma(self, cashflows, cashflow_maturities):
+        zeros = self.zeros(cashflow_maturities)
+        return price(cashflows, zeros * pow(cashflow_maturities, 2))
+
+    def convexity(self, cashflows, cashflow_maturities):
+        return self.gamma(cashflows, cashflow_maturities) / self.price(cashflows, cashflow_maturities)
+
     @classmethod
     def from_fit(cls, real_prices, cashflows, cashflow_maturities, x0=None):
         result = ns_fit(real_prices, cashflows, cashflow_maturities, x0)
