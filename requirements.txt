@@ -3,3 +3,4 @@ pandas>=0.20.3
 xlrd
 requests
 lxml
+sklearn
