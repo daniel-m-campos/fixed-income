@@ -87,7 +87,10 @@ def treasury_direct(date=None):
 
     df = _create_df(table)
     df['MATURITY DATE'] = pd.to_datetime(df['MATURITY DATE'])
+    df['MATURITY DATE'] = pd.to_datetime(df['MATURITY DATE'])
     df['MATURITY'] = (df['MATURITY DATE'] - clean_date) / np.timedelta64(1, 'Y')
+    for c in ['BUY', 'SELL', 'END OF DAY']:
+        df[c] = pd.to_numeric(df[c])
     return df
 
 

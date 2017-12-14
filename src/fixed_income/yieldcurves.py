@@ -6,7 +6,8 @@ __all__ = ['NelsonSiegel', 'Vasicek']
 
 
 def nelson_siegel(theta0, theta1, theta2, kappa, maturities):
-    inverse_maturities = (1.0 / maturities).replace(np.inf, 0)
+    inverse_maturities = (1.0 / maturities)
+    inverse_maturities[inverse_maturities == np.inf] = 0
     yields = np.zeros(maturities.shape)
     yields += theta0
     yields += (theta1 + theta2) * (1 - np.exp(-maturities / kappa)) * inverse_maturities * kappa
