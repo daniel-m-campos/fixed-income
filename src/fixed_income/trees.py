@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.optimize import minimize
 
-__all__ = ['ho_lee', 'black_derman_toy', 'fit', 'bond_price']
+__all__ = ['ho_lee', 'simple_bdt', 'fit', 'bond_price']
 
 
 def initialize_tree(maturity, time_step, is_zero):
