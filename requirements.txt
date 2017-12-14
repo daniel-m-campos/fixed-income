@@ -4,3 +4,4 @@ xlrd
 requests
 lxml
 sklearn
+matplotlib
