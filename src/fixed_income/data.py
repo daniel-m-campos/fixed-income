@@ -1,5 +1,6 @@
 import datetime
 
+import numpy as np
 import pandas as pd
 import requests
 
@@ -72,6 +73,7 @@ def treasury_direct(date=None):
     if date is None:
         url = 'https://www.treasurydirect.gov/GA-FI/FedInvest/todaySecurityPriceDate.htm'
         table = pd.read_html(url)[0]
+        clean_date = datetime.datetime.today()
     else:
         clean_date = _get_date(date)
         url = 'https://www.treasurydirect.gov/GA-FI/FedInvest/selectSecurityPriceDate.htm'
@@ -83,4 +85,28 @@ def treasury_direct(date=None):
         assert response.ok
         table = pd.read_html(response.text)[0]
 
-    return _create_df(table)
+    df = _create_df(table)
+    df['MATURITY DATE'] = pd.to_datetime(df['MATURITY DATE'])
+    df['MATURITY'] = (df['MATURITY DATE'] - clean_date) / np.timedelta64(1, 'Y')
+    return df
+
+
+def cashflows_matrix(treasury_direct_df, quote_date):
+    max_semi_periods = int(np.ceil(((treasury_direct_df['MATURITY DATE'] - quote_date) / np.timedelta64(6, 'M')).max()))
+    maturities = np.zeros((len(treasury_direct_df), max_semi_periods))
+    cashflows = maturities.copy()
+
+    for i, row in treasury_direct_df.iterrows():
+        semi_periods = int(np.ceil(row['MATURITY'] / 0.5))
+        if semi_periods == 0:
+            maturities[i - 1, 0] = row['MATURITY']
+            cashflows[i - 1, 0] = 100
+        else:
+            maturities[i - 1, semi_periods - 1] = row['MATURITY']
+            maturities[i - 1, :(semi_periods - 1)] = row['MATURITY'] - (0.5 * np.ones(
+                (1, semi_periods - 1))).cumsum()[::-1]
+            coupon = float(row['RATE'][:-1]) / 2
+            cashflows[i - 1, :semi_periods] = coupon
+            cashflows[i - 1, semi_periods - 1] += 100
+
+    return cashflows, maturities
