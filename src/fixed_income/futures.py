@@ -40,7 +40,7 @@ def conversion_factor(globex_code, coupon, time_to_maturity):
 
 def eligible_for_delivery_in(time_to_maturity):
     tau = np.array(time_to_maturity)
-    globax_codes = np.empty(tau.shape, dtype='<U2')
+    globax_codes = np.empty(tau.shape, dtype='<U3')
 
     mask = tau > 25.0
     globax_codes[mask] = 'UB'
