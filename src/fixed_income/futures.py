@@ -6,6 +6,7 @@ CONVERSION_YIELD = 0.06
 CONVERSION_FV = 1.03
 
 
+@np.vectorize
 def conversion_factor(globex_code, coupon, time_to_maturity):
     years = np.floor(time_to_maturity)
     year_fraction = time_to_maturity - years
@@ -25,6 +26,7 @@ def conversion_factor(globex_code, coupon, time_to_maturity):
     return a * (coupon / 2 + c + d) - b
 
 
+@np.vectorize
 def eligible_for_delivery_of(time_to_maturity):
     if time_to_maturity > 25.0:
         return 'UB'
