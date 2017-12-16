@@ -18,6 +18,7 @@ class TestTreasuryDirect(unittest.TestCase):
                  'MATURITY DATE': {0: pd.Timestamp('2025-08-15 00:00:00'),
                                    1: pd.Timestamp('2025-11-15 00:00:00')},
                  'RATE': {0: '2.000%', 1: '2.250%'},
+                 'COUPON': {0: 2.0, 1: 2.25},
                  'SECURITY TYPE': {0: 'MARKET BASED NOTE', 1: 'MARKET BASED NOTE'},
                  'SELL': {0: '97.500000', 1: '99.156250'}}
 

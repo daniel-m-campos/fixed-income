@@ -89,6 +89,7 @@ def treasury_direct(date=None):
     df['MATURITY DATE'] = pd.to_datetime(df['MATURITY DATE'])
     df['MATURITY DATE'] = pd.to_datetime(df['MATURITY DATE'])
     df['MATURITY'] = (df['MATURITY DATE'] - clean_date) / np.timedelta64(1, 'Y')
+    df['COUPON'] = df['RATE'].str[:-1].astype(float)
     for c in ['BUY', 'SELL', 'END OF DAY']:
         df[c] = pd.to_numeric(df[c])
     return df
@@ -108,8 +109,8 @@ def cashflows_matrix(treasury_direct_df, quote_date):
             maturities[i - 1, semi_periods - 1] = row['MATURITY']
             maturities[i - 1, :(semi_periods - 1)] = row['MATURITY'] - (0.5 * np.ones(
                 (1, semi_periods - 1))).cumsum()[::-1]
-            coupon = float(row['RATE'][:-1]) / 2
-            cashflows[i - 1, :semi_periods] = coupon
+            semi_coupon = row['COUPON'] / 2
+            cashflows[i - 1, :semi_periods] = semi_coupon
             cashflows[i - 1, semi_periods - 1] += 100
 
     return cashflows, maturities
