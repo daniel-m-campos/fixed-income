@@ -69,3 +69,7 @@ class TestConversionFactor(unittest.TestCase):
         actual = futures.conversion_factor('UB', coupon=4.375 / 100, time_to_maturity=time_to_maturity)
 
         self.assertAlmostEqual(expected, actual, places=6)
+
+    def test_not_support_error(self):
+        with self.assertRaises(NotImplementedError):
+            futures.conversion_factor('?', coupon=4.375 / 100, time_to_maturity=1.5)

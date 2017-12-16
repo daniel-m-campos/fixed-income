@@ -12,9 +12,11 @@ def conversion_factor(security_type, coupon, time_to_maturity):
     if security_type in ('TY', 'US', 'UB'):
         months = np.floor(year_fraction / MONTHS_IN_QUARTER * MONTHS_IN_YEAR) * MONTHS_IN_QUARTER
         v = months if months < 7 else MONTHS_IN_QUARTER
-    else:
+    elif security_type in ('TU', '3YR', 'FV'):
         months = np.floor(year_fraction * MONTHS_IN_YEAR)
         v = months if months < 7 else months - 6
+    else:
+        raise NotImplementedError(f'{security_type} not supported.')
     a = 1 / pow(CONVERSION_FV, v / 6)
     b = (coupon / 2) * (6 - v) / 6
     c = 1 / pow(CONVERSION_FV, 2 * years if months < 7 else 2 * years + 1)
