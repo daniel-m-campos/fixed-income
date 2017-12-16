@@ -11,7 +11,7 @@ class TestConversionFactor(unittest.TestCase):
         time_to_maturity = years + months / 12 + days / 365
 
         expected = 0.906258
-        actual = futures.conversion_factor('TU', coupon=0.75 / 100, time_to_maturity=time_to_maturity)
+        actual = futures.conversion_factor('ZT', coupon=0.75 / 100, time_to_maturity=time_to_maturity)
 
         self.assertAlmostEqual(expected, actual, places=6)
 
@@ -22,7 +22,7 @@ class TestConversionFactor(unittest.TestCase):
         time_to_maturity = years + months / 12 + days / 365
 
         expected = 0.867956
-        actual = futures.conversion_factor('3YR', coupon=1.125 / 100, time_to_maturity=time_to_maturity)
+        actual = futures.conversion_factor('Z3N', coupon=1.125 / 100, time_to_maturity=time_to_maturity)
 
         self.assertAlmostEqual(expected, actual, places=6)
 
@@ -33,7 +33,7 @@ class TestConversionFactor(unittest.TestCase):
         time_to_maturity = years + months / 12 + days / 365
 
         expected = 0.837079
-        actual = futures.conversion_factor('FV', coupon=2.125 / 100, time_to_maturity=time_to_maturity)
+        actual = futures.conversion_factor('ZF', coupon=2.125 / 100, time_to_maturity=time_to_maturity)
 
         self.assertAlmostEqual(expected, actual, places=6)
 
@@ -44,7 +44,7 @@ class TestConversionFactor(unittest.TestCase):
         time_to_maturity = years + months / 12 + days / 365
 
         expected = 0.815653
-        actual = futures.conversion_factor('TY', coupon=3.375 / 100, time_to_maturity=time_to_maturity)
+        actual = futures.conversion_factor('ZN', coupon=3.375 / 100, time_to_maturity=time_to_maturity)
 
         self.assertAlmostEqual(expected, actual, places=6)
 
@@ -55,7 +55,7 @@ class TestConversionFactor(unittest.TestCase):
         time_to_maturity = years + months / 12 + days / 365
 
         expected = 1.044053
-        actual = futures.conversion_factor('US', coupon=6.375 / 100, time_to_maturity=time_to_maturity)
+        actual = futures.conversion_factor('ZB', coupon=6.375 / 100, time_to_maturity=time_to_maturity)
 
         self.assertAlmostEqual(expected, actual, places=6)
 
