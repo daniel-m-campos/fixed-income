@@ -80,14 +80,14 @@ class TestConversionFactor(unittest.TestCase):
 class TestEligableForDeliveryOf(unittest.TestCase):
     def test_single_time_to_maturity(self):
         time_to_maturity = 8.5
-        actual = futures.eligible_for_delivery_of(time_to_maturity)
+        actual = futures.eligible_for_delivery_in(time_to_maturity)
         expected = 'ZN'
 
         self.assertEqual(expected, actual)
 
     def test_array_of_time_to_maturity(self):
         time_to_maturity = np.array([5, 7, 17, 26])
-        actual = futures.eligible_for_delivery_of(time_to_maturity).tolist()
+        actual = futures.eligible_for_delivery_in(time_to_maturity).tolist()
         expected = ['ZF', 'ZN', 'ZB', 'UB']
 
         self.assertEqual(expected, actual)
