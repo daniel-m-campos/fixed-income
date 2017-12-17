@@ -22,7 +22,7 @@ class TestTreasuryDirect(unittest.TestCase):
                  'SECURITY TYPE': {0: 'MARKET BASED NOTE', 1: 'MARKET BASED NOTE'},
                  'SELL': {0: '97.500000', 1: '99.156250'}}
 
-    @vcr.use_cassette('resources/test_load_data_from_date.yml')
+    @vcr.use_cassette('unit/resources/test_load_data_from_date.yml')
     def test_load_data_from_date(self):
         df = data.treasury_direct(self.date)
         self.assertTrue(~df.empty)
