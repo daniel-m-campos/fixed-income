@@ -99,7 +99,7 @@ def treasury_direct(date=None):
 
 
 def cashflows_matrix(treasury_direct_df, quote_date):
-    max_semi_periods = int(np.ceil(((treasury_direct_df['MATURITY DATE'] - quote_date) / np.timedelta64(6, 'M')).max()))
+    max_semi_periods = int(np.ceil(((treasury_direct_df['MATURITY_DATE'] - quote_date) / np.timedelta64(6, 'M')).max()))
     maturities = np.zeros((len(treasury_direct_df), max_semi_periods))
     cashflows = maturities.copy()
 
