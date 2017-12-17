@@ -11,13 +11,17 @@ def _n_and_v(globex_code, year_fraction):
     n = mask * np.nan
     v = mask * np.nan
     if mask.any():
-        n[mask] = np.floor(year_fraction / MONTHS_IN_QUARTER * MONTHS_IN_YEAR) * MONTHS_IN_QUARTER
-        v[mask] = n * (n < 7) + MONTHS_IN_QUARTER * (n >= 7)
+        values = np.floor(year_fraction / MONTHS_IN_QUARTER * MONTHS_IN_YEAR) * MONTHS_IN_QUARTER
+        n[mask] = values if isinstance(values, float) else values[mask]
+        values = n * (n < 7) + MONTHS_IN_QUARTER * (n >= 7)
+        v[mask] = values if isinstance(values, float) else values[mask]
 
     mask = np.in1d(globex_code, ('ZT', 'Z3N', 'ZF'))
     if mask.any():
-        n[mask] = np.floor(year_fraction * MONTHS_IN_YEAR)
-        v[mask] = n * (n < 7) + (n - 6) * (n >= 7)
+        values = np.floor(year_fraction * MONTHS_IN_YEAR)
+        n[mask] = values if isinstance(values, float) else values[mask]
+        values = n * (n < 7) + (n - 6) * (n >= 7)
+        v[mask] = values if isinstance(values, float) else values[mask]
 
     if np.isnan(n).all():
         raise NotImplementedError('No supported value of globex_code found!')
@@ -31,7 +35,7 @@ def conversion_factor(globex_code, coupon, time_to_maturity):
     n, v = _n_and_v(globex_code, year_fraction)
     a = 1 / pow(CONVERSION_FV, v / 6)
     b = (coupon / 2) * (6 - v) / 6
-    c = 1 / pow(CONVERSION_FV, 2 * years if n < 7 else 2 * years + 1)
+    c = 1 / pow(CONVERSION_FV, 2 * years + 1 * (n >= 7))
     d = (coupon / CONVERSION_YIELD) * (1 - c)
 
     factor = a * (coupon / 2 + c + d) - b

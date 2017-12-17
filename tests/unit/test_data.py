@@ -48,3 +48,34 @@ class TestTreasuryDirect(unittest.TestCase):
         actual_cashflows, actual_maturities = data.cashflows_matrix(df, quote_date)
         self.assertTrue(np.array_equal(expected_cashflows, actual_cashflows))
         self.assertTrue(np.allclose(expected_maturities, actual_maturities, rtol=1e-7))
+
+
+class TestToDecimalPrice(unittest.TestCase):
+    def test_no_tick(self):
+        actual = data.to_decimal_price(price_in_32s="124'000")
+        expected = 124.0
+        self.assertEqual(actual, expected)
+
+    def test_single_digit_whole_tick(self):
+        actual = data.to_decimal_price(price_in_32s="124'07")
+        expected = 124.0 + 7 / 32
+        self.assertEqual(actual, expected)
+
+    def test_double_digit_whole_tick(self):
+        actual = data.to_decimal_price(price_in_32s="124'250")
+        expected = 124.0 + 25 / 32
+        self.assertEqual(actual, expected)
+
+    def test_only_partial_tick(self):
+        actual = data.to_decimal_price(price_in_32s="124'002")
+        expected = 124.0 + 0.25 / 32
+        self.assertEqual(actual, expected)
+
+    def test_whole_and_partial_tick(self):
+        actual = data.to_decimal_price(price_in_32s="124'177")
+        expected = 124.0 + 17.75 / 32
+        self.assertEqual(actual, expected)
+
+    def test_exception_on_tick_greater_than_31(self):
+        with self.assertRaises(AssertionError):
+            data.to_decimal_price(price_in_32s="124'320")

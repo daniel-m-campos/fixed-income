@@ -114,3 +114,29 @@ def cashflows_matrix(treasury_direct_df, quote_date):
             cashflows[i - 1, semi_periods - 1] += 100
 
     return cashflows, maturities
+
+
+def to_decimal_price(price_in_32s):
+    partial_tick_value = {0: 0.0, 2: 0.25 / 32, 5: 0.5 / 32, 7: 0.75 / 32}
+    handles_and_fraction = price_in_32s.split('\'')
+    handles = int(handles_and_fraction[0])
+    ticks = int(handles_and_fraction[1][:2])
+    assert ticks < 32
+    partial_ticks = int(handles_and_fraction[1][2]) if len(handles_and_fraction[1]) > 2 else 0
+    assert partial_ticks in partial_tick_value.keys()
+    return handles + ticks / 32 + partial_tick_value[partial_ticks]
+
+
+def globex_futures():
+    response = requests.get('http://www.cmegroup.com/trading/interest-rates/')
+    assert response.ok
+    df = pd.concat(pd.read_html(response.text))
+    df = df.drop(['Unnamed: 3', 'Chart'], axis=1)
+    df.index = np.arange(len(df))
+
+    price_columns = ('Last', 'Open', 'High', 'Low')
+    mask = df.Code.str.contains('ZT|ZF|ZN|TN|UB|ZB')
+    for c in price_columns:
+        df.loc[mask, c] = df.loc[mask, c].apply(to_decimal_price)
+
+    return df
