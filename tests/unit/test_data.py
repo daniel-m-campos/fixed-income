@@ -11,15 +11,15 @@ from fixed_income import data
 class TestTreasuryDirect(unittest.TestCase):
     date = datetime.date(year=2017, month=11, day=17)
     test_data = {'BUY': {0: '97.500000', 1: '99.156250'},
-                 'CALL DATE': {0: np.nan, 1: np.nan},
+                 'CALL_DATE': {0: np.nan, 1: np.nan},
                  'CUSIP': {0: '912828K74', 1: '912828M56'},
                  'END OF DAY': {0: '97.562500', 1: '99.218750'},
                  'MATURITY': {0: 7.6743533405887865, 1: 7.9262407852317294},
-                 'MATURITY DATE': {0: pd.Timestamp('2025-08-15 00:00:00'),
+                 'MATURITY_DATE': {0: pd.Timestamp('2025-08-15 00:00:00'),
                                    1: pd.Timestamp('2025-11-15 00:00:00')},
                  'RATE': {0: '2.000%', 1: '2.250%'},
                  'COUPON': {0: 2.0, 1: 2.25},
-                 'SECURITY TYPE': {0: 'MARKET BASED NOTE', 1: 'MARKET BASED NOTE'},
+                 'SECURITY_TYPE': {0: 'MARKET BASED NOTE', 1: 'MARKET BASED NOTE'},
                  'SELL': {0: '97.500000', 1: '99.156250'}}
 
     @vcr.use_cassette('unit/resources/test_load_data_from_date.yml')

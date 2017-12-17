@@ -77,17 +77,15 @@ class TestConversionFactor(unittest.TestCase):
             futures.conversion_factor('?', coupon=4.375 / 100, time_to_maturity=1.5)
 
 
-class TestEligableForDeliveryOf(unittest.TestCase):
+class TestFindDeliverablesOf(unittest.TestCase):
     def test_single_time_to_maturity(self):
-        time_to_maturity = 8.5
-        actual = futures.eligible_for_delivery_in(time_to_maturity)
-        expected = 'ZN'
-
+        actual = futures.find_deliverables_of('ZN', time_to_maturity=8.5)
+        expected = True
         self.assertEqual(expected, actual)
 
     def test_array_of_time_to_maturity(self):
-        time_to_maturity = np.array([5, 7, 17, 26])
-        actual = futures.eligible_for_delivery_in(time_to_maturity).tolist()
-        expected = ['ZF', 'ZN', 'ZB', 'UB']
+        time_to_maturity = [5, 7, 17, 26]
+        actual = futures.find_deliverables_of('ZN', time_to_maturity).tolist()
+        expected = np.array([False, True, False, False])
 
-        self.assertEqual(expected, actual)
+        self.assertTrue(np.array_equal(expected, actual))

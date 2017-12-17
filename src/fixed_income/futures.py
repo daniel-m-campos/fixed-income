@@ -1,9 +1,12 @@
 import numpy as np
+import pandas as pd
 
 MONTHS_IN_QUARTER = 3
 MONTHS_IN_YEAR = 12
 CONVERSION_YIELD = 0.06
 CONVERSION_FV = 1.03
+
+GLOBEX_CODES = ('ZN', 'ZB', 'UB', 'ZT', 'Z3N', 'ZF')
 
 
 def _n_and_v(globex_code, year_fraction):
@@ -42,25 +45,34 @@ def conversion_factor(globex_code, coupon, time_to_maturity):
     return factor if factor.size > 1 else float(factor)
 
 
-def eligible_for_delivery_in(time_to_maturity):
+def extract_deliverables(df):
+    deliverables = []
+    for code in GLOBEX_CODES:
+        tmp_df = df[find_deliverables_of(code, df.MATURITY)].copy()
+        tmp_df['DELIVERABLE'] = code
+        tmp_df['CONV_FACTOR'] = conversion_factor(tmp_df.DELIVERABLE, tmp_df.COUPON / 100, tmp_df.MATURITY)
+        deliverables.append(tmp_df)
+
+    deliverables = pd.concat(deliverables)
+    deliverables.index = np.arange(len(deliverables))
+    return deliverables
+
+
+def find_deliverables_of(globex_code, time_to_maturity):
     tau = np.array(time_to_maturity)
-    globax_codes = np.empty(tau.shape, dtype='<U3')
-
-    mask = tau > 25.0
-    globax_codes[mask] = 'UB'
-    mask = (15.0 <= tau) & (tau < 25.0)
-    globax_codes[mask] = 'ZB'
-    mask = (9.5 <= tau) & (tau < 10.0)
-    globax_codes[mask] = 'TN'
-    mask = (6.5 <= tau) & (tau < 10.0)
-    globax_codes[mask] = 'ZN'
-    mask = (6.5 <= tau) & (tau < 10.0)
-    globax_codes[mask] = 'ZN'
-    mask = (4 + 2 / 12 <= tau) & (tau < 5 + 3 / 12)
-    globax_codes[mask] = 'ZF'
-    mask = (2 + 9 / 12 <= tau) & (tau < 4 + 2 / 12)
-    globax_codes[mask] = 'Z3N'
-    mask = (1 + 9 / 12 <= tau) & (tau < 2 + 9 / 12)
-    globax_codes[mask] = 'ZT'
-
-    return globax_codes if globax_codes.size > 1 else str(globax_codes)
+    if globex_code == 'UB':
+        return tau >= 25.0
+    elif globex_code == 'ZB':
+        return (15.0 <= tau) & (tau < 25.0)
+    elif globex_code == 'ZN':
+        return (6 + 6 / 12 <= tau) & (tau <= 10.0)
+    elif globex_code == 'TN':
+        return (9 + 5 / 12 <= tau) & (tau <= 10.0)
+    elif globex_code == 'ZF':
+        return (4 + 2 / 12 <= tau) & (tau <= 5 + 3 / 12)
+    elif globex_code == 'Z3N':
+        return (2 + 9 / 12 <= tau) & (tau <= 5 + 3 / 12)
+    elif globex_code == 'ZT':
+        return (1 + 9 / 12 <= tau) & (tau <= 5 + 3 / 12)
+    else:
+        raise NotImplementedError(f'{globex_code} not supported!')
