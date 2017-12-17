@@ -2,6 +2,7 @@ import datetime
 
 import numpy as np
 import pandas as pd
+from pandas.tseries.offsets import BDay
 import requests
 
 DATE_FORMAT = '%Y%m%d'
@@ -90,6 +91,7 @@ def treasury_direct(date=None):
     df['MATURITY DATE'] = pd.to_datetime(df['MATURITY DATE'])
     df['MATURITY'] = (df['MATURITY DATE'] - clean_date) / np.timedelta64(1, 'Y')
     df['COUPON'] = df['RATE'].str[:-1].astype(float)
+    df['QUOTE_DATE'] = clean_date
     for c in ['BUY', 'SELL', 'END OF DAY']:
         df[c] = pd.to_numeric(df[c])
     df.columns = df.columns.str.replace(' ', '_')
@@ -141,6 +143,8 @@ def globex_futures():
     for c in price_columns:
         df.loc[mask, c] = df.loc[mask, c].apply(to_decimal_price)
 
+    df['QUOTE_DATE'] = pd.datetime.today() - BDay(1)
+    df['QUOTE_DATE'] = df['QUOTE_DATE'].dt.date
     df.columns = df.columns.str.upper()
     df.columns = df.columns.str.replace(' ', '_')
 
