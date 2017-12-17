@@ -92,6 +92,7 @@ def treasury_direct(date=None):
     df['COUPON'] = df['RATE'].str[:-1].astype(float)
     for c in ['BUY', 'SELL', 'END OF DAY']:
         df[c] = pd.to_numeric(df[c])
+    df.columns = df.columns.str.replace(' ', '_')
     return df
 
 
@@ -131,12 +132,16 @@ def globex_futures():
     response = requests.get('http://www.cmegroup.com/trading/interest-rates/')
     assert response.ok
     df = pd.concat(pd.read_html(response.text))
-    df = df.drop(['Unnamed: 3', 'Chart'], axis=1)
+    df = df.drop(['Unnamed: 3', 'Chart', 'Change'], axis=1)
+    df = df.drop_duplicates()
     df.index = np.arange(len(df))
 
     price_columns = ('Last', 'Open', 'High', 'Low')
     mask = df.Code.str.contains('ZT|ZF|ZN|TN|UB|ZB')
     for c in price_columns:
         df.loc[mask, c] = df.loc[mask, c].apply(to_decimal_price)
+
+    df.columns = df.columns.str.upper()
+    df.columns = df.columns.str.replace(' ', '_')
 
     return df
