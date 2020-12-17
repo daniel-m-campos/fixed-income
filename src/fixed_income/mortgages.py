@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-__all__ = ['payments']
+__all__ = ["payments"]
 
 
 def coupon(loan, maturity, mortgage_rate, freq=1):
@@ -29,9 +29,10 @@ def payments(loan, maturity, mortgage_rate, freq=1):
         amounts[i] = payment
         interest[i] = balance[i - 1] * mortgage_rate * dt
         balance[i] = balance[i - 1] - payment + interest[i]
-    return (pd.DataFrame()
-            .assign(time=payment_times)
-            .assign(value=balance)
-            .assign(payment=amounts)
-            .assign(interest=interest)
-            )
+    return (
+        pd.DataFrame()
+        .assign(time=payment_times)
+        .assign(value=balance)
+        .assign(payment=amounts)
+        .assign(interest=interest)
+    )

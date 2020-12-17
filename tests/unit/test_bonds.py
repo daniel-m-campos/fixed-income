@@ -11,7 +11,9 @@ class TestFunctions(unittest.TestCase):
         face_value = 100
         coupon = 6.5
         expected = coupon / face_value
-        actual = bonds.yield_to_maturity(bond_price=face_value, face_value=face_value, periods=8, coupon=coupon)
+        actual = bonds.yield_to_maturity(
+            bond_price=face_value, face_value=face_value, periods=8, coupon=coupon
+        )
         self.assertAlmostEqual(actual, expected)
 
     def test_price_equals_cash_flows_when_ytm_is_zero(self):
@@ -19,33 +21,54 @@ class TestFunctions(unittest.TestCase):
         coupon = 6.5
         periods = 8
         expected = coupon * periods + face_value
-        actual = bonds.price(ytm=0, face_value=face_value, periods=periods, coupon=coupon)
+        actual = bonds.price(
+            ytm=0, face_value=face_value, periods=periods, coupon=coupon
+        )
         self.assertAlmostEqual(actual, expected)
 
     def test_can_bootstrap_is_true(self):
-        portfolio = [bonds.TreasuryNote(coupon_rate=0.05, maturity_years=t / 2, annual_ytm=0.05) for t in range(1, 5)]
+        portfolio = [
+            bonds.TreasuryNote(coupon_rate=0.05, maturity_years=t / 2, annual_ytm=0.05)
+            for t in range(1, 5)
+        ]
         self.assertTrue(bonds.can_bootstrap(portfolio))
 
     def test_can_bootstrap_is_false(self):
-        portfolio = [bonds.TreasuryNote(coupon_rate=0.05, maturity_years=0.0, annual_ytm=0.02),
-                     bonds.TreasuryNote(coupon_rate=0.05, maturity_years=1.0, annual_ytm=0.02)]
+        portfolio = [
+            bonds.TreasuryNote(coupon_rate=0.05, maturity_years=0.0, annual_ytm=0.02),
+            bonds.TreasuryNote(coupon_rate=0.05, maturity_years=1.0, annual_ytm=0.02),
+        ]
         self.assertFalse(bonds.can_bootstrap(portfolio))
 
     def test_cash_flows(self):
-        portfolio = [bonds.TreasuryNote(coupon_rate=0.05, maturity_years=0.5, annual_ytm=0.02),
-                     bonds.TreasuryNote(coupon_rate=0.05, maturity_years=1.0, annual_ytm=0.02),
-                     bonds.TreasuryNote(coupon_rate=0.05, maturity_years=2.0, annual_ytm=0.02)]
+        portfolio = [
+            bonds.TreasuryNote(coupon_rate=0.05, maturity_years=0.5, annual_ytm=0.02),
+            bonds.TreasuryNote(coupon_rate=0.05, maturity_years=1.0, annual_ytm=0.02),
+            bonds.TreasuryNote(coupon_rate=0.05, maturity_years=2.0, annual_ytm=0.02),
+        ]
         actual = bonds.cash_flows(portfolio)
-        expected = [[102.5, 0.0, 0.0, 0.0], [2.5, 102.5, 0.0, 0.0], [2.5, 2.5, 2.5, 102.5]]
+        expected = [
+            [102.5, 0.0, 0.0, 0.0],
+            [2.5, 102.5, 0.0, 0.0],
+            [2.5, 2.5, 2.5, 102.5],
+        ]
         self.assertEqual(actual, expected)
 
     def test_bootstrap(self):
         ytm = 0.1
         periods = list(range(1, 5))
-        portfolio = [bonds.TreasuryNote(coupon_rate=ytm, maturity_years=n / 2, annual_ytm=ytm) for n in periods]
+        portfolio = [
+            bonds.TreasuryNote(coupon_rate=ytm, maturity_years=n / 2, annual_ytm=ytm)
+            for n in periods
+        ]
         actuals = bonds.bootstrap(portfolio)
-        expecteds = (bonds.Zero(face_value=1.0, periods=n, ytm=bonds.period_ytm(ytm)) for n in periods)
-        self.assertTrue(all(actual == expected for actual, expected in zip(actuals, expecteds)))
+        expecteds = (
+            bonds.Zero(face_value=1.0, periods=n, ytm=bonds.period_ytm(ytm))
+            for n in periods
+        )
+        self.assertTrue(
+            all(actual == expected for actual, expected in zip(actuals, expecteds))
+        )
 
 
 class TestCouponBond(unittest.TestCase):
@@ -57,7 +80,9 @@ class TestCouponBond(unittest.TestCase):
         face_value = 100
         ytm = 0.07
         coupon = ytm * face_value
-        bond = bonds.CouponBond(face_value=face_value, coupon=coupon, ytm=ytm, periods=12)
+        bond = bonds.CouponBond(
+            face_value=face_value, coupon=coupon, ytm=ytm, periods=12
+        )
         self.assertAlmostEqual(bond.price, face_value)
 
     def test_duration_of_zero_equals_periods(self):
@@ -70,14 +95,19 @@ class TestCouponBond(unittest.TestCase):
         coupon = 6.5
         periods = 8
         ytm = coupon / face_value
-        actual = bonds.CouponBond.from_price(bond_price=face_value, face_value=face_value, periods=periods,
-                                             coupon=coupon)
-        expected = bonds.CouponBond(ytm=ytm, face_value=face_value, periods=periods, coupon=coupon)
+        actual = bonds.CouponBond.from_price(
+            bond_price=face_value, face_value=face_value, periods=periods, coupon=coupon
+        )
+        expected = bonds.CouponBond(
+            ytm=ytm, face_value=face_value, periods=periods, coupon=coupon
+        )
         self.assertEqual(actual, expected)
 
     def test_from_dataframe(self):
-        bond_details = {'bond_price': 100, 'coupon': 5, 'face_value': 100, 'periods': 2}
-        df = pd.DataFrame([bond_details], )
+        bond_details = {"bond_price": 100, "coupon": 5, "face_value": 100, "periods": 2}
+        df = pd.DataFrame(
+            [bond_details],
+        )
         actual = next(bonds.CouponBond.from_dataframe(df))
         expected = bonds.CouponBond.from_price(**bond_details)
         self.assertEqual(actual, expected)
@@ -86,7 +116,9 @@ class TestCouponBond(unittest.TestCase):
         face_value = 100
         coupon = 7
         periods = 2
-        bond = bonds.CouponBond(ytm=0.01, face_value=face_value, periods=periods, coupon=coupon)
+        bond = bonds.CouponBond(
+            ytm=0.01, face_value=face_value, periods=periods, coupon=coupon
+        )
         actual = list(bond)
         expected = [(1, coupon), (2, coupon + face_value)]
         self.assertEqual(actual, expected)
@@ -152,29 +184,52 @@ class TestPerpetuity(unittest.TestCase):
 class TestTreasuryNote(unittest.TestCase):
     def test_price(self):
         """ Example 2.11 from Pietro Veronesi - Fixed Income Securities"""
-        note = bonds.TreasuryNote(coupon_rate=0.0475, maturity_years=9.5, annual_ytm=0.037548)
+        note = bonds.TreasuryNote(
+            coupon_rate=0.0475, maturity_years=9.5, annual_ytm=0.037548
+        )
         expected = 107.8906
         self.assertAlmostEqual(note.price, expected, places=3)
 
     def test_from_price(self):
         """ Example 2.11 from Pietro Veronesi - Fixed Income Securities"""
-        note = bonds.TreasuryNote.from_price(bond_price=141.5267, coupon_rate=0.08875, maturity_years=9.5)
+        note = bonds.TreasuryNote.from_price(
+            bond_price=141.5267, coupon_rate=0.08875, maturity_years=9.5
+        )
         expected = bonds.period_ytm(0.036603)
         self.assertAlmostEqual(note.ytm, expected, places=6)
 
     def test_duration(self):
         #         TreasuryNote(face_value=100, coupon=2, periods=10, ytm=0.007789642, price=111.7031)
-        note = bonds.TreasuryNote.from_price(bond_price=111.7031250, coupon_rate=0.04, maturity_years=5)
+        note = bonds.TreasuryNote.from_price(
+            bond_price=111.7031250, coupon_rate=0.04, maturity_years=5
+        )
         expected = 4.6040133
         self.assertAlmostEqual(note.duration, expected, places=2)
 
 
 class TestLIF(unittest.TestCase):
     def test_from_zeros(self):
-        zero_prices = [0.99832479, 0.99389955, 0.98957486, 0.98455887, 0.97605325,
-                       0.96571976, 0.95716784, 0.94795714, 0.93556282, 0.91985021]
-        actual = bonds.InverseFloatingRateBond.from_zeros(zero_prices, fixed_coupon=10, maturity=5, leverage=2)
-        expected = bonds.InverseFloatingRateBond(**{'price': 124.29840844999998, 'duration': 11.35131578267606,
-                                                    'convexity': 58.76219278131876,
-                                                    'leverage': 2})
+        zero_prices = [
+            0.99832479,
+            0.99389955,
+            0.98957486,
+            0.98455887,
+            0.97605325,
+            0.96571976,
+            0.95716784,
+            0.94795714,
+            0.93556282,
+            0.91985021,
+        ]
+        actual = bonds.InverseFloatingRateBond.from_zeros(
+            zero_prices, fixed_coupon=10, maturity=5, leverage=2
+        )
+        expected = bonds.InverseFloatingRateBond(
+            **{
+                "price": 124.29840844999998,
+                "duration": 11.35131578267606,
+                "convexity": 58.76219278131876,
+                "leverage": 2,
+            }
+        )
         self.assertEqual(actual, expected)

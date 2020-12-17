@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.optimize import minimize
 
-__all__ = ['ho_lee', 'simple_bdt', 'fit', 'bond_price']
+__all__ = ["ho_lee", "simple_bdt", "fit", "bond_price"]
 
 
 def initialize_tree(maturity, time_step, is_zero):
@@ -18,23 +18,34 @@ def backfill(rate_tree, period, time_step):
     pi = 0.5
     for j in range(period + 1, 0, -1):
         discount = np.exp(-rate_tree[:j, j - 1] * time_step)
-        zero_tree[:j, j - 1] = discount * pi * (zero_tree[:j, j] + zero_tree[1:j + 1, j])
+        zero_tree[:j, j - 1] = (
+            discount * pi * (zero_tree[:j, j] + zero_tree[1 : j + 1, j])
+        )
     return zero_tree
 
 
 def ho_lee(theta, rate_tree, period, sigma, time_step):
-    rate_tree[0, period] = rate_tree[0, period - 1] + theta * time_step + sigma * np.sqrt(time_step)
+    rate_tree[0, period] = (
+        rate_tree[0, period - 1] + theta * time_step + sigma * np.sqrt(time_step)
+    )
     for i in range(1, period + 1):
-        rate_tree[i, period] = rate_tree[i - 1, period - 1] + theta * time_step - sigma * np.sqrt(time_step)
+        rate_tree[i, period] = (
+            rate_tree[i - 1, period - 1]
+            + theta * time_step
+            - sigma * np.sqrt(time_step)
+        )
 
     return rate_tree, backfill(rate_tree, period, time_step)
 
 
 def simple_bdt(theta, rate_tree, period, sigma, time_step):
-    rate_tree[0, period] = rate_tree[0, period - 1] * np.exp(theta * time_step + sigma * np.sqrt(time_step))
+    rate_tree[0, period] = rate_tree[0, period - 1] * np.exp(
+        theta * time_step + sigma * np.sqrt(time_step)
+    )
     for i in range(1, rate_tree.shape[0]):
-        rate_tree[i, period] = rate_tree[i - 1, period - 1] \
-                               * np.exp(theta * time_step - sigma * np.sqrt(time_step))
+        rate_tree[i, period] = rate_tree[i - 1, period - 1] * np.exp(
+            theta * time_step - sigma * np.sqrt(time_step)
+        )
 
     return rate_tree, backfill(rate_tree, period, time_step)
 
@@ -58,11 +69,16 @@ def fit(model, zeros, sigma, time_step):
     errors = np.zeros(zeros.shape)
 
     for i, zero in enumerate(zeros[1:], start=1):
-        result = minimize(error, x0=[0], args=(zero, model, rate_tree.copy(), i, sigma, time_step), method='powell')
+        result = minimize(
+            error,
+            x0=[0],
+            args=(zero, model, rate_tree.copy(), i, sigma, time_step),
+            method="powell",
+        )
         thetas[i - 1] = result.x
         errors[i - 1] = result.fun
         rate_tree, z_tree = model(thetas[i - 1], rate_tree, i, sigma, time_step)
-        zero_tree[:i + 2, :i + 2, i] = z_tree
+        zero_tree[: i + 2, : i + 2, i] = z_tree
 
     fitted_zeros = zero_tree[0, 0, :].squeeze()
     return thetas, fitted_zeros, rate_tree
@@ -76,7 +92,9 @@ def bond_price(rate_tree, coupon, maturity, time_step):
 
     for j in range(size, 0, -1):
         discount = np.exp(-rate_tree[:j, j - 1] * time_step)
-        bond_tree[:j, j - 1] = discount * (pi * (bond_tree[:j, j] + bond_tree[1:j + 1, j]) + coupon * time_step)
+        bond_tree[:j, j - 1] = discount * (
+            pi * (bond_tree[:j, j] + bond_tree[1 : j + 1, j]) + coupon * time_step
+        )
     return bond_tree
 
 
@@ -88,7 +106,11 @@ def call_price(rate_tree, bond_tree, strike, maturity, time_step, first_time_cal
 
     for j in range(size, 0, -1):
         discount = np.exp(-rate_tree[:j, j - 1] * time_step)
-        call_tree[:j, j - 1] = discount * pi * (call_tree[:j, j] + call_tree[1:j + 1, j])
+        call_tree[:j, j - 1] = (
+            discount * pi * (call_tree[:j, j] + call_tree[1 : j + 1, j])
+        )
         if (j - 1) * time_step >= first_time_call:
-            call_tree[:j, j - 1] = np.max([call_tree[:j, j - 1], bond_tree[:j, j - 1] - strike], axis=0)
+            call_tree[:j, j - 1] = np.max(
+                [call_tree[:j, j - 1], bond_tree[:j, j - 1] - strike], axis=0
+            )
     return call_tree
