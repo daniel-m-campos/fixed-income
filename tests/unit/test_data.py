@@ -24,7 +24,7 @@ class TestTreasuryDirect(unittest.TestCase):
 
     @vcr.use_cassette('unit/resources/test_load_data_from_date.yml')
     def test_load_data_from_date(self):
-        df = data.treasury_direct(self.date)
+        df = data.treasury_direct_prices(self.date)
         self.assertTrue(~df.empty)
 
     def test_get_cashflows(self):
