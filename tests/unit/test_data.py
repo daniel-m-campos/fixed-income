@@ -1,4 +1,5 @@
 import datetime
+import os
 import unittest
 
 import numpy as np
@@ -7,9 +8,11 @@ import vcr
 
 from fixed_income import data
 
+DIR = os.path.dirname(os.path.abspath(__file__))
+
 
 class TestTreasuryDirect(unittest.TestCase):
-    date = datetime.date(year=2017, month=11, day=17)
+    date = datetime.date(year=2017, month=12, day=12)
     test_data = {
         "BUY": {0: "97.500000", 1: "99.156250"},
         "CALL_DATE": {0: np.nan, 1: np.nan},
@@ -26,7 +29,7 @@ class TestTreasuryDirect(unittest.TestCase):
         "SELL": {0: "97.500000", 1: "99.156250"},
     }
 
-    @vcr.use_cassette("unit/resources/test_load_data_from_date.yml")
+    @vcr.use_cassette(f"{DIR}/resources/test_load_data_from_date.yml")
     def test_load_data_from_date(self):
         df = data.treasury_direct_prices(self.date)
         self.assertTrue(~df.empty)

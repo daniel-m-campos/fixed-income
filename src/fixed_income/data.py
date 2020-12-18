@@ -106,10 +106,11 @@ def treasury_direct_prices(date=None):
         assert response.ok
         table = pd.read_html(response.text)[0]
 
-    df = _create_df(table)
+    df = table
     df["MATURITY DATE"] = pd.to_datetime(df["MATURITY DATE"])
-    df["MATURITY DATE"] = pd.to_datetime(df["MATURITY DATE"])
-    df["MATURITY"] = (df["MATURITY DATE"] - clean_date) / np.timedelta64(1, "Y")
+    df["MATURITY"] = (
+        df["MATURITY DATE"] - pd.to_datetime(clean_date)
+    ) / np.timedelta64(1, "Y")
     df["COUPON"] = df["RATE"].str[:-1].astype(float)
     df["QUOTE_DATE"] = clean_date
     for c in ["BUY", "SELL", "END OF DAY"]:
@@ -135,7 +136,7 @@ def cashflows_matrix(treasury_direct_df, quote_date):
     max_semi_periods = int(
         np.ceil(
             (
-                (treasury_direct_df["MATURITY_DATE"] - quote_date)
+                (treasury_direct_df["MATURITY_DATE"] - pd.to_datetime(quote_date))
                 / np.timedelta64(6, "M")
             ).max()
         )

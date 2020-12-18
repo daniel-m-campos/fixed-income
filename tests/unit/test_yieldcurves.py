@@ -14,12 +14,13 @@ VASICEK_FILE = f"{DIR}/resources/VasicekData.xlsx"
 class TestNelsonSiegelFit(TestCase):
     def setUp(self):
         super().setUp()
-        os.path.dirname(os.path.abspath(__file__))
-        self.quotes = pd.read_excel(TIPS_FILE, sheetname="Treasury_Quotes")
+        self.quotes = pd.read_excel(TIPS_FILE, sheet_name="Treasury_Quotes")
         self.quotes.index = self.quotes["Time To Maturity"].values
-        self.cashflows = pd.read_excel(TIPS_FILE, sheetname="Treasury_Cashflows")
+        self.cashflows = pd.read_excel(
+            TIPS_FILE, sheet_name="Treasury_Cashflows", index_col=0
+        )
         self.cf_maturities = pd.read_excel(
-            TIPS_FILE, sheetname="Treasury_Cashflows_Maturity"
+            TIPS_FILE, sheet_name="Treasury_Cashflows_Maturity", index_col=0
         )
 
     def test_fit(self):
@@ -49,10 +50,14 @@ class TestNelsonSiegelFit(TestCase):
 class TestVasicekFit(TestCase):
     def setUp(self):
         super().setUp()
-        self.quotes = pd.read_excel(VASICEK_FILE, sheetname="Quotes")
+        self.quotes = pd.read_excel(VASICEK_FILE, sheet_name="Quotes")
         self.quotes.index = range(1, len(self.quotes) + 1)
-        self.cashflows = pd.read_excel(VASICEK_FILE, sheetname="CashFlows")
-        self.cf_maturities = pd.read_excel(VASICEK_FILE, sheetname="Maturities")
+        self.cashflows = pd.read_excel(
+            VASICEK_FILE, sheet_name="CashFlows", index_col=0
+        )
+        self.cf_maturities = pd.read_excel(
+            VASICEK_FILE, sheet_name="Maturities", index_col=0
+        )
 
     def test_fit(self):
         r0 = 0.011499737607216544

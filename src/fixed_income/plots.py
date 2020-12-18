@@ -25,15 +25,15 @@ def term_structure(
     ax.set_title("Nominal Discount")
 
     ax = axes[2]
-    ax.plot(yc_df.Yield * 100, "o-", c="b")
-    ax.plot(yc_df.Forward * 100, "o-", c="r")
+    ax.plot(yc_df.Yield * 100, "o-", c="b", label="Zero")
+    ax.plot(yc_df.Forward * 100, "o-", c="r", label="Forward")
     ax.set_ylabel("Yield (%)")
     ax.set_title("Nominal Yield")
+    ax.legend()
 
     for ax in axes:
         ax.set_xlabel("Maturity")
         ax.grid()
-        ax.legend()
 
     fig.tight_layout()
     return fig
