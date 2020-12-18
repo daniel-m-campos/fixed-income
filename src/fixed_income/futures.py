@@ -6,20 +6,23 @@ MONTHS_IN_YEAR = 12
 CONVERSION_YIELD = 0.06
 CONVERSION_FV = 1.03
 
-GLOBEX_CODES = ('ZN', 'ZB', 'UB', 'ZT', 'Z3N', 'ZF')
+GLOBEX_CODES = ("ZN", "ZB", "UB", "ZT", "TN", "Z3N", "ZF")
 
 
 def _n_and_v(globex_code, year_fraction):
-    mask = np.in1d(globex_code, ('ZN', 'ZB', 'UB'))
+    mask = np.in1d(globex_code, ("ZN", "ZB", "UB", "TN"))
     n = mask * np.nan
     v = mask * np.nan
     if mask.any():
-        values = np.floor(year_fraction / MONTHS_IN_QUARTER * MONTHS_IN_YEAR) * MONTHS_IN_QUARTER
+        values = (
+            np.floor(year_fraction / MONTHS_IN_QUARTER * MONTHS_IN_YEAR)
+            * MONTHS_IN_QUARTER
+        )
         n[mask] = values if isinstance(values, float) else values[mask]
         values = n * (n < 7) + MONTHS_IN_QUARTER * (n >= 7)
         v[mask] = values if isinstance(values, float) else values[mask]
 
-    mask = np.in1d(globex_code, ('ZT', 'Z3N', 'ZF'))
+    mask = np.in1d(globex_code, ("ZT", "Z3N", "ZF"))
     if mask.any():
         values = np.floor(year_fraction * MONTHS_IN_YEAR)
         n[mask] = values if isinstance(values, float) else values[mask]
@@ -27,7 +30,7 @@ def _n_and_v(globex_code, year_fraction):
         v[mask] = values if isinstance(values, float) else values[mask]
 
     if np.isnan(n).all():
-        raise NotImplementedError('No supported value of globex_code found!')
+        raise NotImplementedError(f"No {globex_code} deliverables found!")
 
     return n, v
 
@@ -49,8 +52,10 @@ def extract_deliverables(df):
     deliverables = []
     for code in GLOBEX_CODES:
         tmp_df = df[find_deliverables_of(code, df.MATURITY)].copy()
-        tmp_df['DELIVERABLE'] = code
-        tmp_df['CONV_FACTOR'] = conversion_factor(tmp_df.DELIVERABLE, tmp_df.COUPON / 100, tmp_df.MATURITY)
+        tmp_df["DELIVERABLE"] = code
+        tmp_df["CONV_FACTOR"] = conversion_factor(
+            tmp_df.DELIVERABLE, tmp_df.COUPON / 100, tmp_df.MATURITY
+        )
         deliverables.append(tmp_df)
 
     deliverables = pd.concat(deliverables)
@@ -60,19 +65,19 @@ def extract_deliverables(df):
 
 def find_deliverables_of(globex_code, time_to_maturity):
     tau = np.array(time_to_maturity)
-    if globex_code == 'UB':
+    if globex_code == "UB":
         return tau >= 25.0
-    elif globex_code == 'ZB':
+    elif globex_code == "ZB":
         return (15.0 <= tau) & (tau < 25.0)
-    elif globex_code == 'ZN':
+    elif globex_code == "ZN":
         return (6 + 6 / 12 <= tau) & (tau <= 10.0)
-    elif globex_code == 'TN':
+    elif globex_code == "TN":
         return (9 + 5 / 12 <= tau) & (tau <= 10.0)
-    elif globex_code == 'ZF':
+    elif globex_code == "ZF":
         return (4 + 2 / 12 <= tau) & (tau <= 5 + 3 / 12)
-    elif globex_code == 'Z3N':
+    elif globex_code == "Z3N":
         return (2 + 9 / 12 <= tau) & (tau <= 5 + 3 / 12)
-    elif globex_code == 'ZT':
+    elif globex_code == "ZT":
         return (1 + 9 / 12 <= tau) & (tau <= 5 + 3 / 12)
     else:
-        raise NotImplementedError(f'{globex_code} not supported!')
+        raise NotImplementedError(f"{globex_code} not supported!")

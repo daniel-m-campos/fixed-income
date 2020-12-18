@@ -13,7 +13,9 @@ class TestConversionFactor(unittest.TestCase):
         time_to_maturity = years + months / 12 + days / 365
 
         expected = 0.906258
-        actual = futures.conversion_factor('ZT', coupon=0.75 / 100, time_to_maturity=time_to_maturity)
+        actual = futures.conversion_factor(
+            "ZT", coupon=0.75 / 100, time_to_maturity=time_to_maturity
+        )
 
         self.assertAlmostEqual(expected, actual, places=6)
 
@@ -24,7 +26,9 @@ class TestConversionFactor(unittest.TestCase):
         time_to_maturity = years + months / 12 + days / 365
 
         expected = 0.867956
-        actual = futures.conversion_factor('Z3N', coupon=1.125 / 100, time_to_maturity=time_to_maturity)
+        actual = futures.conversion_factor(
+            "Z3N", coupon=1.125 / 100, time_to_maturity=time_to_maturity
+        )
 
         self.assertAlmostEqual(expected, actual, places=6)
 
@@ -35,7 +39,9 @@ class TestConversionFactor(unittest.TestCase):
         time_to_maturity = years + months / 12 + days / 365
 
         expected = 0.837079
-        actual = futures.conversion_factor('ZF', coupon=2.125 / 100, time_to_maturity=time_to_maturity)
+        actual = futures.conversion_factor(
+            "ZF", coupon=2.125 / 100, time_to_maturity=time_to_maturity
+        )
 
         self.assertAlmostEqual(expected, actual, places=6)
 
@@ -46,7 +52,9 @@ class TestConversionFactor(unittest.TestCase):
         time_to_maturity = years + months / 12 + days / 365
 
         expected = 0.815653
-        actual = futures.conversion_factor('ZN', coupon=3.375 / 100, time_to_maturity=time_to_maturity)
+        actual = futures.conversion_factor(
+            "ZN", coupon=3.375 / 100, time_to_maturity=time_to_maturity
+        )
 
         self.assertAlmostEqual(expected, actual, places=6)
 
@@ -57,7 +65,9 @@ class TestConversionFactor(unittest.TestCase):
         time_to_maturity = years + months / 12 + days / 365
 
         expected = 1.044053
-        actual = futures.conversion_factor('ZB', coupon=6.375 / 100, time_to_maturity=time_to_maturity)
+        actual = futures.conversion_factor(
+            "ZB", coupon=6.375 / 100, time_to_maturity=time_to_maturity
+        )
 
         self.assertAlmostEqual(expected, actual, places=6)
 
@@ -68,24 +78,26 @@ class TestConversionFactor(unittest.TestCase):
         time_to_maturity = years + months / 12 + days / 365
 
         expected = 0.775740
-        actual = futures.conversion_factor('UB', coupon=4.375 / 100, time_to_maturity=time_to_maturity)
+        actual = futures.conversion_factor(
+            "UB", coupon=4.375 / 100, time_to_maturity=time_to_maturity
+        )
 
         self.assertAlmostEqual(expected, actual, places=6)
 
     def test_not_support_error(self):
         with self.assertRaises(NotImplementedError):
-            futures.conversion_factor('?', coupon=4.375 / 100, time_to_maturity=1.5)
+            futures.conversion_factor("?", coupon=4.375 / 100, time_to_maturity=1.5)
 
 
 class TestFindDeliverablesOf(unittest.TestCase):
     def test_single_time_to_maturity(self):
-        actual = futures.find_deliverables_of('ZN', time_to_maturity=8.5)
+        actual = futures.find_deliverables_of("ZN", time_to_maturity=8.5)
         expected = True
         self.assertEqual(expected, actual)
 
     def test_array_of_time_to_maturity(self):
         time_to_maturity = [5, 7, 17, 26]
-        actual = futures.find_deliverables_of('ZN', time_to_maturity).tolist()
+        actual = futures.find_deliverables_of("ZN", time_to_maturity).tolist()
         expected = np.array([False, True, False, False])
 
         self.assertTrue(np.array_equal(expected, actual))
