@@ -2,9 +2,12 @@ language: python
 
 python:
   - "3.6"
-install: "pip install -r requirements.txt -r test-requirements.txt"
-# command to run tests
-script: pytest
+
+install:
+  - pip install -r requirements.txt -r test-requirements.txt
+  - pip install .
+
+script: pytest tests/unit
 
 notifications:
   email: false
